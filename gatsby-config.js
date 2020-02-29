@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -5,7 +9,26 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    {
+      resolve:`gatsby-source-airtable`,
+      options: {
+        apiKey: process.env.AIRTABLE_API_KEY,
+        concurrency: 5,
+        tables: [
+          {
+            baseId: `appGmWAihDWDGn2kP`,
+            tableName: `words`,
+            // createSeparateNodeType: true,
+          },
+          {
+            baseId: `appGmWAihDWDGn2kP`,
+            tableName: `sessions`,
+            tableLinks: [`words`],
+            // createSeparateNodeType: true,
+          }
+        ]
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

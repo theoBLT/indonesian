@@ -620,3 +620,71 @@ pre tt:after {
     font-size: 100%;
   }
 }
+.header {
+  margin:80px 20px 0px 20px;
+}
+.container {
+  margin:80px 20px 0px 40px;
+}
+
+.title {
+  font-size:3em;
+}
+
+.subtitle {
+  font-size:1.5em;
+}
+
+.translated {
+  font-style:italic;
+  margin-top:-0.7em;
+}
+
+h3 {
+  font-size:2.5em;
+}
+
+.date {
+  color:grey;
+}
+
+ul {
+  margin: 40px 0 40px 0px;
+}
+
+li {
+  list-style-type: none;
+  padding-top:20px;
+  padding-left:0px;
+  margin-left:0px;
+  cursor:default;
+}
+
+li .word {
+  background: #fff2cc;
+  font-size: 2em;
+}
+
+li .type {
+  display: inline-block;
+  font-size:0.7em;
+  font-style: oblique;
+  opacity:0;
+}
+
+li .translation {
+  display:block;
+  opacity:0;
+}
+
+li:hover .translation {
+  opacity:100;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
+}
+
+li:hover .type {
+  opacity:100;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
+}
