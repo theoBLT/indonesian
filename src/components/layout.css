@@ -200,7 +200,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  font-family: 'Work Sans';
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -230,9 +230,6 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
   line-height: 1.1;
@@ -622,6 +619,7 @@ pre tt:after {
 }
 .header {
   margin:80px 20px 0px 20px;
+  font-weight:500;
 }
 .container {
   margin:80px 20px 0px 40px;
@@ -629,6 +627,7 @@ pre tt:after {
 
 .title {
   font-size:3em;
+  font-weight:600;
 }
 
 .subtitle {
@@ -636,12 +635,14 @@ pre tt:after {
 }
 
 .translated {
-  font-style:italic;
+  /* font-style:italic; */
   margin-top:-0.7em;
+  font-weight:400;
 }
 
-h3 {
+.session h3 {
   font-size:2.5em;
+  font-weight:600;
 }
 
 .date {
@@ -663,6 +664,7 @@ li {
 li .word {
   background: #fff2cc;
   font-size: 2em;
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 li .type {
@@ -670,6 +672,7 @@ li .type {
   font-size:0.7em;
   font-style: oblique;
   opacity:0;
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 li .translation {
