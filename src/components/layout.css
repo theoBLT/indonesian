@@ -665,6 +665,7 @@ li .word {
   background: #fff2cc;
   font-size: 2em;
   font-family:Georgia, 'Times New Roman', Times, serif;
+  padding-right:20px;
 }
 
 li .type {
