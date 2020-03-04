@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Header from "../components/header"
+import Session from "../components/session"
 
 export default ({ data }) => {
  
@@ -13,24 +14,15 @@ export default ({ data }) => {
 
         <div className="container">
           {/* loop over the sessions _*/}
+ 
          {data.allAirtable.nodes.map((session, index) => (
-
+            
           <div key ={index} className="session">
-
-          <h3>Session #{session.data.number}</h3>
-          <span className ="date">{session.data.date}</span>
-
-            {/* loop over the words _*/}
-            <ul>
-            {session.data.words.map((definition, i) =>
-              <li key={i}>
-                <span className="word">{definition.data.word}</span> <span className="type">({definition.data.type})</span> 
-                <span className="translation">{definition.data.translation}</span>
-              </li>
-              )}
-            </ul>
-            
-            
+           <Session
+            sessionNumber = {session.data.number}
+            sessionDate = {session.data.date}
+            sessionWords = {session.data.words}
+           />  
           </div>
         ))}
               <footer>
