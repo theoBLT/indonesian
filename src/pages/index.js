@@ -17,13 +17,14 @@ export default ({ data }) => {
  
          {data.allAirtable.nodes.map((session, index) => (
             
-          <div key ={index} className="session">
+          // <div key ={index} className="session">
            <Session
+            key = {index}
             sessionNumber = {session.data.number}
             sessionDate = {session.data.date}
             sessionWords = {session.data.words}
            />  
-          </div>
+          // </div>
         ))}
               <footer>
           © {new Date().getFullYear()}, Built with
