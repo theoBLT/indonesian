@@ -1,11 +1,13 @@
 import React from "react" 
+import {capitalize} from "../utils/helpers.js"
 
 export default props =>  {
+    const {word, type, translation, key} = props;
     return (
-        <li key={props.key}>
-            <span className="word">{props.word}</span> 
-            <span className="type">({props.type})</span> 
-            <span className="translation">{props.translation}</span>
+        <li key={key}>
+            <span className="word">{capitalize(word)}</span> 
+            <span className="type">({type})</span> 
+            <span className="translation">{translation}</span>
       </li>
     )
 }
