@@ -2,14 +2,15 @@ import React from "react"
 import Word from "../components/word"
 
 export default props => {
+    const {key,sessionNumber,sessionDate,sessionWords} = props;
     return (
-        <div className = "session" key={props.key}>
-        <h3>Session #{props.sessionNumber}</h3>
-          <span className ="date">{props.sessionDate}</span>
 
-            {/* loop over the words _*/}
+        <div className = "session" key={key}>
+        <h3>Session #{sessionNumber}</h3>
+          <span className ="date">{sessionDate}</span>
+
             <ul>
-              {props.sessionWords.map((definition, i) =>
+              {sessionWords.map((definition, i) =>
                 <Word
                 key= {i}
                 word = {definition.data.word}
@@ -18,6 +19,7 @@ export default props => {
                 />
                 )}
             </ul>
+
         </div>
-    )
+      )
 }
