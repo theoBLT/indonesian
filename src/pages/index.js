@@ -9,30 +9,23 @@ export default ({ data }) => {
     return (
       <Layout>
         <Header 
-          headerText="Selamat datang!"
-          headerTranslation="Welcome!"/>
+          text="Selamat datang!"
+          translation="Welcome!"/>
 
         <div className="container">
-          {/* loop over the sessions _*/}
  
          {data.allAirtable.nodes.map((session, index) => (
-            
-          // <div key ={index} className="session">
            <Session
             key = {index}
             sessionNumber = {session.data.number}
             sessionDate = {session.data.date}
             sessionWords = {session.data.words}
            />  
-          // </div>
         ))}
-              <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-      
+          <footer>
+            © {new Date().getFullYear()}, CelotehBahasa.com
+          </footer>
+        </div>
       </Layout>
     )
   }
