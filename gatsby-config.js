@@ -60,9 +60,20 @@ module.exports = {
       }
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options:{
+        extensions: [`.md`,`.mdx`],
+        gatsbyRemarkPlugins: [ 
+          {
+          resolve: `gatsby-remark-images`,
+          options: {
+            maxWidth:1200,
+          }
+        }
+      ]
+      }
+    }
   ],
 }
