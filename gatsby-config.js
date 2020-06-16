@@ -13,21 +13,21 @@ module.exports = {
       resolve:`gatsby-source-filesystem`,
       options: {
         name:`images`,
-        path: `${__dirname}/src/images`
+        path: `${__dirname}/src/images/`
       }
     },
     {
       resolve:`gatsby-source-filesystem`,
       options: {
         name:`posts`,
-        path: `${__dirname}/src/posts`
+        path: `${__dirname}/src/posts/`
       }
     },
     {
       resolve:`gatsby-source-filesystem`,
       options: {
         name:`images`,
-        path: `${__dirname}/src/images`
+        path: `${__dirname}/src/images/`
       }
     },
     {
@@ -70,9 +70,9 @@ module.exports = {
           resolve: `gatsby-remark-images`,
           options: {
             maxWidth:1200,
-          }
-        }
-      ]
+          },
+        },
+      ],
       }
     }
   ],
