@@ -7,7 +7,7 @@ function HeaderTemplate (props) {
       <h1 className="title">{text}</h1>
       <h1 className="title translated">{translation}</h1>
 
-      <p className="subtitle">My goal is to be fluent in Indonesian by end of 2021. Each week, I spend 3 hours learning Indonesian with <a href="https://cintabahasa.com/teacher-and-staff/viona.html">Viona</a> from <a href="https://cintabahasa.com/">Cinta Bahasa</a>, and recap the words I learn below.</p>
+      <p className="subtitle">Hi, I'm <a href="https://www.twitter.com/theoblochet">Théo</a>. My goal is to be fluent in Indonesian by end of 2021. Each week, I spend 3 hours learning Indonesian with <a href="https://cintabahasa.com/teacher-and-staff/viona.html">Viona</a> from <a href="https://cintabahasa.com/">Cinta Bahasa</a>, and recap the words I learn below.</p>
     </div>
   )
 }
