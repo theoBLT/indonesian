@@ -693,3 +693,31 @@ li:hover .type {
   transition-duration: 300ms;
   transition-timing-function: ease-in;
 }
+
+#intro {
+  display:grid;
+  grid-gap: 20px;
+  padding-top: 20px;
+}
+
+#avatar {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+#avatar img {
+  max-width:150px;
+  border-radius:50%;
+  filter:grayscale(100%)
+}
+
+#avatar img:hover {
+  filter:grayscale(0%);
+  transition: .5s;
+}
+
+
+#welcome_text {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
