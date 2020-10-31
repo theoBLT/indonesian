@@ -720,6 +720,10 @@ li:hover .type {
   padding-top: 20px;
 }
 
+.sessionIntro {
+  margin-top:20px;
+}
+
 #avatar img {
   max-width:150px;
   border-radius:50%;
