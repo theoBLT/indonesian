@@ -7,7 +7,7 @@ export default props =>  {
         <li key={key}>
             <span className="word">{capitalize(word)}</span> 
             <span className="type">({type})</span> 
-            <span className="translation">{translation}</span>
+            <span className="translation">{capitalize(translation)}</span>
       </li>
     )
 }
