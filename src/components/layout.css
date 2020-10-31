@@ -736,6 +736,30 @@ li:hover .type {
   filter:grayscale(0%);
 }
 
-.example {
+.hidden {
   display:none;
+}
+
+.example {
+  font-style: italic;
+  background-color:#e3e3e3;
+}
+
+/* .example:after {
+  bottom: 100%;
+  left: 25%;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(227, 227, 227, 0);
+  border-bottom-color: #e3e3e3;
+  border-width: 10px;
+  margin-left: -10px;
+} */
+
+.clickable {
+  cursor:pointer;
 }
