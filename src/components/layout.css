@@ -683,7 +683,7 @@ li .word {
   color:#fff;
   font-size: 2em;
   font-family:Georgia, 'Times New Roman', Times, serif;
-  padding-right:20px;
+  padding: 0 8px 0 8px; 
 }
 
 li .type {
@@ -725,9 +725,9 @@ li:hover .type {
   border-radius:50%;
   filter:grayscale(100%);
   display:block;
+  transition: .5s;
 }
 
 #avatar img:hover {
   filter:grayscale(0%);
-  transition: .5s;
 }
