@@ -19,6 +19,7 @@ export default props => {
                 word = {definition.data.word}
                 type = {definition.data.type}
                 translation = {definition.data.translation}
+                example = {definition.data.example}
                 />
                 )}
             </ul>

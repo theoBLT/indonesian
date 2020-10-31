@@ -44,6 +44,7 @@ query getWordsBySession {
             word
             translation
             type
+            example
           }
         }
         intro {
