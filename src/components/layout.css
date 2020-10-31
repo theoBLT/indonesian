@@ -617,8 +617,14 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+/* Custom CSS starts here, after the reset */
+
+a {
+  color:#C34C4F;
+}
 .header {
-  margin:80px 20px 0px 20px;
+  margin:20px;
   font-weight:500;
 }
 .container {
@@ -663,7 +669,8 @@ li {
 }
 
 li .word {
-  background: #fff2cc;
+  background: #C34C4F;
+  color:#fff;
   font-size: 2em;
   font-family:Georgia, 'Times New Roman', Times, serif;
   padding-right:20px;
