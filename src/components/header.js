@@ -14,7 +14,7 @@ function HeaderTemplate () {
 
         <div id="welcome_text">
           <p class="subtitle">
-          Hi, I'm <a href="https://www.twitter.com/theoblochet">Théo</a>. My goal is to be fluent in Indonesian by end of 2021. Each week, I spend 3 hours learning the language with my teacher <a href="https://cintabahasa.com/teacher-and-staff/viona.html">Viona</a>, and recap my revelations below.
+          Hi, I'm <a href="https://www.twitter.com/theoblochet">Théo</a>. My goal is to speak Indonesian fluently by end of 2021. I learn the language for 3 hours a week with my teacher <a href="https://cintabahasa.com/teacher-and-staff/viona.html">Viona</a> and recap my revelations below.
           </p>
         </div>
 
