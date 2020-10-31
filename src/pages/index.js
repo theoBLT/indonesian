@@ -11,12 +11,11 @@ export default ({ data }) => {
       <>
       <SEO></SEO>
       <Layout>
+      <div className="container">
         <Header 
           text="Selamat datang!"
           translation="Welcome!"/>
-
-        <div className="container">
- 
+          
          {data.allAirtable.nodes.map((session, index) => (
            <Session
             key = {index}
