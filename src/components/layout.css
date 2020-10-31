@@ -628,7 +628,7 @@ a {
   font-weight:500;
 }
 .container {
-  margin:80px 20px 0px 40px;
+  margin:40px 20px 0px 40px;
 }
 
 .title {
@@ -639,6 +639,10 @@ a {
 .subtitle {
   font-size:1.5em;
   line-height: 1.25em;
+}
+
+.sessionTitle {
+  margin-bottom:0px;
 }
 
 .translated {

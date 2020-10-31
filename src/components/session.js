@@ -6,7 +6,7 @@ export default props => {
     return (
 
         <div className = "session" key={key}>
-        <h3>Session #{sessionNumber}</h3>
+        <h3 className ="sessionTitle">Session #{sessionNumber}</h3>
           <span className ="date">{sessionDate}</span>
 
             <ul>
