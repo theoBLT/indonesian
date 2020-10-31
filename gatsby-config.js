@@ -45,6 +45,10 @@ module.exports = {
             baseId: `appGmWAihDWDGn2kP`,
             tableName: `sessions`,
             tableLinks: [`words`],
+            mapping:{
+              'intro': `text/markdown`
+            },
+            separateMapType: true
             // createSeparateNodeType: true,
           }
         ]

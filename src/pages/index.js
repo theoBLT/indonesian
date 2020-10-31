@@ -20,6 +20,7 @@ export default ({ data }) => {
             sessionNumber = {session.data.number}
             sessionDate = {session.data.date}
             sessionWords = {session.data.words}
+            sessionIntro = {session.data.intro.childMdx.body}
            />  
         ))}
           <footer>
@@ -36,13 +37,19 @@ query getWordsBySession {
   allAirtable(filter: {data: {number: {ne: null}}}, sort: {order: DESC, fields: data___number}) {
     nodes {
       data {
-        date(fromNow:true)
+        date(fromNow: true)
         number
         words {
           data {
             word
             translation
             type
+          }
+        }
+        intro {
+          id
+          childMdx {
+            body
           }
         }
       }
