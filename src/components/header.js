@@ -1,13 +1,10 @@
 import React from "react"
 import Logo from "../images/celotehbahasa.svg"
 
-function HeaderTemplate (props) {
-  const {text,translation} = props;
+function HeaderTemplate () {
   return (
     <div className ="header">
       <img src={Logo}/>
-      {/* <h1 className="title">{text}</h1>
-      <h1 className="title translated">{translation}</h1> */}
 
       <div id="intro">
 
