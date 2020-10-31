@@ -39,7 +39,7 @@ query getWordsBySession {
   allAirtable(filter: {data: {number: {ne: null}}}, sort: {order: DESC, fields: data___number}) {
     nodes {
       data {
-        date(formatString: "MMMM DD, YYYY")
+        date(fromNow:true)
         number
         words {
           data {
