@@ -4,11 +4,11 @@ import Logo from "../images/celotehbahasa.svg"
 function HeaderTemplate () {
   return (
     <div className ="header">
-      <img src={Logo}/>
+      <img src={Logo} alt="CelotehBahsa's logo"/>
       <div id="intro">
 
         <div id="avatar">
-          <img src="https://pbs.twimg.com/profile_images/1281572845877964800/wVwtNrSE_400x400.jpg"/>
+          <img src="https://pbs.twimg.com/profile_images/1281572845877964800/wVwtNrSE_400x400.jpg" alt="A portrait of Théo Blochet"/>
         </div>
 
         <div id="welcome_text">
