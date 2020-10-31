@@ -5,7 +5,6 @@ function HeaderTemplate () {
   return (
     <div className ="header">
       <img src={Logo}/>
-
       <div id="intro">
 
         <div id="avatar">
