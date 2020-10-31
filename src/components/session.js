@@ -10,7 +10,7 @@ export default props => {
         <h3 className ="sessionTitle">Session #{sessionNumber}</h3>
           <span className ="date">{sessionDate}</span>
           <div className = "sessionIntro">
-          <MDXRenderer>{sessionIntro}</MDXRenderer>
+          <MDXRenderer>{sessionIntro ? sessionIntro : null}</MDXRenderer>
           </div>
             <ul>
               {sessionWords.map((definition, i) =>
