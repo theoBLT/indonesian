@@ -696,28 +696,21 @@ li:hover .type {
 
 #intro {
   display:grid;
+  align-items:center;
+  justify-items:center;
   grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   padding-top: 20px;
-}
-
-#avatar {
-  grid-column-start: 1;
-  grid-column-end: 2;
 }
 
 #avatar img {
   max-width:150px;
   border-radius:50%;
-  filter:grayscale(100%)
+  filter:grayscale(100%);
+  display:block;
 }
 
 #avatar img:hover {
   filter:grayscale(0%);
   transition: .5s;
-}
-
-
-#welcome_text {
-  grid-column-start: 2;
-  grid-column-end: 3;
 }
