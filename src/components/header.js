@@ -17,7 +17,7 @@ function HeaderTemplate (props) {
 
         <div id="welcome_text">
           <p class="subtitle">
-          Hi, I'm <a href="https://www.twitter.com/theoblochet">Théo</a>. My goal is to be fluent in Indonesian by end of 2021. Each week, I spend 3 hours learning Indonesian with my teacher <a href="https://cintabahasa.com/teacher-and-staff/viona.html">Viona</a>, and recap the words I learn below.
+          Hi, I'm <a href="https://www.twitter.com/theoblochet">Théo</a>. My goal is to be fluent in Indonesian by end of 2021. Each week, I spend 3 hours learning the language with my teacher <a href="https://cintabahasa.com/teacher-and-staff/viona.html">Viona</a>, and recap my revelations below.
           </p>
         </div>
 
