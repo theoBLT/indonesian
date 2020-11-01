@@ -9,10 +9,9 @@ export default ({ data }) => {
  
     return (
       <>
-      <SEO></SEO>
+      <SEO/>
       <Layout>
-      <div className="container">
-        <Header/>
+      <Header/>
 
          {data.allAirtable.nodes.map((session, index) => (
            <Session
@@ -26,7 +25,6 @@ export default ({ data }) => {
           <footer>
             © {new Date().getFullYear()}, CelotehBahasa.com
           </footer>
-        </div>
       </Layout>
       </>
     )

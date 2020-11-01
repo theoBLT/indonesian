@@ -11,7 +11,7 @@ import "./layout.css"
 
 const Layout = ({ children }) => {
   return (
-      <>
+    <div className="container">
         <div
           style={{
             margin: `0 auto`,
@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
         >
           <main>{children}</main>
         </div>
-      </>
+      </div>
     )
 }
 

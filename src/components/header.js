@@ -1,10 +1,11 @@
 import React from "react"
+import { Link } from "gatsby"
 import Logo from "../images/celotehbahasa.svg"
 
 function HeaderTemplate () {
   return (
     <div className ="header">
-      <img src={Logo} alt="CelotehBahsa's logo"/>
+       <Link to="/"><img src={Logo} alt="CelotehBahsa's logo"/></Link>
       <div id="intro">
 
         <div id="avatar">
