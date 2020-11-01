@@ -14,7 +14,6 @@ export default function Template({data}){
     <Layout>
     <Header/>
       <h1>{frontmatter.title}</h1>
-      <div>Author: {frontmatter.author}</div>
       <div
         dangerouslySetInnerHTML={{ __html: html}}
         />
