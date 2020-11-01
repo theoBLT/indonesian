@@ -8,7 +8,7 @@ function HeaderTemplate () {
       <div id="intro">
 
         <div id="avatar">
-          <img src="https://pbs.twimg.com/profile_images/1281572845877964800/wVwtNrSE_400x400.jpg" alt="A portrait of Théo Blochet"/>
+          <img src="https://pbs.twimg.com/profile_images/1322835228197556224/jJwEyHUX_400x400.png" alt="A portrait of Théo Blochet"/>
         </div>
 
         <div id="welcome_text">
