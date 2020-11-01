@@ -6,10 +6,23 @@ export default props =>  {
     const [visible, setVisible] = useState(false);
     return (
         <li key={key} class={example? "clickable" :""}onClick={() => setVisible(!visible)}>
-            <span className="word">{capitalize(word)}</span> 
-            <span className="type">({type})</span> 
-            <span className="translation">{capitalize(translation)}</span>
-            {example? <span className={visible? "example" : "example hidden"}>{capitalize(example)}</span> : null}
+            <span className="word">
+                {capitalize(word)}
+            </span> 
+
+            <span className="type">
+                ({type})
+            </span> 
+
+            <span className="translation">
+                {capitalize(translation)}
+            </span>
+
+            {example? 
+                <span className={visible? "example" : "example hidden"}>
+                    {capitalize(example)}
+                </span>
+             : null}
       </li>
     )
 }
