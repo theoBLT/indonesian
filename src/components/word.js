@@ -9,20 +9,21 @@ export default props =>  {
             <span className="word">
                 {capitalize(word)}
             </span> 
+            <span className={visible? "metadata" : "example hidden"}>
+                <span className="type">
+                    ({type})
+                </span> 
 
-            <span className="type">
-                ({type})
-            </span> 
-
-            <span className="translation">
-                {capitalize(translation)}
-            </span>
-
-            {example? 
-                <span className={visible? "example" : "example hidden"}>
-                    {capitalize(example)}
+                <span className="translation">
+                    {capitalize(translation)}
                 </span>
-             : null}
+
+                {example? 
+                    <span className="example">
+                        {capitalize(example)}
+                    </span>
+                : null}
+             </span>
       </li>
     )
 }

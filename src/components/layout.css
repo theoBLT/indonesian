@@ -691,25 +691,11 @@ li .type {
   display: inline-block;
   font-size:0.7em;
   font-style: oblique;
-  opacity:0;
   font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 li .translation {
   display:block;
-  opacity:0;
-}
-
-li:hover .translation {
-  opacity:100;
-  transition-duration: 300ms;
-  transition-timing-function: ease-in;
-}
-
-li:hover .type {
-  opacity:100;
-  transition-duration: 300ms;
-  transition-timing-function: ease-in;
 }
 
 #intro {
