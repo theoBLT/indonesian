@@ -681,6 +681,10 @@ li {
   cursor:default;
 }
 
+ li .metadata {
+   display:inline-block;
+ }
+
 li .word {
   background: #C34C4F;
   color:#fff;
@@ -690,14 +694,13 @@ li .word {
 }
 
 li .type {
-  display: inline-block;
   font-size:0.7em;
   font-style: oblique;
   font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 li .translation {
-  display:block;
+  margin-left:2px;
 }
 
 #intro {
