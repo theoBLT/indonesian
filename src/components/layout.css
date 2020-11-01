@@ -682,7 +682,7 @@ li {
 }
 
  li .metadata {
-   display:inline-block;
+   display:block;
  }
 
 li .word {
