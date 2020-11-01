@@ -9,7 +9,7 @@ export default props =>  {
             <span className="word">
                 {capitalize(word)}
             </span> 
-            <span className={visible? "metadata" : "example hidden"}>
+            <span className={visible? "metadata loaded" : "metadata"}>
                 
                 <span className="type">
                     {type}  ·

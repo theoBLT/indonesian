@@ -681,8 +681,17 @@ li {
   cursor:default;
 }
 
- li .metadata {
+ .metadata {
    display:block;
+   height: 0;
+   max-height: 0;
+   overflow: hidden;
+   transition: max-height 0.33s ease-in-out;
+ }
+
+ .metadata.loaded {
+    height:auto;
+    max-height: 200px;
  }
 
 li .word {
