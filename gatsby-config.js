@@ -78,6 +78,15 @@ module.exports = {
         },
       ],
       }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `CelotehBahasa`,
+        short_name: `CelotehBahasa`,
+        start_url: `/`,
+        icon:`src/images/gatsby-icon.svg`
+      },
     }
   ],
 }
