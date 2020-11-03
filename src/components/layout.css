@@ -688,6 +688,7 @@ li {
    max-height: 0;
    overflow: hidden;
    transition: max-height 0.33s ease-in-out;
+   margin-top:8px;
  }
 
  .metadata.loaded {
@@ -701,6 +702,8 @@ li .word {
   font-size: 2em;
   font-family:Georgia, 'Times New Roman', Times, serif;
   padding: 0 8px 4px 8px; 
+  border-radius:2px;
+  user-select:none;
 }
 
 li .type {
@@ -752,6 +755,14 @@ li .translation {
   cursor:pointer;
 }
 
+.article {
+  font-size: 1.2em ;
+  line-height: 1.44em;
+  width: 45ch;
+  margin: auto;
+  margin-top:80px;
+}
+
 .article li {
   list-style-type: disc;
   padding-top:0px;
@@ -763,5 +774,5 @@ li .translation {
 }
 
 .article h3 {
-  margin:20px 0px 40px 0px;
+  margin: 48px 0px 24px 0px
 }
