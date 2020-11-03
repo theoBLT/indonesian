@@ -641,12 +641,17 @@ a {
   line-height: 1.25em;
 }
 
+.session {
+  margin-bottom:60px;
+}
+
 .session ul {
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 10px;
   /* disabling tap highlight on iOS */
   -webkit-tap-highlight-color: rgba(0,0,0,0);
+  margin: 0px;
 }
 
 .sessionTitle {
@@ -667,10 +672,6 @@ a {
 
 .date {
   color:grey;
-}
-
-ul {
-  margin: 40px 0 40px 0px;
 }
 
 li {
@@ -745,6 +746,7 @@ li .translation {
   font-style: italic;
   background-color:#e3e3e3;
 }
+
 
 .clickable {
   cursor:pointer;
