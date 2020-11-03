@@ -1,11 +1,9 @@
 ---
-title: "But... why?"
+title: "Why learn Indonesian, out of all languages?"
 path: "/celoteh/tentang/kenapa"
 author: "Théo Blochet"
 date: "2020-01-01"
 ---
-
-### Why learn Indonesian, out of all languages?
 
 My wife is Indonesian! Learning her language has all kinds of benefits: 
 * Language is the psychology of a culture. Learning the language lets me deeply understand her culture. 

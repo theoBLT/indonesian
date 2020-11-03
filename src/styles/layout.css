@@ -1,0 +1,165 @@
+/* Custom CSS starts here, after the reset */
+
+:root {
+  --red: #C34C4F;
+  --grey: grey;
+  --white: #ffffff;
+}
+
+
+a {
+  color:var(--red);
+}
+.header {
+  font-weight:500;
+  margin-bottom:20px;
+}
+.container {
+  margin:40px 20px 0px 40px;
+}
+
+.title {
+  font-size:3em;
+  font-weight:600;
+}
+
+.subtitle {
+  font-size:1.5em;
+  line-height: 1.25em;
+}
+
+.session {
+  margin-bottom:60px;
+}
+
+.session ul {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 10px;
+  /* disabling tap highlight on iOS */
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  margin: 0px;
+}
+
+.sessionTitle {
+  margin-bottom:0px;
+  font-family: 'Work Sans';
+}
+
+.translated {
+  /* font-style:italic; */
+  margin-top:-0.7em;
+  font-weight:400;
+}
+
+.session h3 {
+  font-size:2.5em;
+  font-weight:600;
+}
+
+.date {
+  color:var(--grey);
+}
+
+li {
+  list-style-type: none;
+  padding-top:20px;
+  padding-left:0px;
+  margin-left:0px;
+  cursor:default;
+}
+
+ .metadata {
+   display:block;
+   height: 0;
+   max-height: 0;
+   overflow: hidden;
+   transition: max-height 0.33s ease-in-out;
+   margin-top:8px;
+ }
+
+ .metadata.loaded {
+    height:auto;
+    max-height: 200px;
+ }
+
+li .word {
+  background:var(--red);
+  color:#fff;
+  font-size: 2em;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  padding: 0 8px 4px 8px; 
+  border-radius:2px;
+  user-select:none;
+}
+
+li .type {
+  font-size:0.7em;
+  font-style: oblique;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+li .translation {
+  margin-left:2px;
+}
+
+#intro {
+  display:grid;
+  align-items:center;
+  justify-items:center;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding-top: 20px;
+}
+
+.sessionIntro {
+  margin-top:20px;
+}
+
+#avatar img {
+  max-width:150px;
+  border-radius:50%;
+  filter:grayscale(100%);
+  display:block;
+  transition: .5s;
+}
+
+#avatar img:hover {
+  filter:grayscale(0%);
+}
+
+.hidden {
+  display:none;
+}
+
+.example {
+  font-style: italic;
+  background-color:#e3e3e3;
+}
+
+
+.clickable {
+  cursor:pointer;
+}
+
+.article {
+  font-size: 1.2em ;
+  line-height: 1.44em;
+  width: 45ch;
+  margin: auto;
+  margin-top:80px;
+}
+
+.article li {
+  list-style-type: disc;
+  padding-top:0px;
+}
+
+.article ul {
+  margin: 10px 0px 10px 0px;
+  padding-left:40px;
+}
+
+.article h3 {
+  margin: 48px 0px 24px 0px
+}
