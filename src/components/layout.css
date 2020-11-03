@@ -700,7 +700,7 @@ li .word {
   color:#fff;
   font-size: 2em;
   font-family:Georgia, 'Times New Roman', Times, serif;
-  padding: 0 8px 0 8px; 
+  padding: 0 8px 4px 8px; 
 }
 
 li .type {
