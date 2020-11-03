@@ -5,7 +5,7 @@ export default props =>  {
     const {word, type, translation, key, example} = props;
     const [visible, setVisible] = useState(false);
     return (
-        <li key={key} class={example? "clickable" :""}onClick={() => setVisible(!visible)}>
+        <li key={key} className="clickable" onClick={() => setVisible(!visible)}>
             <span className="word">
                 {capitalize(word)}
             </span> 
