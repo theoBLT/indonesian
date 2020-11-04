@@ -16,7 +16,6 @@ exports.createPages = async ({ actions, graphql, reporter}) => {
         }
       }
     `)
-    console.log(JSON.stringify(result, null, 4));
     if (result.errors) {
         reporter.panicOnBuild(`Error while running GraphQL query`)
         

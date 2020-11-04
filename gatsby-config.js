@@ -74,6 +74,21 @@ module.exports = {
         start_url: `/`,
         icon:`src/images/gatsby-icon.svg`
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-8E26NKKHYW"
+        ],
+        // This object gets passed directly to the gtag config command
+        // This config will be shared across all trackingIds
+        gtagConfig: {
+          optimize_id: "OPT_CONTAINER_ID",
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+      },
+    },
   ],
 }
