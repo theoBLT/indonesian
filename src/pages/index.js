@@ -11,9 +11,9 @@ export default ({ data }) => {
       <>
       <SEO/>
       <Layout>
-      <Header/>
-
-         {data.allAirtable.nodes.map((session, index) => (
+        <Header/>
+        
+          {data.allAirtable.nodes.map((session, index) => (
            <Session
             key = {index}
             sessionNumber = {session.data.number}
