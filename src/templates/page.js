@@ -10,7 +10,7 @@ export default function Template({data}){
 
   return (
     <>
-    <SEO/>
+    <SEO title={frontmatter.title}/>
     <Layout>
     <Header/>
       <div className="article">

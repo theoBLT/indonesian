@@ -9,7 +9,7 @@ export default ({ data }) => {
  
     return (
       <>
-      <SEO/>
+      <SEO title="My journey learning Indonesian"/>
       <Layout>
         <Header/>
         
