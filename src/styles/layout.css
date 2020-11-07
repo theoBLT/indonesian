@@ -89,7 +89,7 @@ li .word {
   font-size: 2em;
   font-family:Georgia, 'Times New Roman', Times, serif;
   padding: 0 8px 4px 8px; 
-  border-radius:2px;
+  /* border-radius:2px; */
   user-select:none;
 }
 
@@ -118,7 +118,7 @@ li .translation {
 
 #avatar img {
   max-width:150px;
-  border-radius:50%;
+  clip-path: polygon(20% 0%, 100% 0, 80% 100%, 0% 100%);
   filter:grayscale(100%);
   display:block;
   transition: .5s;
