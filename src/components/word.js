@@ -11,12 +11,11 @@ export default props =>  {
     },[]);
     
     return (
-        <li key={key} className="clickable" onClick={() => setVisible(!visible)}>
-            <span className="word" style={{clipPath:`polygon(`+angles[0]+`% 0%, 100% 2%,`+ angles[1]+`% 100%, 0% 99%)`}}>
+        <div key={key} className = "definition">
+        <button type="button" className="word" style={{clipPath:`polygon(`+angles[0]+`% 0%, 100% 2%,`+ angles[1]+`% 100%, 0% 99%)`}} onClick={() => setVisible(!visible)}>
                 {capitalize(word)}
-            </span> 
+        </button>
             <span className={visible? "metadata loaded" : "metadata"}>
-                
                 <span className="type">
                     {type}  ·
                 </span> 
@@ -32,6 +31,7 @@ export default props =>  {
                 : null}
                 </div>
              </span>
-      </li>
+
+      </div>
     )
 }

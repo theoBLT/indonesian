@@ -12,7 +12,7 @@ export default props => {
           <div className = "sessionIntro">
           <MDXRenderer>{sessionIntro ? sessionIntro : null}</MDXRenderer>
           </div>
-            <ul>
+            <div className="wordsList">
               {sessionWords.map((definition, i) =>
                 <Word
                 key= {i}
@@ -22,7 +22,7 @@ export default props => {
                 example = {definition.data.example}
                 />
                 )}
-            </ul>
+            </div>
 
         </div>
       )
