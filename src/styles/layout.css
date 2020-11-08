@@ -2,7 +2,8 @@
 
 :root {
   --red: #C34C4F;
-  --darkred: #993c3d;
+  --darkred: #803234;
+  --darkerred: #4d1e1f;
   --grey: grey;
   --white: #ffffff;
 }
@@ -93,7 +94,13 @@ a {
 
 .word:hover{
   background-color:var(--darkred);
+  border:0px;
   transition:.5s;
+}
+
+.word:focus{
+  outline: none;
+  border-bottom:3px var(--darkerred) solid;
 }
 
 .type {
