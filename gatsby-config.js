@@ -17,6 +17,13 @@ module.exports = {
       },
     },
     {
+      resolve:`gatsby-source-filesystem`,
+      options: {
+        name:`images`,
+        path: `${__dirname}/src/images`
+      },
+    },
+    {
       resolve:`gatsby-source-airtable`,
       options: {
         apiKey: process.env.AIRTABLE_API_KEY,
@@ -49,7 +56,19 @@ module.exports = {
         display: 'swap'
       }
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 600,
+            },
+          },
+        ],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
