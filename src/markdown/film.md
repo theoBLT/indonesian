@@ -5,31 +5,49 @@ author: "Théo Blochet"
 date: "2020-10-01"
 ---
 
-Halo semuania, 
+Hey Everyone, 
 
-Hari ini gue mau cerita tentang film2 Indonesia. Buat belajar Bahasa Indonesia dengan lancar, film adalah sangat berguna. Seruh, dan kalian bisa belajar banyak kata dan ekspresi baru. 
+Today I’d like to talk about Indonesian movies — in particular those that have been most helpful to me in learning **conversational** Indonesian. 
 
-Rekomendasi gue: nonton dengan subtitles di Bahasa Indonesia. Lebih susah, tapi jahu lebih effektiv buat belajar daripada nonton subtitles di Bahasa Ingriss. 
+I recommend you watch them using **Indonesian** subtitles.[^1] On to the list! 
 
-Ini ada daftar film Bahasa Indonesia gue. Type film gue adalah film lucu, ngak repot nonton, tapi juga termasuk 'morale' atau 'life lesson'. 
+### 1 - Love for sale (2008)
 
-### 1 - Love for sale 
+![Love for sale ][image-1]
 
-Cerita cinta di luar biasa, gaya "Black-mirror", yang terjadi di dalam masyarakat dan keluarga asli Jakarta. Ada Love for Sale 1, dan Love for sale 2. Duaduanya sangat bagus, dan ada di Netflix!
+An extraordinary movie. The main character is a single man hopeless to get a girlfriend. One day, he finds out about a mobile app that offers long-term girlfriend "rental services". Tinder, except love is guaranteed®. 
 
-
-### 2 - Cek Toko Sebelah 
-
-Cerita perhubungan bapak dan putra, dan persaingan di antara dua warung yang bersebelah. Lucu banget. Film ini akan bikin lo pikirkan tentang aspirasi lo buat kerja dan uang. Tentang ambisi lo, dan maksudnya. 
+The girlfriend appears the next day and becomes an essential part of his life, family and work. 
 
 
-### 3 - Quickie Express
-
-Cerita Jojo, seorang anak muda yang hidup di Jakarta, dan bekerja sebagai pelayan di perusahan "layanan escort". Sangat lucu. 
+Check it out on [IMDB](https://www.imdb.com/title/tt1172996/) or [Netflix](https://www.netflix.com/title/81016338) - and if you liked the first one, Check out Love for Sale 2! ([IMDB](https://www.imdb.com/title/tt10643938/), [Netflix](https://www.netflix.com/title/81231382)).
 
 
-Itu aja - gue belum nonton banyak, soalnya. Kalo gue temukan yang baru, pasti akan ditambah di daftar tersebut. Kalao kalian punya rekommendasi buat gue, tolong Di-DM gue [di Twitter](https://www.twitter.com/celotehbahasa)! 
 
-Bonus tip: [click di sini](https://www.netflix.com/browse/genre/2867320) untuk mengaccess semua film2 Indonesia di Netflix. Sama sama! 
+### 2 - Cek Toko Sebelah (2016)
+
+![Love for sale ][image-2]
+
+As he nears retirement, the main character hopes his son can take over the family Warung. The son doesn't see it this way — his definition of success is a corner office in a multinational company. 
+
+This film ([IMDB](https://www.imdb.com/title/tt6366854/)) is a great story of the conflict between family tradition and modern ambitions. A great father-son love story, too. It's **not** on Netflix so get ready for a good dose of googling through dodgy streaming sites! 
+
+### 3 - Quickie Express (2007)
+
+![Love for sale ][image-3]
+
+Jojo, a young man from Jakarta ends up working as Escort guy. I haven't watched this one yet but heard it was great comedy, so it made the list! 
+
+Also not on Netflix, sorry! 
 
 
+That's all folks for a first short list of Indonesian movies. If you have anymore recommendations, hit me up on [Twitter](https://www.twitter.com/celotehbahasa)! 
+
+Bonus tip: [click here](https://www.netflix.com/browse/genre/2867320) to view **all of the movies** in the "Indonesian movies" category on Netflix. Handy. 
+
+
+[^1]:	[Studies](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4927148/) prove that watching movies with foreign language subtitles is more effective to retain the language (albeit _less_ effective to retain the plot -but that’s not our goal, is it? 😇 )
+
+[image-1]:	../images/love_for_sale.jpg
+[image-2]:	../images/cek_toko_sebelah.jpg
+[image-3]:	../images/quickie_express.jpg
