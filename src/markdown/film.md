@@ -5,8 +5,6 @@ author: "Théo Blochet"
 date: "2020-10-01"
 ---
 
-Hey Everyone, 
-
 Today I’d like to talk about Indonesian movies — in particular those that have been most helpful to me in learning **conversational** Indonesian. 
 
 I recommend you watch them using **Indonesian** subtitles.[^1] On to the list! 
@@ -15,9 +13,9 @@ I recommend you watch them using **Indonesian** subtitles.[^1] On to the list!
 
 ![Love for sale ][image-1]
 
-An extraordinary movie. The main character is a single man hopeless to get a girlfriend. One day, he finds out about a mobile app that offers long-term girlfriend "rental services". Tinder, except love is guaranteed®. 
+An extraordinary movie. The main character is a single man hopeless to get a girlfriend. One day, he discovers a mobile app offering long-term girlfriend "rental services". Tinder, except love is guaranteed®. 
 
-The girlfriend appears the next day and becomes an essential part of his life, family and work. 
+The girlfriend appears the next day and becomes an essential part of his family and work life. 
 
 
 Check it out on [IMDB](https://www.imdb.com/title/tt1172996/) or [Netflix](https://www.netflix.com/title/81016338) - and if you liked the first one, Check out Love for Sale 2! ([IMDB](https://www.imdb.com/title/tt10643938/), [Netflix](https://www.netflix.com/title/81231382)).
@@ -28,7 +26,7 @@ Check it out on [IMDB](https://www.imdb.com/title/tt1172996/) or [Netflix](https
 
 ![Love for sale ][image-2]
 
-As he nears retirement, the main character hopes his son can take over the family Warung. The son doesn't see it this way — his definition of success is a corner office in a multinational company. 
+As he nears retirement, the main character hopes his son can take over the family Warung. The son doesn't see it this way — his definition of success is a corner office at a multinational company. 
 
 This film ([IMDB](https://www.imdb.com/title/tt6366854/)) is a great story of the conflict between family tradition and modern ambitions. A great father-son love story, too. It's **not** on Netflix so get ready for a good dose of googling through dodgy streaming sites! 
 
