@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, {useState, useLayoutEffect} from "react"
 import {capitalize, getAngles} from "../utils/helpers.js"
 
 export default props =>  {
@@ -6,7 +6,7 @@ export default props =>  {
     const [visible, setVisible] = useState(false);
     const [angles, setAngles] = useState([]);
 
-    useEffect(()=>{
+    useLayoutEffect(()=>{
         return setAngles(getAngles());
     },[]);
     
