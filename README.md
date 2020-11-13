@@ -1,15 +1,16 @@
 <h1 align="center">
-  Indonesian word display
+ CelotehBahasa.com
 </h1>
 
-This site is just a repository of Indonesian words, pulled from Airtable, displayed on a static site, built with GatsbyJS, and deployed with Netlify. 
-
-Find it in the wild at [https://lucid-curie-27eb3e.netlify.com](https://lucid-curie-27eb3e.netlify.com)
+This site is the place where I display the words I learn in Indonesian. 
+Check it out at [celotehbahsa.com](https://celotehbahsa.com). 
 
 ## Setup
 
+Want to make this your own? Fork it!
+
 ### Airtable
-The data that runs this site is hosted on Airtable. If you want to replicate it, you will need to point GatsbyJS to your own base, containing the following 2 tables, with the same case-sensitive column names.
+The data that runs this site is hosted on Airtable. If you want to replicate it, you will need to point GatsbyJS to your own Airtable base, containing the following 2 tables, with the same case-sensitive column names.
 
 ![Words table setup](https://github.com/theoBLT/indonesian/blob/master/README_images/words_table_setup.png)
 
