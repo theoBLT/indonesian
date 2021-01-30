@@ -14,7 +14,7 @@ My wife is Indonesian! Learning her language has all kinds of benefits:
 
 ### Why record all the words you learn this way?
 
-I don't remember what I don't write, and am a very visual person. This site is a forcing function to remember what I've learned. 
+I don't remember what I don't write, and am a very visual person. This site is an elegant forcing function to remember what I've learned. 
 
 
 ### But really, why?
