@@ -1,10 +1,24 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Layout from "../components/layout"
 import Header from "../components/header"
 import SEO from "../components/seo"
 
 const BuyPage = () => {
- 
+  const [loading, setLoading ] = useState(false);
+  const [intent, setIntent] = useState(null);
+
+  useEffect(() => {
+    fetch("http://localhost:8888/.netlify/functions/hello-world")
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.message);
+      setIntent(data.message)
+    })
+    .catch((error) => {
+      console.error('Error',error);
+    })
+  }, [loading]);
+  
     return (
       <>
       <SEO title="Would you like a mug?"/>
