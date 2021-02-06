@@ -14,7 +14,7 @@ function HeaderTemplate () {
 
         <div id="welcome_text">
           <p className="subtitle">
-          Hi, I'm <a href="https://www.twitter.com/theoblochet">Théo</a>. My goal is to speak Indonesian fluently by the end of 2021. I learn the language for 3 hours a week with my teacher Viona and recap my revelations below. <Link to="/celoteh/tentang/kenapa">Why?</Link>
+          Hi, I'm <a href="https://www.twitter.com/theoblochet">Théo</a>. My goal is to speak Indonesian fluently by the end of 2021. I study the language for 3 hours a week with my teacher Viona and recap what I learn below. <Link to="/celoteh/tentang/kenapa">Why?</Link>
           </p>
         </div>
 

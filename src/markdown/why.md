@@ -6,15 +6,15 @@ date: "2020-01-01"
 ---
 
 My wife is Indonesian! Learning her language has all kinds of benefits: 
-* Language is the psychology of a culture. Learning the language lets me deeply understand her culture. 
+* Language is the psychology of a culture. Learning the language lets me deeply understand the Indonesian culture. 
 * Indonesians aren't forced to switch languages when I'm around (In-laws, wife's friends, etc.)
 * When/if I have children, I'll never be cut out of a conversation with my child
-* My wife and I can use our secret language in negotiation or public situations
+* Bonus: my wife and I can use our secret language in negotiation or public situations
 
 
 ### Why record all the words you learn this way?
 
-I don't remember what I don't write, and am a very visual person. This site is an elegant forcing function to remember what I've learned. 
+I don't remember what I don't write, and am a very visual person. This site is a forcing function to remember what I've learned. 
 
 
 ### But really, why?
