@@ -1,4 +1,4 @@
  [build] 
-    command = "cd functions && npm i && cd .."
+    command = "cd functions && npm i && cd .. && npm run"
     publish = "public/"
     functions = "functions"
