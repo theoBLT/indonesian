@@ -12,7 +12,18 @@ exports.handler = async (event) => {
           amount: 2000,
           currency: 'eur',
           payment_method_types: ['paypal','card'],
-          description: '1x Official CelotehBahasa Enamel Campfire Mug'
+          description: '1x Official CelotehBahasa Enamel Campfire Mug',
+          shipping: {
+            name: 'Theo Blochet',
+            address: {
+              line1: '2 rue de malte',
+              line2: 'appt. 202',
+              city: 'Paris',
+              state: 'ile de France',
+              country:'FR',
+              postal_code:'75011'
+            }
+          }
         });
     
     console.log(paymentIntent.id)

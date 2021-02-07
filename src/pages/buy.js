@@ -27,14 +27,25 @@ const BuyPage = () => {
     const {error} = await stripe.confirmPayPalPayment(
     intent,
     {
-      return_url: 'https://your-website.com/checkout/complete',
+      return_url: 'http://localhost:8888/complete',
+      // shipping: {
+      //   name: 'Theo Blochet',
+      //   address: {
+      //     line1: '2 rue de malte',
+      //     line2: 'appt. 202',
+      //     city: 'Paris',
+      //     state: 'ile de France',
+      //     country:'FR',
+      //     postal_code:'75011'
+      //   }
+      // }
     }
     );
     if (error) {
       console.log('There was an error')
     }
   }
-  
+
     return (
       <>
       <SEO title="Would you like a mug?"/>
