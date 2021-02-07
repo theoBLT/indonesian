@@ -7,13 +7,16 @@ import {loadStripe} from '@stripe/stripe-js';
 const BuyPage = () => {
   const [loading, setLoading ] = useState(false);
   const [intent, setIntent] = useState(null);
+  const [returnUrl, setReturnUrl] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:8888/.netlify/functions/create-payment-intent")
+    fetch("/.netlify/functions/create-payment-intent")
     .then(response => response.json())
     .then(data => {
       console.log(data.client_secret);
-      setIntent(data.client_secret)
+      console.log(data.return_url);
+      setReturnUrl(data.return_url);
+      setIntent(data.client_secret);
     })
     .catch((error) => {
       console.error('Error',error);
@@ -27,7 +30,7 @@ const BuyPage = () => {
     const {error} = await stripe.confirmPayPalPayment(
     intent,
     {
-      return_url: 'http://localhost:8888/complete',
+      return_url: `${returnUrl}`,
       // shipping: {
       //   name: 'Theo Blochet',
       //   address: {
@@ -42,7 +45,7 @@ const BuyPage = () => {
     }
     );
     if (error) {
-      console.log('There was an error')
+      console.log('There was an error in redirecting to the payment method provider.')
     }
   }
 

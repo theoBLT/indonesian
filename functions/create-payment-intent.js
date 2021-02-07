@@ -33,8 +33,8 @@ exports.handler = async (event) => {
         headers,
         body: JSON.stringify(
             {
-                id:paymentIntent.id,
-                client_secret:paymentIntent.client_secret
+                client_secret:paymentIntent.client_secret,
+                return_url:`${process.env.URL}/complete`
             }
             )
     };
