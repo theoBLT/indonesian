@@ -7,7 +7,7 @@ import {loadStripe} from '@stripe/stripe-js';
 const CompletePage = () => { 
 
     // Defining initial state for the component
-    const [loading, setLoading ] = useState(false);
+    const [loading, setLoading ] = useState(true);
     const [paymentSucceeded, setPaymentSucceeded] = useState(false);
 
     // Calling a serverless function to retrieve payment status
@@ -28,26 +28,39 @@ const CompletePage = () => {
       .then(data => {
         console.log(data.status);
         if(data.status === 'succeeded'){
+          setLoading(false);
           setPaymentSucceeded(true);
+        } else {
+          setLoading(false);
+          setPaymentSucceeded(false);
         }
       })
       .catch((error) => {
         console.error('Error',error);
       })
-    }, [loading]);
+    }, []);
 
   return (
       <>
       <SEO title="Thank you for your purchase"/>
       <Layout>
         <Header short="true"/>
-        <h2>{paymentSucceeded?`Thank you for your order!`:`Oops, payment failed.`}</h2>
-          <p>
-          {paymentSucceeded?`Woot! Payment went through, and your mug is on the way!`:`It looks like your order could not be paid at this time. Please try again or select a different payment option.`}
-          </p>
-          <p>
-            <a href ="/buy" alt="buy another">Purchase again</a>
-          </p>
+        
+        <div className={loading?``:`hidden`}>
+        Loading the result of your payment — hold with us, this shouldn't take long... 
+        </div>
+
+        <div className={loading?`hidden`:``}>
+          <h2>{paymentSucceeded?`Thank you for your order!`:`Oops, payment failed.`}</h2>
+            <p>
+            {paymentSucceeded?`Woot! Payment went through, and your mug is on the way!`:`It looks like your order could not be paid at this time. Please try again or select a different payment option.`}
+            </p>
+            <p>
+              <a href ="/buy" alt="buy another">Purchase again</a>
+            </p>
+          </div>
+
+
           <footer>
             © {new Date().getFullYear()}, CelotehBahasa.com
           </footer>
