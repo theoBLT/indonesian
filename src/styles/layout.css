@@ -168,3 +168,52 @@ a {
 .article h3 {
   margin: 48px 0px 24px 0px
 }
+
+/* Chrome, Safari, Edge, Opera hack to hide the stepper in number inputs*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox hack to remove the stepper from number input*/
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.inline-button {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left:20px;
+}
+
+.buy-button {
+  padding: 10px 15px;
+  background-color: var(--red);
+  border: 0px;
+  color: var(--white);
+  font-weight: bold;
+  cursor: pointer;
+  width: 250px;
+}
+
+.buy-button:hover {
+  background-color: var(--darkerred);
+  transition: 0.33s ease-in-out;
+}
+
+footer {
+  margin-top:150px;
+}
+
+.blik-token {
+  border: 1px solid var(--grey);
+  height: 45px;
+  width: 250px;
+  margin-top: 10px;
+  text-align: center;
+  letter-spacing: 2px;  
+}

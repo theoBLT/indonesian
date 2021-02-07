@@ -89,21 +89,19 @@ const BuyPage = () => {
         </div>
         <h2>Official CelotehBahasa® Enamel Campfire Mug</h2>
         <p><strong>{currency==='eur'?`€2.00`:`8,00 zł`}</strong>
+        <button onClick={switchCurrency} className="inline-button">{currency==='eur'?`Buy in Polish zlotis instead`:`Buy in Euros`}</button>
           </p>
-          <button onClick={switchCurrency}>{currency==='eur'?`Buy in Polish zlotis`:`Buy in Euros`}</button>
+          
           <p>
-          Get your hands on this durable enamel mug that holds 12 ounces of your favorite beverage. Add a personalized touch to your hipster moment with full-color printing of a photo, logo or design. Great for indoors and outdoors activities as it can keep up with the dirt and grunge of campsites. This sturdy and stylish cup is perfect for coffee, tea or even your morning cereal in the wild.
-          .: 12oz (0.35 l)
-          .: Lightweight stainless steel
-          .: Rounded corners
-          .: C-handle
+          Get your hands on this durable enamel mug that holds 12 ounces of your favorite beverage. Add a personalized touch to your hipster moment with full-color printing of the CelotehBahasa® logo. Great for indoors and outdoors activities as it can keep up with the dirt and grunge of campsites. This sturdy and stylish cup is perfect for coffee, tea or even your morning cereal in the wild.
+          • 12oz (0.35 l) • Lightweight stainless steel • Rounded corners • C-handle.
           </p>
           <p className={currency==='pln'?'':'hidden'}>
             <label htmlFor='blik_code'>Please enter your 6-digits BLIK code below<br/>
-              <input onChange={handleChange} type='number' max='999999' id='blik_code' name ='blik_code' placeholder='000000' value ={blikCode} ></input>
+              <input className="blik-token" onChange={handleChange} type='number' max='999999' id='blik_code' name ='blik_code' placeholder='000000' value ={blikCode} ></input>
             </label>
           </p>
-          <button onClick={currency==='eur'?confirmPaypalPayment:confirmBlikPayment}>Buy!</button>
+          <button className="buy-button" onClick={currency==='eur'?confirmPaypalPayment:confirmBlikPayment}>Buy it now!</button>
           <footer>
             © {new Date().getFullYear()}, CelotehBahasa.com
           </footer>
