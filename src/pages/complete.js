@@ -40,7 +40,7 @@ const CompletePage = () => {
       <>
       <SEO title="Thank you for your purchase"/>
       <Layout>
-        <Header/>
+        <Header short="true"/>
         <h2>{paymentSucceeded?`Thank you for your order!`:`Oops, payment failed.`}</h2>
           <p>
           {paymentSucceeded?`Woot! Payment went through, and your mug is on the way!`:`It looks like your order could not be paid at this time. Please try again or select a different payment option.`}

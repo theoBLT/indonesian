@@ -9,7 +9,7 @@ exports.handler = async (event) => {
 
     // Get currency from client, can either be pln or eur
     const { currency } = JSON.parse(event.body);
-    console.log(`The currency passed when creating the paymentintent was ${currency}`);
+    console.log(`The currency passed was ${currency}`);
     var payment_methods = [];
     var amount;
 

@@ -52,7 +52,6 @@ const BuyPage = () => {
   const switchCurrency = () => {
     currency === 'eur'?setCurrency('pln'):setCurrency('eur');
   }
-
   const confirmBlikPayment = async () => {
     fetch("/.netlify/functions/confirm-payment-intent",
     {
@@ -84,7 +83,7 @@ const BuyPage = () => {
       <>
       <SEO title="Would you like a mug?"/>
       <Layout>
-        <Header/>
+        <Header short="true"/>
         <div>
           <img width ="255" src ="https://images.printify.com/mockup/601ee67435b5ea595a48dd7f/70768/6906/enamel-campfire-mug.jpg?s=2048&t=1612638194000" alt ="The official CelotehBahsa.com mug"/>
         </div>

@@ -2,11 +2,12 @@ import React from "react"
 import { Link } from "gatsby"
 import Logo from "../images/celotehbahasa.svg"
 
-function HeaderTemplate () {
+function HeaderTemplate (props) {
+  const {short} = props;
   return (
     <div className ="header">
        <Link to="/"><img src={Logo} alt="CelotehBahsa's logo"/></Link>
-      <div id="intro">
+      <div id="intro" className={short?`hidden`:``}>
 
         <div id="avatar">
           <img src="https://pbs.twimg.com/profile_images/1322835228197556224/jJwEyHUX_400x400.png" alt="A portrait of Théo Blochet"/>

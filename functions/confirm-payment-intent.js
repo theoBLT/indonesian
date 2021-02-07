@@ -10,7 +10,6 @@ exports.handler = async (event) => {
     // Get currency from client, can either be pln or eur
     const { blik_code, payment_intent } = JSON.parse(event.body);
     console.log(`Confirming payment_intent ${payment_intent} with code ${blik_code}`);
-
     const paymentIntent = await stripe.paymentIntents.confirm(
         payment_intent,
         {
