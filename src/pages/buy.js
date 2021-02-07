@@ -24,7 +24,7 @@ const BuyPage = () => {
   }, [loading]);
   
   const confirmPayment = async () => {
-    const stripe = await loadStripe(process.env.STRIPE_PUBLISHABLE_KEY,
+    const stripe = await loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY,
       {betas: ['paypal_pm_beta_1']}
       );
     const {error} = await stripe.confirmPayPalPayment(
