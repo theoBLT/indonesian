@@ -2,16 +2,38 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 exports.handler = async (event) => {
     const headers = {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Type',
-        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE'
-      };
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE'
+    };
+
+    // Get currency from client, can either be pln or eur
+    const { currency } = JSON.parse(event.body);
+    console.log(`The currency passed when creating the paymentintent was ${currency}`);
+    var payment_methods = [];
+    var amount;
+
+    // defining the set of payment methods and prices based on currency. To replace with 'prices' when in the Beta
+    if(currency ==='pln'){
+      payment_methods = ['blik','card'];
+      amount = 800;
+      console.log(`Behavior: Polish detected`);
+
+    } else if (currency === 'eur'){
+      payment_methods = ['paypal','card']
+      amount = 200;
+      console.log(`Behavior: European detected`);
+
+    } else {
+      payment_methods = ['paypal','card'];
+      price = 'price_1IIFXEKMFPueLM0KBdPYm8wz';
+    }
 
     const paymentIntent = await stripe.paymentIntents.create(
         {
-          amount: 2000,
-          currency: 'eur',
-          payment_method_types: ['paypal','card'],
+          currency:currency,
+          amount:amount,
+          payment_method_types: payment_methods,
           description: '1x Official CelotehBahasa Enamel Campfire Mug',
           shipping: {
             name: 'Theo Blochet',
@@ -34,6 +56,7 @@ exports.handler = async (event) => {
         body: JSON.stringify(
             {
                 client_secret:paymentIntent.client_secret,
+                payment_intent:paymentIntent.id,
                 return_url:`${process.env.URL}/complete`
             }
             )
