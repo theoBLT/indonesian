@@ -6,16 +6,17 @@ import {loadStripe} from '@stripe/stripe-js';
 
 const CompletePage = () => { 
 
-    // Retreiving the payment_intent token from the URL params
-    const urlParams = new URLSearchParams(window.location.search);
-    const payment_intent = urlParams.get('payment_intent')
-
     // Defining initial state for the component
     const [loading, setLoading ] = useState(false);
     const [paymentSucceeded, setPaymentSucceeded] = useState(false);
 
     // Calling a serverless function to retrieve payment status
     useEffect(() => {
+
+        // This needs to take place in useEffect. If not, it runs at build time and break https://www.gatsbyjs.com/docs/debugging-html-builds/
+      const urlParams = new URLSearchParams(window.location.search);
+      const payment_intent = urlParams.get('payment_intent')
+
       fetch("/.netlify/functions/get-payment-status",{
         method: 'POST',
         headers: {
