@@ -10,7 +10,9 @@ function HeaderTemplate (props) {
       <div id="intro" className={short?`hidden`:``}>
 
         <div id="avatar">
+          <a href="/buy">
           <img src="https://pbs.twimg.com/profile_images/1322835228197556224/jJwEyHUX_400x400.png" alt="A portrait of Théo Blochet"/>
+          </a>
         </div>
 
         <div id="welcome_text">
