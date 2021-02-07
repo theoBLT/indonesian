@@ -20,6 +20,11 @@ exports.handler = async (event) => {
     return {
         statusCode: 200,
         headers,
-        body: JSON.stringify(paymentIntent.id)
+        body: JSON.stringify(
+            {
+                id:paymentIntent.id,
+                client_secret:paymentIntent.client_secret
+            }
+            )
     };
 }

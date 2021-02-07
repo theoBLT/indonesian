@@ -2,22 +2,38 @@ import React, { useEffect, useState } from "react"
 import Layout from "../components/layout"
 import Header from "../components/header"
 import SEO from "../components/seo"
+import {loadStripe} from '@stripe/stripe-js';
 
 const BuyPage = () => {
   const [loading, setLoading ] = useState(false);
   const [intent, setIntent] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:8888/.netlify/functions/hello-world")
+    fetch("http://localhost:8888/.netlify/functions/create-payment-intent")
     .then(response => response.json())
     .then(data => {
-      console.log(data.message);
-      setIntent(data.message)
+      console.log(data.client_secret);
+      setIntent(data.client_secret)
     })
     .catch((error) => {
       console.error('Error',error);
     })
   }, [loading]);
+  
+  const confirmPayment = async () => {
+    const stripe = await loadStripe(process.env.STRIPE_PUBLISHABLE_KEY,
+      {betas: ['paypal_pm_beta_1']}
+      );
+    const {error} = await stripe.confirmPayPalPayment(
+    intent,
+    {
+      return_url: 'https://your-website.com/checkout/complete',
+    }
+    );
+    if (error) {
+      console.log('There was an error')
+    }
+  }
   
     return (
       <>
@@ -35,7 +51,7 @@ const BuyPage = () => {
           .: Rounded corners
           .: C-handle
           </p>
-          <button>Buy!</button>
+          <button onClick={confirmPayment}>Buy!</button>
           <footer>
             © {new Date().getFullYear()}, CelotehBahasa.com
           </footer>
