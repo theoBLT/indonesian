@@ -30,7 +30,8 @@ exports.handler = async (event) => {
             {
                 client_secret:paymentIntent.client_secret,
                 payment_intent:paymentIntent.id,
-                return_url:`${process.env.URL}/complete`
+                return_url:`${process.env.URL}/complete`,
+                status:paymentIntent.status
             }
             )
     };

@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import Header from "../components/header"
 import SEO from "../components/seo"
 import {loadStripe} from '@stripe/stripe-js';
+import {createPaymentIntent, confirmBlikPayment} from '../utils/api-proxy.js'
 
 const BuyPage = () => {
   const [currency, setCurrency ] = useState('eur');
@@ -12,19 +13,7 @@ const BuyPage = () => {
   const [blikCode, setBlikCode] = useState('');
 
   useEffect(() => {
-    fetch("/.netlify/functions/create-payment-intent",
-    {
-      method: 'POST',
-        headers: {
-          'Content-type': 'application/json',
-        },
-        body: JSON.stringify({currency:currency})
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log(data.client_secret);
-      console.log(data.payment_intent);
-      console.log(data.return_url);
+    createPaymentIntent(currency).then(data => {
       setReturnUrl(data.return_url);
       setPaymentIntent(data.payment_intent);
       setClientSecret(data.client_secret);
@@ -45,28 +34,18 @@ const BuyPage = () => {
     }
     );
     if (error) {
-      console.log('There was an error in redirecting to the payment method provider.')
+      console.error('There was an error in redirecting to the payment method provider.')
     }
   }
   
   const switchCurrency = () => {
     currency === 'eur'?setCurrency('pln'):setCurrency('eur');
   }
-  const confirmBlikPayment = async () => {
-    fetch("/.netlify/functions/confirm-payment-intent",
-    {
-      method: 'POST',
-      headers: {
-          'Content-type': 'application/json',
-        },
-        body: JSON.stringify({
-          payment_intent:paymentIntent,
-          blik_code:blikCode
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log(data)
+
+  const startBlikPayment = async () => {
+    confirmBlikPayment(blikCode, paymentIntent).then(data => {
+      console.log(data);
+      console.log(`BLIK payment intent created. Its token is ${data.payment_intent} and its status is ${data.status}. Next, we'll poll for it!`)
     })
     .catch((error) => {
       console.error('Error',error);
@@ -77,7 +56,6 @@ const BuyPage = () => {
     console.log(event.target.value);
     setBlikCode(event.target.value);
   }
-
 
     return (
       <>
@@ -101,7 +79,7 @@ const BuyPage = () => {
               <input className="blik-token" onChange={handleChange} type='number' max='999999' id='blik_code' name ='blik_code' placeholder='000000' value ={blikCode} ></input>
             </label>
           </p>
-          <button className="buy-button" onClick={currency==='eur'?confirmPaypalPayment:confirmBlikPayment}>Buy it now!</button>
+          <button className="buy-button" onClick={currency==='eur'?confirmPaypalPayment:startBlikPayment}>Buy it now!</button>
           <footer>
             © {new Date().getFullYear()}, CelotehBahasa.com
           </footer>
