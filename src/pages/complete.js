@@ -17,8 +17,8 @@ const CompletePage = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const payment_intent = urlParams.get('payment_intent')
 
-    getPaymentStatus(payment_intent).then(status => {
-      if(status === 'succeeded'){
+    getPaymentStatus(payment_intent).then(data => {
+      if(data.status === 'succeeded'){
         setLoading(false);
         setPaymentSucceeded(true);
       } else {
@@ -42,7 +42,7 @@ const CompletePage = () => {
         <div className={loading?`hidden`:``}>
           <h2>{paymentSucceeded?`Thank you for your order!`:`Oops, payment failed.`}</h2>
             <p>
-            {paymentSucceeded?`Woot! Payment went through, and your mug is on the way!`:`It looks like your order could not be paid at this time. Please try again or select a different payment option.`}
+            {paymentSucceeded?`Awesome! Payment went through, and your mug is on the way!`:`It looks like your order could not be paid at this time. Please try again or select a different payment option.`}
             </p>
             <p>
               <a href ="/buy" alt="buy another">Purchase again</a>

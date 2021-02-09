@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import Header from "../components/header"
 import SEO from "../components/seo"
 import {loadStripe} from '@stripe/stripe-js';
-import {createPaymentIntent, confirmBlikPayment} from '../utils/api-proxy.js'
+import {createPaymentIntent, confirmBlikPayment, getPaymentStatus} from '../utils/api-proxy.js'
 
 const BuyPage = () => {
   const [currency, setCurrency ] = useState('eur');
@@ -42,10 +42,51 @@ const BuyPage = () => {
     currency === 'eur'?setCurrency('pln'):setCurrency('eur');
   }
 
-  const startBlikPayment = async () => {
+  const processBlikPayment = async () => {
     confirmBlikPayment(blikCode, paymentIntent).then(data => {
-      console.log(data);
+      // Set loading state, triggerring visibility of modale
+      // Call polling function, when status stops being "requires_action"
+      // Redirect user to complete.js page
       console.log(`BLIK payment intent created. Its token is ${data.payment_intent} and its status is ${data.status}. Next, we'll poll for it!`)
+
+      function delay(t) {
+        return new Promise(function(resolve) {
+            setTimeout(resolve, t);
+        });
+      }
+      // interval is how often to poll
+      // timeout is how long to poll waiting for a result (0 means try forever)
+      // url is the URL to request
+      function pollUntilDone(paymentIntent, interval, timeout) {
+        let start = Date.now();
+        function run() {
+            return getPaymentStatus(paymentIntent).then(function(data) {
+                if (data.status !== "requires_action") {
+                    // Here we'll unset the loading state
+                    console.log(`Polling done, payment updated. Exiting run`)
+                    return data;
+                } else {
+                    if (timeout !== 0 && Date.now() - start > timeout) {
+                        throw new Error("timeout error on pollUntilDone");
+                    } else {
+                        // run again with a short delay
+                        console.log(data);
+                        return delay(interval).then(run);
+                    }
+                }
+            });
+        }
+        return run();
+      }
+
+      pollUntilDone(paymentIntent, 1000, 30 * 1000).then(function(result) {
+      // have final result here 
+      console.log('polling done, entered done state');
+      console.log(result);
+      window.location.href = `/complete?payment_intent=${result.id}`;
+      }).catch(function(err) {
+        // handle error here
+      });
     })
     .catch((error) => {
       console.error('Error',error);
@@ -53,7 +94,6 @@ const BuyPage = () => {
   }
 
   const handleChange = (event) => {
-    console.log(event.target.value);
     setBlikCode(event.target.value);
   }
 
@@ -79,7 +119,7 @@ const BuyPage = () => {
               <input className="blik-token" onChange={handleChange} type='number' max='999999' id='blik_code' name ='blik_code' placeholder='000000' value ={blikCode} ></input>
             </label>
           </p>
-          <button className="buy-button" onClick={currency==='eur'?confirmPaypalPayment:startBlikPayment}>Buy it now!</button>
+          <button className="buy-button" onClick={currency==='eur'?confirmPaypalPayment:processBlikPayment}>Buy it now!</button>
           <footer>
             © {new Date().getFullYear()}, CelotehBahasa.com
           </footer>

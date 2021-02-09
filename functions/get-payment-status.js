@@ -6,13 +6,14 @@ exports.handler = async (event) => {
     // Retrieve payment intent from the token passed
     const paymentIntent = await stripe.paymentIntents.retrieve(id);
     
-    console.log(paymentIntent)
+    console.log(`Called Stripe to get status of ${paymentIntent}`)
 
     return {
         statusCode: 200,
         body: JSON.stringify(
             {
-                status:paymentIntent.status
+                status:paymentIntent.status,
+                id:paymentIntent.id
             }
             )
     };
