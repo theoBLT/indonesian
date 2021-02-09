@@ -1,4 +1,9 @@
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const https = require('https');
+// Hack to avoid issues with Stripe's node library conflicting with AWS lambda https://github.com/stripe/stripe-node/issues/1040
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
+  httpAgent: new https.Agent({keepAlive: false})
+});
+
 
 exports.handler = async (event) => {
     const { id } = JSON.parse(event.body);
