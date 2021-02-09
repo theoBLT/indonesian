@@ -24,6 +24,7 @@ const BuyPage = () => {
   }, [currency]);
   
   const confirmPaypalPayment = async () => {
+    setButtonProcessing();
     const stripe = await loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY,
       {betas: ['paypal_pm_beta_1']}
       );
@@ -42,9 +43,19 @@ const BuyPage = () => {
     currency === 'eur'?setCurrency('pln'):setCurrency('eur');
   }
 
+  const toggleModal = () => {
+    var modal = document.querySelector("#modal");
+    var modalOverlay = document.querySelector("#modal-overlay");
+
+    modal.classList.toggle("closed");
+    modalOverlay.classList.toggle("closed")
+  }
+
   const processBlikPayment = async () => {
     confirmBlikPayment(blikCode, paymentIntent).then(data => {
-      // Set loading state, triggerring visibility of modale
+      // Set loading state, triggerring visibility of modal
+      setButtonProcessing();
+      toggleModal ();
       // Call polling function, when status stops being "requires_action"
       // Redirect user to complete.js page
       console.log(`BLIK payment intent created. Its token is ${data.payment_intent} and its status is ${data.status}. Next, we'll poll for it!`)
@@ -97,6 +108,12 @@ const BuyPage = () => {
     setBlikCode(event.target.value);
   }
 
+  const setButtonProcessing = () => {
+    document.querySelector('.buy-button').textContent = 'Processing...';
+  }
+
+  
+
     return (
       <>
       <SEO title="Would you like a mug?"/>
@@ -115,14 +132,25 @@ const BuyPage = () => {
           • 12oz (0.35 l) • Lightweight stainless steel • Rounded corners • C-handle.
           </p>
           <p className={currency==='pln'?'':'hidden'}>
-            <label htmlFor='blik_code'>Please enter your 6-digits BLIK code below<br/>
+            <label htmlFor='blik_code'>Please enter the 6-digits BLIK code from your banking application<br/>
               <input className="blik-token" onChange={handleChange} type='number' max='999999' id='blik_code' name ='blik_code' placeholder='000000' value ={blikCode} ></input>
             </label>
           </p>
-          <button className="buy-button" onClick={currency==='eur'?confirmPaypalPayment:processBlikPayment}>Buy it now!</button>
+          <button className="buy-button" onClick={currency==='eur'?confirmPaypalPayment:processBlikPayment}>{currency==='pln'?'Buy with BLIK':'Buy with PayPal'}</button>
+          <p className={currency==='pln'?'helptext':'hidden helptext'}>In a moment, we will ask you for a BLIK code. Make sure you've got your phone handy, to confirm the payment in your banking app.</p>
           <footer>
             © {new Date().getFullYear()}, CelotehBahasa.com
           </footer>
+
+        <div className="modal-overlay closed" id="modal-overlay"></div>
+
+        {/* modal triggered when the BLIK payment is awaiting user confirmation */}
+        <div className="modal closed" id="modal">
+          <div className="modal-guts">
+            <h3>Confirm the payment</h3>
+            <p>Please open your banking app, and confirm the BLIK payment when prompted. Go on, we'll wait for you here.</p>
+          </div>
+        </div>
       </Layout>
       </>
     )
