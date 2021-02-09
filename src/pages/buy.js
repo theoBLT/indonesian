@@ -137,7 +137,6 @@ const BuyPage = () => {
             </label>
           </p>
           <button className="buy-button" onClick={currency==='eur'?confirmPaypalPayment:processBlikPayment}>{currency==='pln'?'Buy with BLIK':'Buy with PayPal'}</button>
-          <p className={currency==='pln'?'helptext':'hidden helptext'}>In a moment, we will ask you for a BLIK code. Make sure you've got your phone handy, to confirm the payment in your banking app.</p>
           <footer>
             © {new Date().getFullYear()}, CelotehBahasa.com
           </footer>
