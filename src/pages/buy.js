@@ -133,7 +133,7 @@ const BuyPage = () => {
           </p>
           <p className={currency==='pln'?'':'hidden'}>
             <label htmlFor='blik_code'>Please enter the 6-digits BLIK code from your banking application<br/>
-              <input className="blik-token" onChange={handleChange} type='number' max='999999' id='blik_code' name ='blik_code' placeholder='000000' value ={blikCode} ></input>
+              <input className="blik-token" pattern="[0-9]*" onChange={handleChange} type='number' max='999999' id='blik_code' name ='blik_code' placeholder='000000' value ={blikCode} ></input>
             </label>
           </p>
           <button className="buy-button" onClick={currency==='eur'?confirmPaypalPayment:processBlikPayment}>{currency==='pln'?'Buy with BLIK':'Buy with PayPal'}</button>
