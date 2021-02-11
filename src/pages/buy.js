@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react"
 import Layout from "../components/layout"
+import Footer from "../components/footer"
 import Header from "../components/header"
 import SEO from "../components/seo"
 import {loadStripe} from '@stripe/stripe-js';
 import {createPaymentIntent, confirmBlikPayment, getPaymentStatus} from '../utils/api-proxy.js'
+import Paymentmethod from "../components/paymentmethod"
 
 const BuyPage = () => {
   const [currency, setCurrency ] = useState('eur');
@@ -11,19 +13,29 @@ const BuyPage = () => {
   const [clientSecret,setClientSecret] = useState (null);
   const [returnUrl, setReturnUrl] = useState(null);
   const [blikCode, setBlikCode] = useState('');
+  const [buyerCountry, setBuyerCountry] = useState ('DE');
+  const [availableMethods, setAvailableMethods] = useState (['paypal'])
+
+  // todo: change to ['paypal','sofort','card']
+  const german_methods = ['PayPal']
+
+
+  // By default, set the active method as the first of the default selected country
+  const [paymentMethod, setPaymentMethod] = useState(german_methods[0].toLowerCase())
 
   useEffect(() => {
-    createPaymentIntent(currency).then(data => {
+    createPaymentIntent(buyerCountry).then(data => {
       setReturnUrl(data.return_url);
       setPaymentIntent(data.payment_intent);
       setClientSecret(data.client_secret);
+      setAvailableMethods(data.payment_methods);
     })
     .catch((error) => {
       console.error('Error',error);
     })
-  }, [currency]);
+  }, [buyerCountry]);
   
-  const confirmPaypalPayment = async () => {
+  const processPaypalPayment = async () => {
     setButtonProcessing();
     const stripe = await loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY,
       {betas: ['paypal_pm_beta_1']}
@@ -38,9 +50,46 @@ const BuyPage = () => {
       console.error('There was an error in redirecting to the payment method provider.')
     }
   }
+
+  const processSofortPayment = async () => {
+    setButtonProcessing();
+    const stripe = await loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY);
+    const {error} = await stripe.confirmSofortPayment(
+      clientSecret, {
+        payment_method: {
+          sofort: {
+            country: "DE"
+          },
+          billing_details: {
+            name: 'Theo Blochet',
+          },
+        },
+        return_url: `${returnUrl}`,
+      });
+      if (error) {
+        console.error('There was an error in redirecting to the payment method provider.')
+      }
+  }
+
+  const processGiropayPayment = async () => {
+    setButtonProcessing();
+    const stripe = await loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY);
+    const {error} = await stripe.confirmGiropayPayment(
+      clientSecret, {
+        payment_method: {
+          billing_details: {
+            name: 'Theo Blochet',
+          },
+        },
+        return_url: `${returnUrl}`,
+      });
+      if (error) {
+        console.error('There was an error in redirecting to the payment method provider.')
+      }
+  }
   
-  const switchCurrency = () => {
-    currency === 'eur'?setCurrency('pln'):setCurrency('eur');
+  const switchCountry = () => {
+    buyerCountry === 'DE'?setBuyerCountry('PL'):setBuyerCountry('DE');
   }
 
   const toggleModal = () => {
@@ -50,6 +99,7 @@ const BuyPage = () => {
     modal.classList.toggle("closed");
     modalOverlay.classList.toggle("closed")
   }
+
 
   const processBlikPayment = async () => {
     confirmBlikPayment(blikCode, paymentIntent).then(data => {
@@ -65,23 +115,17 @@ const BuyPage = () => {
             setTimeout(resolve, t);
         });
       }
-      // interval is how often to poll
-      // timeout is how long to poll waiting for a result (0 means try forever)
-      // url is the URL to request
-      function pollUntilDone(paymentIntent, interval, timeout) {
+
+      function poll(paymentIntent, interval, timeout) {
         let start = Date.now();
         function run() {
             return getPaymentStatus(paymentIntent).then(function(data) {
                 if (data.status !== "requires_action") {
-                    // Here we'll unset the loading state
-                    console.log(`Polling done, payment updated. Exiting run`)
                     return data;
                 } else {
                     if (timeout !== 0 && Date.now() - start > timeout) {
-                        throw new Error("timeout error on pollUntilDone");
+                        throw new Error("Timeout error during polling");
                     } else {
-                        // run again with a short delay
-                        console.log(data);
                         return delay(interval).then(run);
                     }
                 }
@@ -90,11 +134,9 @@ const BuyPage = () => {
         return run();
       }
 
-      pollUntilDone(paymentIntent, 1000, 30 * 1000).then(function(result) {
-      // have final result here 
-      console.log('polling done, entered done state');
-      console.log(result);
-      window.location.href = `/complete?payment_intent=${result.id}`;
+      poll(paymentIntent, 1000, 30 * 1000).then(function(result) {
+        // Redirect
+        window.location.href = `/complete?payment_intent=${result.id}`;
       }).catch(function(err) {
         // handle error here
       });
@@ -112,7 +154,47 @@ const BuyPage = () => {
     document.querySelector('.buy-button').textContent = 'Processing...';
   }
 
-  
+  function selectMethod(method) {
+
+    // Declare all variables
+    var i, methods, methodContainers;
+    var lowercase_method = method.toLowerCase()
+
+    // Change state
+    setPaymentMethod(lowercase_method);
+    console.log(`State has been set to method: ${lowercase_method}`)
+
+    // Get all elements with class="methods" and remove the class "active"
+    methods = document.querySelectorAll(".payment-method");
+    for (i = 0; i < methods.length; i++) {
+      methods[i].classList.remove("active")
+    }
+
+    // Get all their containers and do the same 
+    methodContainers = document.querySelectorAll(".method-container");
+    for (i=0; i < methodContainers.length; i++) {
+      methodContainers[i].classList.remove("active");
+    }
+
+    // Set the current method and its container (both with the ID set as the method's) as active 
+    document.querySelectorAll(`#${lowercase_method}`).forEach((item) => item.classList.add("active"));
+  }
+
+  const processPayment = () => {
+    if (paymentMethod === 'blik') {
+      processBlikPayment();
+    } else if (paymentMethod === 'paypal') {
+      processPaypalPayment();
+    } 
+    else if (paymentMethod === 'sofort') {
+      processSofortPayment();
+    } else if (paymentMethod === 'giropay') {
+      processGiropayPayment();
+    }
+    else {
+      console.log ('Unknown method, sorry.')
+    }
+  }
 
     return (
       <>
@@ -124,26 +206,44 @@ const BuyPage = () => {
         </div>
         <h2>Official CelotehBahasa® Enamel Campfire Mug</h2>
         <p><strong>{currency==='eur'?`€2.00`:`8,00 zł`}</strong>
-        <button onClick={switchCurrency} className="inline-button">{currency==='eur'?`Buy in Polish zlotis instead`:`Buy in Euros`}</button>
+        <button onClick={switchCountry} className="inline-button">{buyerCountry==='DE'?`Switch to Poland`:`Switch to Germany`}</button>
           </p>
           
           <p>
           Get your hands on this durable enamel mug that holds 12 ounces of your favorite beverage. Add a personalized touch to your hipster moment with full-color printing of the CelotehBahasa® logo. Great for indoors and outdoors activities as it can keep up with the dirt and grunge of campsites. This sturdy and stylish cup is perfect for coffee, tea or even your morning cereal in the wild.
           • 12oz (0.35 l) • Lightweight stainless steel • Rounded corners • C-handle.
           </p>
-          <p className={currency==='pln'?'':'hidden'}>
-            <label htmlFor='blik_code'>Please enter the 6-digits BLIK code from your banking application<br/>
-              <input className="blik-token" pattern="[0-9]*" onChange={handleChange} type='number' max='999999' id='blik_code' name ='blik_code' placeholder='000000' value ={blikCode} ></input>
-            </label>
-          </p>
-          <button className="buy-button" onClick={currency==='eur'?confirmPaypalPayment:processBlikPayment}>{currency==='pln'?'Buy with BLIK':'Buy with PayPal'}</button>
-          <footer>
-            © {new Date().getFullYear()}, CelotehBahasa.com
-          </footer>
 
-        <div className="modal-overlay closed" id="modal-overlay"></div>
+          <h4>Payment method</h4>
+
+          <div className="tab">
+
+            {availableMethods.map((method, i) =>
+              <Paymentmethod 
+                key = {i}
+                method = {method}
+                onselect = {selectMethod}
+              />
+            )}
+
+          </div>
+
+          <div id = "paypal" className="method-container">
+
+          </div>
+
+          <div id ="blik" className ="method-container">
+            <label htmlFor='blik_code'>Please enter the 6-digits BLIK code from your banking application<br/>
+                <input className="blik-token" pattern="[0-9]*" onChange={handleChange} type='number' max='999999' id='blik_code' name ='blik_code' placeholder='000000' value ={blikCode} ></input>
+            </label>
+          </div>
+
+          <button className="buy-button" onClick={processPayment}>Pay now</button>
+          
+        <Footer/>
 
         {/* modal triggered when the BLIK payment is awaiting user confirmation */}
+        <div className="modal-overlay closed" id="modal-overlay"></div>
         <div className="modal closed" id="modal">
           <div className="modal-guts">
             <h3>Confirm the payment</h3>

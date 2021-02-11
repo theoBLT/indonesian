@@ -12,25 +12,29 @@ exports.handler = async (event) => {
     };
 
     // Get currency from client, can either be pln or eur
-    const { currency } = JSON.parse(event.body);
-    console.log(`The currency passed was ${currency}`);
+    const { buyerCountry } = JSON.parse(event.body);
+    console.log(`The country passed was ${buyerCountry}`);
     var payment_methods = [];
-    var amount;
+    var amount, currency;
 
     // defining the set of payment methods and prices based on currency. To replace with 'prices' when in the Beta
-    if(currency ==='pln'){
-      payment_methods = ['blik','card'];
+    if(buyerCountry ==='PL'){
+      payment_methods = ['blik'];
       amount = 800;
+      currency = 'PLN';
       console.log(`Behavior: Polish detected`);
+      
 
-    } else if (currency === 'eur'){
-      payment_methods = ['paypal','card']
+    } else if (buyerCountry === 'DE'){
+      payment_methods = ['paypal','sofort','giropay']
       amount = 200;
-      console.log(`Behavior: European detected`);
+      currency = 'EUR';
+      console.log(`Behavior: Germany detected`);
 
     } else {
       payment_methods = ['paypal','card'];
-      price = 'price_1IIFXEKMFPueLM0KBdPYm8wz';
+      amount = 200;
+      currency ='EUR';
     }
 
     const paymentIntent = await stripe.paymentIntents.create(
@@ -61,7 +65,8 @@ exports.handler = async (event) => {
             {
                 client_secret:paymentIntent.client_secret,
                 payment_intent:paymentIntent.id,
-                return_url:`${process.env.URL}/complete`
+                return_url:`${process.env.URL}/complete`,
+                payment_methods:paymentIntent.payment_method_types
             }
             )
     };

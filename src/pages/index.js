@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import Header from "../components/header"
 import Session from "../components/session"
 import SEO from "../components/seo"
+import Footer from "../components/footer"
 
 export default ({ data }) => {
  
@@ -22,9 +23,7 @@ export default ({ data }) => {
             sessionIntro = {session.data.intro.childMdx.body}
            />  
         ))}
-          <footer>
-            © {new Date().getFullYear()}, CelotehBahasa.com
-          </footer>
+      <Footer/>
       </Layout>
       </>
     )

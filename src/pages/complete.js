@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import Layout from "../components/layout"
+import Footer from "../components/footer"
 import Header from "../components/header"
 import SEO from "../components/seo"
 import {getPaymentStatus} from "../utils/api-proxy.js"
@@ -18,7 +19,7 @@ const CompletePage = () => {
     const payment_intent = urlParams.get('payment_intent')
 
     getPaymentStatus(payment_intent).then(data => {
-      if(data.status === 'succeeded'){
+      if(data.status === 'succeeded' || data.status === 'processing' ){
         setLoading(false);
         setPaymentSucceeded(true);
       } else {
@@ -48,11 +49,7 @@ const CompletePage = () => {
               <a href ="/buy" alt="buy another">Purchase again</a>
             </p>
           </div>
-
-
-          <footer>
-            © {new Date().getFullYear()}, CelotehBahasa.com
-          </footer>
+      <Footer/>
       </Layout>
       </>
     )

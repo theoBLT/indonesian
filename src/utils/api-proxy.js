@@ -17,14 +17,14 @@ const getPaymentStatus = async (token) => {
 export {getPaymentStatus};
 
 
-const createPaymentIntent = async (currency) => {
+const createPaymentIntent = async (buyerCountry) => {
     return fetch("/.netlify/functions/create-payment-intent",
     {
       method: 'POST',
         headers: {
           'Content-type': 'application/json',
         },
-        body: JSON.stringify({currency:currency})
+        body: JSON.stringify({buyerCountry:buyerCountry})
     }).then(response => response.json())
 }
 

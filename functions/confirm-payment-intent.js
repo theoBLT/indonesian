@@ -4,7 +4,6 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
   httpAgent: new https.Agent({keepAlive: false})
 });
 
-
 exports.handler = async (event) => {
     const headers = {
       'Access-Control-Allow-Origin': '*',
