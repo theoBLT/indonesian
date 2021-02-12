@@ -87,6 +87,25 @@ const BuyPage = () => {
         console.error('There was an error in redirecting to the payment method provider.')
       }
   }
+
+  const processP24Payment = async () => {
+    setButtonProcessing();
+    const stripe = await loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY);
+    const {error} = await stripe.confirmP24Payment(
+      clientSecret,     {
+        payment_method: {
+          p24: {bank: 'inteligo'},
+          billing_details: {
+            name: 'theo blochet',
+            email: 'theobloc@gmail.com',
+          },
+        },
+        return_url: `${returnUrl}`,
+      });
+      if (error) {
+        console.error('There was an error in redirecting to the payment method provider.')
+      }
+  }
   
   const switchCountry = () => {
     buyerCountry === 'DE'?setBuyerCountry('PL'):setBuyerCountry('DE');
@@ -190,6 +209,8 @@ const BuyPage = () => {
       processSofortPayment();
     } else if (paymentMethod === 'giropay') {
       processGiropayPayment();
+    } else if (paymentMethod === 'p24') {
+      processP24Payment();
     }
     else {
       console.log ('Unknown method, sorry.')
