@@ -61,6 +61,7 @@ const Checkout = () => {
           name: "Théo Blochet",
         },
       },
+      shipping: shipping,
     })
     if (result.error) {
       // Show error to your customer (e.g., insufficient funds)
@@ -71,6 +72,27 @@ const Checkout = () => {
         console.log("Card payment succesful")
         window.location.href = `/complete?payment_intent=${result.paymentIntent.id}`
       }
+    }
+  }
+
+  const processPaypalPayment = async () => {
+    setButtonProcessing()
+    const stripe = await loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY, {
+      betas: ["paypal_pm_beta_1"],
+    })
+    const { error } = await stripe.confirmPayPalPayment(clientSecret, {
+      payment_method_options: {
+        paypal: {
+          preferred_locale: "en_US",
+        },
+      },
+      return_url: `${returnUrl}`,
+      shipping: shipping,
+    })
+    if (error) {
+      console.error(
+        "There was an error in redirecting to the payment method provider."
+      )
     }
   }
 
@@ -131,21 +153,6 @@ const Checkout = () => {
     }
   }
 
-  const processPaypalPayment = async () => {
-    setButtonProcessing()
-    const stripe = await loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY, {
-      betas: ["paypal_pm_beta_1"],
-    })
-    const { error } = await stripe.confirmPayPalPayment(clientSecret, {
-      return_url: `${returnUrl}`,
-    })
-    if (error) {
-      console.error(
-        "There was an error in redirecting to the payment method provider."
-      )
-    }
-  }
-
   const processSofortPayment = async () => {
     setButtonProcessing()
     const stripe = await loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY)
@@ -159,6 +166,7 @@ const Checkout = () => {
         },
       },
       return_url: `${returnUrl}`,
+      shipping: shipping,
     })
     if (error) {
       console.error(
@@ -177,6 +185,7 @@ const Checkout = () => {
         },
       },
       return_url: `${returnUrl}`,
+      shipping: shipping,
     })
     if (error) {
       console.error(
@@ -197,6 +206,7 @@ const Checkout = () => {
         },
       },
       return_url: `${returnUrl}`,
+      shipping: shipping,
     })
     if (error) {
       console.error(
@@ -218,7 +228,7 @@ const Checkout = () => {
   }
 
   const processBlikPayment = async () => {
-    confirmBlikPayment(blikCode, paymentIntent)
+    confirmBlikPayment(blikCode, paymentIntent, shipping)
       .then(data => {
         // Set loading state, triggerring visibility of modal
         setButtonProcessing()
@@ -321,10 +331,30 @@ const Checkout = () => {
     }
   }
 
+  const pretendyouareme = () => {
+    setShipping({
+      name: "Théo Blochet",
+      address: {
+        line1: "2 rue de malte",
+        line2: "",
+        city: "Paris",
+        country: "FR",
+        postal_code: "75011",
+      },
+    })
+  }
+
   return (
     <>
       <form id="payment-form" onSubmit={processPayment} method="POST">
         <h4>Shipping address</h4>
+        <button
+          onClick={pretendyouareme}
+          className="inline-button"
+          type="button"
+        >
+          Fill with Théo's deets
+        </button>
         <Address shipping={shipping} updateShipping={updateShipping} />
         <div className="payment-methods-section">
           <h4>Payment method</h4>
@@ -366,7 +396,7 @@ const Checkout = () => {
         </button>
       </form>
       <p>
-        <button onClick={switchCountry} className="inline-button">
+        <button onClick={switchCountry} className="inline-button" type="button">
           {buyerCountry === "DE" ? `Switch to Poland` : `Switch to Germany`}
         </button>
       </p>

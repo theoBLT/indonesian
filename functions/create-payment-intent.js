@@ -39,17 +39,6 @@ exports.handler = async event => {
     amount: amount,
     payment_method_types: payment_methods,
     description: "1x Official CelotehBahasa Enamel Campfire Mug",
-    shipping: {
-      name: "Theo Blochet",
-      address: {
-        line1: "2 rue de malte",
-        line2: "appt. 202",
-        city: "Paris",
-        state: "ile de France",
-        country: "FR",
-        postal_code: "75011",
-      },
-    },
   })
 
   return {
