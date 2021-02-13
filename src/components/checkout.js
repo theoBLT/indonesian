@@ -260,39 +260,42 @@ const Checkout = () => {
   return (
     <>
       <form id="payment-form" onSubmit={processPayment} method="POST">
-        <h4>Payment method</h4>
+        <h4>Shipping address</h4>
+        <Address />
+        <div className="payment-methods-section">
+          <h4>Payment method</h4>
+          <div className="tab">
+            {availableMethods.map((method, i) => (
+              <Paymentmethod key={i} method={method} onselect={selectMethod} />
+            ))}
+          </div>
 
-        <div className="tab">
-          {availableMethods.map((method, i) => (
-            <Paymentmethod key={i} method={method} onselect={selectMethod} />
-          ))}
+          <div id="paypal" className="method-container"></div>
+
+          <div id="blik" className="method-container">
+            <label htmlFor="blik_code">
+              Please enter the 6-digits BLIK code from your banking application
+              <br />
+              <input
+                className="blik-token"
+                pattern="[0-9]*"
+                onChange={updateBlikState}
+                type="number"
+                max="999999"
+                id="blik_code"
+                name="blik_code"
+                placeholder="000000"
+                value={blikCode}
+              ></input>
+            </label>
+          </div>
+
+          <div id="card" className="method-container">
+            <CardSection />
+          </div>
+
+          <div id="p24" className="method-container"></div>
         </div>
-
-        <div id="paypal" className="method-container"></div>
-
-        <div id="blik" className="method-container">
-          <label htmlFor="blik_code">
-            Please enter the 6-digits BLIK code from your banking application
-            <br />
-            <input
-              className="blik-token"
-              pattern="[0-9]*"
-              onChange={updateBlikState}
-              type="number"
-              max="999999"
-              id="blik_code"
-              name="blik_code"
-              placeholder="000000"
-              value={blikCode}
-            ></input>
-          </label>
-        </div>
-
-        <div id="card" className="method-container">
-          <CardSection />
-        </div>
-
-        <div id="p24" className="method-container"></div>
 
         <button type="submit" className="buy-button">
           Pay now

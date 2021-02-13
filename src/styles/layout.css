@@ -283,7 +283,7 @@ footer {
   float: left;
   border: 1px solid var(--grey);
   border-radius: 4px;
-  width: 150px;
+  width: 100px;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
@@ -322,7 +322,6 @@ footer {
 .method-container {
   display: none;
   margin-top: 20px;
-  max-width: 450px;
 }
 
 .method-container.active {
@@ -333,4 +332,12 @@ footer {
   width: 100%;
   padding: 11px 15px 11px 5px;
   border: 1px solid var(--grey);
+}
+
+#payment-form {
+  max-width: 450px;
+}
+
+.payment-methods-section {
+  margin-top: 1.45rem;
 }
