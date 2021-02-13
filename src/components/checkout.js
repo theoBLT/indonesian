@@ -5,7 +5,7 @@ import {
   getPaymentStatus,
 } from "../utils/api-proxy.js"
 import Paymentmethod from "../components/paymentmethod"
-import CardSection from "../components/CardSection"
+import CardSection from "../components/cardesction"
 
 import { loadStripe } from "@stripe/stripe-js"
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js"
