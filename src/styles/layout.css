@@ -322,8 +322,15 @@ footer {
 .method-container {
   display: none;
   margin-top: 20px;
+  max-width: 450px;
 }
 
 .method-container.active {
   display: block;
+}
+
+.StripeElement {
+  width: 100%;
+  padding: 11px 15px 11px 5px;
+  border: 1px solid var(--grey);
 }
