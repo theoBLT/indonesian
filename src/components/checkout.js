@@ -238,7 +238,8 @@ const Checkout = () => {
       .forEach(item => item.classList.add("active"))
   }
 
-  const processPayment = () => {
+  const processPayment = event => {
+    event.preventDefault()
     if (paymentMethod === "blik") {
       processBlikPayment()
     } else if (paymentMethod === "paypal") {
@@ -258,11 +259,7 @@ const Checkout = () => {
 
   return (
     <>
-      {/* <div class="address-form">
-        <h4>Shipping address</h4>
-        <Address />
-      </div> */}
-      <div class="payment-form">
+      <form id="payment-form" onSubmit={processPayment} method="POST">
         <h4>Payment method</h4>
 
         <div className="tab">
@@ -297,11 +294,10 @@ const Checkout = () => {
 
         <div id="p24" className="method-container"></div>
 
-        <button className="buy-button" onClick={processPayment}>
+        <button type="submit" className="buy-button">
           Pay now
         </button>
-      </div>
-
+      </form>
       <p>
         <button onClick={switchCountry} className="inline-button">
           {buyerCountry === "DE" ? `Switch to Poland` : `Switch to Germany`}
