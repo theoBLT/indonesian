@@ -11,13 +11,14 @@ import { loadStripe } from "@stripe/stripe-js"
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js"
 
 const Checkout = () => {
-  const [currency, setCurrency] = useState("eur")
+  // const [currency, setCurrency] = useState("eur")
   const [paymentIntent, setPaymentIntent] = useState(null)
   const [clientSecret, setClientSecret] = useState(null)
   const [returnUrl, setReturnUrl] = useState(null)
   const [blikCode, setBlikCode] = useState("")
   const [buyerCountry, setBuyerCountry] = useState("DE")
   const [availableMethods, setAvailableMethods] = useState(["paypal"])
+  const [isProcessing, setIsProcessing] = useState(false)
 
   // Setting Shipping
   const [shipping, setShipping] = useState({
@@ -53,7 +54,6 @@ const Checkout = () => {
 
   const processCardPayment = async () => {
     setButtonProcessing()
-
     const result = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
         card: elements.getElement(CardElement),
@@ -64,12 +64,12 @@ const Checkout = () => {
       shipping: shipping,
     })
     if (result.error) {
+      stopButtonProcessing()
       // Show error to your customer (e.g., insufficient funds)
-      console.log(result.error.message)
+      displayError(result.error.decline_code)
     } else {
       // The payment has been processed!
       if (result.paymentIntent.status === "succeeded") {
-        console.log("Card payment succesful")
         window.location.href = `/complete?payment_intent=${result.paymentIntent.id}`
       }
     }
@@ -90,6 +90,7 @@ const Checkout = () => {
       shipping: shipping,
     })
     if (error) {
+      stopButtonProcessing()
       console.error(
         "There was an error in redirecting to the payment method provider."
       )
@@ -103,7 +104,6 @@ const Checkout = () => {
         setShipping({ ...shipping, name: newval })
         break
       case "address.country":
-        console.log(`Updating address country to ${newval}`)
         setShipping({
           ...shipping,
           address: {
@@ -169,6 +169,7 @@ const Checkout = () => {
       shipping: shipping,
     })
     if (error) {
+      stopButtonProcessing()
       console.error(
         "There was an error in redirecting to the payment method provider."
       )
@@ -188,6 +189,7 @@ const Checkout = () => {
       shipping: shipping,
     })
     if (error) {
+      stopButtonProcessing()
       console.error(
         "There was an error in redirecting to the payment method provider."
       )
@@ -209,6 +211,7 @@ const Checkout = () => {
       shipping: shipping,
     })
     if (error) {
+      stopButtonProcessing()
       console.error(
         "There was an error in redirecting to the payment method provider."
       )
@@ -232,12 +235,17 @@ const Checkout = () => {
       .then(data => {
         // Set loading state, triggerring visibility of modal
         setButtonProcessing()
+
+        if (data.error) {
+          stopButtonProcessing()
+          console.log("There was an error")
+          displayError(data.error.code)
+          return false
+        }
+
         toggleModal()
         // Call polling function, when status stops being "requires_action"
         // Redirect user to complete.js page
-        console.log(
-          `BLIK payment intent created. Its token is ${data.payment_intent} and its status is ${data.status}. Next, we'll poll for it!`
-        )
 
         function delay(t) {
           return new Promise(function(resolve) {
@@ -283,6 +291,11 @@ const Checkout = () => {
 
   const setButtonProcessing = () => {
     document.querySelector(".buy-button").textContent = "Processing..."
+    document.querySelector(".buy-button").classList.add("processing")
+  }
+  const stopButtonProcessing = () => {
+    document.querySelector(".buy-button").textContent = "Pay now"
+    document.querySelector(".buy-button").classList.remove("processing")
   }
 
   function selectMethod(method) {
@@ -290,9 +303,9 @@ const Checkout = () => {
     var i, methods, methodContainers
     var lowercase_method = method.toLowerCase()
 
-    // Change state
+    // Change states - new method, clean error messages
     setPaymentMethod(lowercase_method)
-    console.log(`State has been set to method: ${lowercase_method}`)
+    displayError("none")
 
     // Get all elements with class="methods" and remove the class "active"
     methods = document.querySelectorAll(".payment-method")
@@ -314,6 +327,10 @@ const Checkout = () => {
 
   const processPayment = event => {
     event.preventDefault()
+
+    // Clear prior error messages
+    displayError("none")
+
     if (paymentMethod === "blik") {
       processBlikPayment()
     } else if (paymentMethod === "paypal") {
@@ -342,6 +359,35 @@ const Checkout = () => {
         postal_code: "75011",
       },
     })
+  }
+
+  const displayError = code => {
+    let message = ""
+    //Define which error message to display
+    switch (code) {
+      case "none":
+        message = ""
+        break
+      case "payment_method_invalid_parameter":
+        message =
+          "The BLIK code you entered has expired, or wasn't valid. Please enter another BLIK code."
+        break
+      case "payment_method_provider_decline":
+        message =
+          "The payment was declined by your bank. Please try another payment method."
+        break
+      case "insufficient_funds":
+        message =
+          "The bank refused your payment due to insufficient funds. Please try another payment method."
+        break
+      default:
+        message =
+          "Your payment couldn't be processed. Please try again or try another payment method."
+    }
+
+    // Inject error message
+    let error = document.querySelector("#error")
+    error.textContent = message
   }
 
   return (
@@ -390,7 +436,7 @@ const Checkout = () => {
 
           <div id="p24" className="method-container"></div>
         </div>
-
+        <div id="error"></div>
         <button type="submit" className="buy-button">
           Pay now
         </button>

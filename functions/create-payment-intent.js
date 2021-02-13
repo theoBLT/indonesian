@@ -20,7 +20,7 @@ exports.handler = async event => {
   // defining the set of payment methods and prices based on currency. To replace with 'prices' when in the Beta
   if (buyerCountry === "PL") {
     payment_methods = ["blik", "p24", "card"]
-    amount = 800
+    amount = 755
     currency = "PLN"
     console.log(`Behavior: Polish detected`)
   } else if (buyerCountry === "DE") {

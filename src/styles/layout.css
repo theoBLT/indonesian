@@ -341,3 +341,7 @@ footer {
 .payment-methods-section {
   margin-top: 1.45rem;
 }
+
+#error {
+  color: var(--darkred);
+}
