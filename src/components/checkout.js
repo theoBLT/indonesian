@@ -5,10 +5,15 @@ import {
   getPaymentStatus,
 } from "../utils/api-proxy.js"
 import Paymentmethod from "../components/paymentmethod"
-import CardSection from "../components/cardesction"
-
+import CardSection from "../components/cardsection"
+import Address from "../components/adress"
 import { loadStripe } from "@stripe/stripe-js"
-import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js"
+import {
+  useStripe,
+  useElements,
+  CardElement,
+  P24BankElement,
+} from "@stripe/react-stripe-js"
 
 const Checkout = () => {
   const [currency, setCurrency] = useState("eur")
@@ -253,41 +258,49 @@ const Checkout = () => {
 
   return (
     <>
-      <h4>Payment method</h4>
+      {/* <div class="address-form">
+        <h4>Shipping address</h4>
+        <Address />
+      </div> */}
+      <div class="payment-form">
+        <h4>Payment method</h4>
 
-      <div className="tab">
-        {availableMethods.map((method, i) => (
-          <Paymentmethod key={i} method={method} onselect={selectMethod} />
-        ))}
+        <div className="tab">
+          {availableMethods.map((method, i) => (
+            <Paymentmethod key={i} method={method} onselect={selectMethod} />
+          ))}
+        </div>
+
+        <div id="paypal" className="method-container"></div>
+
+        <div id="blik" className="method-container">
+          <label htmlFor="blik_code">
+            Please enter the 6-digits BLIK code from your banking application
+            <br />
+            <input
+              className="blik-token"
+              pattern="[0-9]*"
+              onChange={updateBlikState}
+              type="number"
+              max="999999"
+              id="blik_code"
+              name="blik_code"
+              placeholder="000000"
+              value={blikCode}
+            ></input>
+          </label>
+        </div>
+
+        <div id="card" className="method-container">
+          <CardSection />
+        </div>
+
+        <div id="p24" className="method-container"></div>
+
+        <button className="buy-button" onClick={processPayment}>
+          Pay now
+        </button>
       </div>
-
-      <div id="paypal" className="method-container"></div>
-
-      <div id="blik" className="method-container">
-        <label htmlFor="blik_code">
-          Please enter the 6-digits BLIK code from your banking application
-          <br />
-          <input
-            className="blik-token"
-            pattern="[0-9]*"
-            onChange={updateBlikState}
-            type="number"
-            max="999999"
-            id="blik_code"
-            name="blik_code"
-            placeholder="000000"
-            value={blikCode}
-          ></input>
-        </label>
-      </div>
-
-      <div id="card" className="method-container">
-        <CardSection />
-      </div>
-
-      <button className="buy-button" onClick={processPayment}>
-        Pay now
-      </button>
 
       <p>
         <button onClick={switchCountry} className="inline-button">
