@@ -16,12 +16,8 @@ const BuyPage = () => {
   const [buyerCountry, setBuyerCountry] = useState ('DE');
   const [availableMethods, setAvailableMethods] = useState (['paypal'])
 
-  // todo: change to ['paypal','sofort','card']
-  const german_methods = ['PayPal']
-
-
   // By default, set the active method as the first of the default selected country
-  const [paymentMethod, setPaymentMethod] = useState(german_methods[0].toLowerCase())
+  const [paymentMethod, setPaymentMethod] = useState('paypal')
 
   useEffect(() => {
     createPaymentIntent(buyerCountry).then(data => {
@@ -204,15 +200,13 @@ const BuyPage = () => {
       processBlikPayment();
     } else if (paymentMethod === 'paypal') {
       processPaypalPayment();
-    } 
-    else if (paymentMethod === 'sofort') {
+    } else if (paymentMethod === 'sofort') {
       processSofortPayment();
     } else if (paymentMethod === 'giropay') {
       processGiropayPayment();
     } else if (paymentMethod === 'p24') {
       processP24Payment();
-    }
-    else {
+      } else {
       console.log ('Unknown method, sorry.')
     }
   }
@@ -250,13 +244,16 @@ const BuyPage = () => {
           </div>
 
           <div id = "paypal" className="method-container">
-
           </div>
 
           <div id ="blik" className ="method-container">
             <label htmlFor='blik_code'>Please enter the 6-digits BLIK code from your banking application<br/>
                 <input className="blik-token" pattern="[0-9]*" onChange={handleChange} type='number' max='999999' id='blik_code' name ='blik_code' placeholder='000000' value ={blikCode} ></input>
             </label>
+          </div>
+
+          <div id ="card" className = "method-container">
+
           </div>
 
           <button className="buy-button" onClick={processPayment}>Pay now</button>

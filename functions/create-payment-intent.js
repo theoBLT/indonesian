@@ -55,8 +55,6 @@ exports.handler = async (event) => {
             }
           }
         });
-    
-    console.log(paymentIntent.id)
 
     return {
         statusCode: 200,
