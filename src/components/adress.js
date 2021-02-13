@@ -8,6 +8,7 @@ const Address = props => {
         name="address.country"
         value={props.shipping.address.country}
         onChange={props.updateShipping}
+        required
       >
         <option value="">Pick a country</option>
         <option value="FR">France</option>
@@ -23,6 +24,7 @@ const Address = props => {
         placeholder="Full name"
         value={props.shipping.name}
         onChange={props.updateShipping}
+        required
       />
 
       <input
@@ -31,6 +33,7 @@ const Address = props => {
         placeholder="Address line 1"
         value={props.shipping.address.line1}
         onChange={props.updateShipping}
+        required
       />
 
       <input
@@ -47,6 +50,7 @@ const Address = props => {
         placeholder="City"
         value={props.shipping.address.city}
         onChange={props.updateShipping}
+        required
       />
 
       <input
@@ -55,6 +59,7 @@ const Address = props => {
         placeholder="Postcode"
         value={props.shipping.address.postal_code}
         onChange={props.updateShipping}
+        required
       />
     </div>
   )

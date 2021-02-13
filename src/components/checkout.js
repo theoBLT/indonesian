@@ -410,8 +410,6 @@ const Checkout = () => {
             ))}
           </div>
 
-          <div id="paypal" className="method-container"></div>
-
           <div id="blik" className="method-container">
             <label htmlFor="blik_code">
               Please enter the 6-digits BLIK code from your banking application
@@ -433,8 +431,6 @@ const Checkout = () => {
           <div id="card" className="method-container">
             <CardSection />
           </div>
-
-          <div id="p24" className="method-container"></div>
         </div>
         <div id="error"></div>
         <button type="submit" className="buy-button">

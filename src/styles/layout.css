@@ -273,9 +273,11 @@ footer {
 }
 
 .tab {
+  display: grid;
+  column-gap: 5px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   overflow: hidden;
   background-color: #fff;
-  padding: 5px 0px;
 }
 
 .tab button {
@@ -283,14 +285,13 @@ footer {
   float: left;
   border: 1px solid var(--grey);
   border-radius: 4px;
-  width: 100px;
+  /* width: 100px; */
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
-  margin-left: 5px;
+  /* margin-left: 5px; */
   appearance: none;
-  transition: box-shadow 0.08s ease-in, border 0.08s ease-in;
 }
 
 .tab button:hover {
@@ -298,8 +299,7 @@ footer {
 }
 
 .tab button.active {
-  box-shadow: 0 0 0 1px rgba(26, 26, 26, 0.9), 0 2px 4px 0 rgba(0, 0, 0, 0.07),
-    0 1px 1.5px 0 rgba(0, 0, 0, 0.05);
+  border: 2px solid var(--darkerred);
 }
 
 .tab-content {
