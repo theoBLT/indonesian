@@ -8,12 +8,7 @@ import Paymentmethod from "../components/paymentmethod"
 import CardSection from "../components/cardsection"
 import Address from "../components/adress"
 import { loadStripe } from "@stripe/stripe-js"
-import {
-  useStripe,
-  useElements,
-  CardElement,
-  P24BankElement,
-} from "@stripe/react-stripe-js"
+import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js"
 
 const Checkout = () => {
   const [currency, setCurrency] = useState("eur")
@@ -23,6 +18,18 @@ const Checkout = () => {
   const [blikCode, setBlikCode] = useState("")
   const [buyerCountry, setBuyerCountry] = useState("DE")
   const [availableMethods, setAvailableMethods] = useState(["paypal"])
+
+  // Setting Shipping
+  const [shipping, setShipping] = useState({
+    name: "",
+    address: {
+      line1: "",
+      line2: "",
+      city: "",
+      country: "",
+      postal_code: "",
+    },
+  })
 
   // By default, set the active method as the first of the default selected country
   const [paymentMethod, setPaymentMethod] = useState("paypal")
@@ -64,6 +71,63 @@ const Checkout = () => {
         console.log("Card payment succesful")
         window.location.href = `/complete?payment_intent=${result.paymentIntent.id}`
       }
+    }
+  }
+
+  const updateShipping = event => {
+    let newval = event.target.value
+    switch (event.target.name) {
+      case "name":
+        setShipping({ ...shipping, name: newval })
+        break
+      case "address.country":
+        console.log(`Updating address country to ${newval}`)
+        setShipping({
+          ...shipping,
+          address: {
+            ...shipping.address,
+            country: newval,
+          },
+        })
+        break
+      case "address.line1":
+        setShipping({
+          ...shipping,
+          address: {
+            ...shipping.address,
+            line1: newval,
+          },
+        })
+        break
+      case "address.line2":
+        setShipping({
+          ...shipping,
+          address: {
+            ...shipping.address,
+            line2: newval,
+          },
+        })
+        break
+      case "address.city":
+        setShipping({
+          ...shipping,
+          address: {
+            ...shipping.address,
+            city: newval,
+          },
+        })
+        break
+      case "address.postal_code":
+        setShipping({
+          ...shipping,
+          address: {
+            ...shipping.address,
+            postal_code: newval,
+          },
+        })
+        break
+      default:
+        throw new Error()
     }
   }
 
@@ -261,7 +325,7 @@ const Checkout = () => {
     <>
       <form id="payment-form" onSubmit={processPayment} method="POST">
         <h4>Shipping address</h4>
-        <Address />
+        <Address shipping={shipping} updateShipping={updateShipping} />
         <div className="payment-methods-section">
           <h4>Payment method</h4>
           <div className="tab">
