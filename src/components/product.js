@@ -7,7 +7,7 @@ const Product = () => {
       <div>
         <img src={bookimage} alt="The book of Jakarta" width="255" />
       </div>
-      2<h2>The Book of Jakarta: A City in Short Fiction</h2>
+      <h2>The Book of Jakarta: A City in Short Fiction</h2>
       <p>
         <strong>Ratri Ninditya</strong>
       </p>

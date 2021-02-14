@@ -35,9 +35,9 @@ const CausesPage = () => {
         <p>
           Welcome to the soon-to-be built <strong>CelotehBahasa causes</strong>.
           My intention here is to feature some great Indonesian causes that I
-          contribute to, and help you do the same. — Théo For now this page is a
+          contribute to, and help you do the same. For now this page is a
           playground, in which you can create a test susbcription with a test
-          card. Nothing much to it.
+          card. Nothing much to it, but stay tuned for updates!
         </p>
         <form onSubmit={handleCustomerForm} id="customer-form">
           Please enter your email
