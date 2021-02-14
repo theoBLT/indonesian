@@ -1,27 +1,47 @@
 import React from "react"
+import bookimage from "../images/the_book_of_jakarta.jpg"
 
 const Product = () => {
   return (
     <>
       <div>
-        <img
-          width="255"
-          src="https://images.printify.com/mockup/601ee67435b5ea595a48dd7f/70768/6906/enamel-campfire-mug.jpg?s=2048&t=1612638194000"
-          alt="The official CelotehBahsa.com mug"
-        />
+        <img src={bookimage} alt="The book of Jakarta" width="255" />
       </div>
-      <h2>Official CelotehBahasa® Enamel Campfire Mug</h2>
+      2<h2>The Book of Jakarta: A City in Short Fiction</h2>
       <p>
-        <strong>8,00 zł</strong>
+        <strong>Ratri Ninditya</strong>
       </p>
       <p>
-        Get your hands on this durable enamel mug that holds 12 ounces of your
-        favorite beverage. Add a personalized touch to your hipster moment with
-        full-color printing of the CelotehBahasa® logo. Great for indoors and
-        outdoors activities as it can keep up with the dirt and grunge of
-        campsites. This sturdy and stylish cup is perfect for coffee, tea or
-        even your morning cereal in the wild. • 12oz (0.35 l) • Lightweight
-        stainless steel • Rounded corners • C-handle.
+        <strong>£10.00</strong>
+      </p>
+      <p>
+        <p>
+          A young woman takes a driverless taxi through the streets of Jakarta,
+          only to discover that the destination she is hurtling towards is now
+          entirely submerged...{" "}
+        </p>
+        <p>
+          A group of elderly women visit a famous amusement park for one last
+          ride, but things don’t go quite according to plan...
+        </p>
+        <p>
+          The day before her wedding, a bride risks everything to meet her
+          former lover at their favourite seafood restaurant on the other side
+          of the tracks...{" "}
+        </p>
+        <p>
+          Despite being the world’s fourth-largest nation – made up of over
+          17,000 islands – very little of Indonesian history and contemporary
+          politics are known to outsiders. From feudal states and sultanates to
+          a Cold War killing field and a now struggling, flawed democracy – the
+          country’s political history, as well as its literature, defies easy
+          explanation. Like Indonesia itself, the capital city Jakarta is a
+          multiplicity; irreducible, unpredictable and full of surprises.
+          Traversing the different neighbourhoods and districts, the stories
+          gathered here attempt to capture the essence of contemporary Jakarta
+          and its writing, as well as the ever-changing landscape of the
+          fastest-sinking city in the world
+        </p>
       </p>
     </>
   )

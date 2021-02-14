@@ -18,7 +18,7 @@ const Checkout = () => {
   const [blikCode, setBlikCode] = useState("")
   const [buyerCountry, setBuyerCountry] = useState("DE")
   const [availableMethods, setAvailableMethods] = useState(["paypal"])
-  const [isProcessing, setIsProcessing] = useState(false)
+  // const [isProcessing, setIsProcessing] = useState(false)
 
   // Setting Shipping
   const [shipping, setShipping] = useState({

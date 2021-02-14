@@ -43,3 +43,29 @@ const confirmBlikPayment = async (blik_code, payment_intent, shipping) => {
 }
 
 export { confirmBlikPayment }
+
+const createCustomer = async email => {
+  return fetch("/.netlify/functions/create-customer", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({
+      email: email,
+    }),
+  }).then(response => response.json())
+}
+
+export { createCustomer }
+
+const createSubscription = async data => {
+  return fetch("/.netlify/functions/create-subscription", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify(data),
+  }).then(response => response.json())
+}
+
+export { createSubscription }

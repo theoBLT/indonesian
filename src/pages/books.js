@@ -14,15 +14,20 @@ const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY)
 const BuyPage = () => {
   return (
     <>
-      <SEO title="Would you like a mug?" />
+      <SEO title="CelotehBahasa | The book club" />
       <Layout>
         <Header short="true" />
+        <p>
+          Welcome to <strong>the CelotehBahasa book club</strong>. My intention
+          is to include great reads about Indonesia, for other people who like
+          me have an interest in the culture. For now that section only includes
+          one (great) book below, but stay tuned for more options coming soon! —
+          Théo
+        </p>
         <Product />
-
         <Elements stripe={stripePromise}>
           <Checkout />
         </Elements>
-
         <Footer />
       </Layout>
     </>

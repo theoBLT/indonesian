@@ -1,5 +1,5 @@
 import React from "react"
-import "../styles/address.css"
+import "../styles/forms.css"
 
 const Address = props => {
   return (
