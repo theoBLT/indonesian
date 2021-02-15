@@ -87,7 +87,7 @@ const Checkout = () => {
         },
       },
       return_url: `${returnUrl}`,
-      shipping: shipping,
+      // shipping: shipping,
     })
     if (error) {
       stopButtonProcessing()
