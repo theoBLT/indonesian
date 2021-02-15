@@ -5,26 +5,26 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Celotehbahsa.com`,
-    description: `My journey learning Indonesian language.`,
+    description: `My journey learning the Indonesian language.`,
     author: `@theoblochet`,
   },
   plugins: [
     {
-      resolve:`gatsby-source-filesystem`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name:`posts`,
-        path: `${__dirname}/src/markdown`
+        name: `posts`,
+        path: `${__dirname}/src/markdown`,
       },
     },
     {
-      resolve:`gatsby-source-filesystem`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name:`images`,
-        path: `${__dirname}/src/images`
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
     {
-      resolve:`gatsby-source-airtable`,
+      resolve: `gatsby-source-airtable`,
       options: {
         apiKey: process.env.AIRTABLE_API_KEY,
         concurrency: 5,
@@ -38,23 +38,21 @@ module.exports = {
             baseId: `appGmWAihDWDGn2kP`,
             tableName: `sessions`,
             tableLinks: [`words`],
-            mapping:{
-              'intro': `text/markdown`
+            mapping: {
+              intro: `text/markdown`,
             },
-            separateMapType: true
+            separateMapType: true,
             // createSeparateNodeType: true,
-          }
-        ]
-      }
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `Work Sans`
-        ],
-        display: 'swap'
-      }
+        fonts: [`Work Sans`],
+        display: "swap",
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -73,17 +71,17 @@ module.exports = {
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-mdx`,
-      options:{
-        extensions: [`.md`,`.mdx`],
-        gatsbyRemarkPlugins: [ 
+      options: {
+        extensions: [`.md`, `.mdx`],
+        gatsbyRemarkPlugins: [
           {
-          resolve: `gatsby-remark-images`,
-          options: {
-            maxWidth:1200,
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+            },
           },
-        },
-      ],
-      }
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -91,15 +89,13 @@ module.exports = {
         name: `CelotehBahasa`,
         short_name: `CelotehBahasa`,
         start_url: `/`,
-        icon:`src/images/gatsby-icon.svg`
+        icon: `src/images/gatsby-icon.svg`,
       },
     },
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: [
-          "G-8E26NKKHYW"
-        ],
+        trackingIds: ["G-8E26NKKHYW"],
         // This object gets passed directly to the gtag config command
         // This config will be shared across all trackingIds
         gtagConfig: {

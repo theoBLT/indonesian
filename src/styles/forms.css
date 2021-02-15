@@ -1,4 +1,5 @@
-.address-form input,
+input[type="text"],
+input[type="email"],
 select {
   display: block;
   width: 100%;
