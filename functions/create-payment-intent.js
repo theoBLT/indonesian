@@ -25,12 +25,12 @@ exports.handler = async event => {
     console.log(`Behavior: Polish detected`)
   } else if (buyerCountry === "DE") {
     payment_methods = ["paypal", "card", "sofort", "giropay"]
-    amount = 200
+    amount = 1000
     currency = "EUR"
     console.log(`Behavior: Germany detected`)
   } else {
     payment_methods = ["paypal", "card"]
-    amount = 200
+    amount = 1000
     currency = "EUR"
   }
 

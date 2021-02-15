@@ -12,7 +12,7 @@ const Product = () => {
         <strong>Ratri Ninditya</strong>
       </p>
       <p>
-        <strong>£10.00</strong>
+        <strong>€10.00</strong>
       </p>
       <p>
         <p>
