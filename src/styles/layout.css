@@ -18,7 +18,7 @@ a {
 }
 
 .container {
-  margin: 40px 20px 0px 40px;
+  margin: 20px;
 }
 
 .title {
@@ -150,7 +150,7 @@ a {
 .article {
   font-size: 1.2em;
   line-height: 1.44em;
-  width: 45ch;
+  max-width: 45ch;
   margin: auto;
   margin-top: 80px;
 }
