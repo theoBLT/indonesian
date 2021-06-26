@@ -4,29 +4,27 @@ import Layout from "../components/layout"
 import Header from "../components/header"
 import SEO from "../components/seo"
 
-export default function Template({data}){
+export default function Template({ data }) {
   const { markdownRemark } = data
-  const { frontmatter, html } = markdownRemark
+  const { frontmatter, html, excerpt } = markdownRemark
 
   return (
     <>
-    <SEO title={frontmatter.title}/>
-    <Layout>
-    <Header/>
-      <div className="article">
-      <h3>{frontmatter.title}</h3>
-      <div
-        dangerouslySetInnerHTML={{ __html: html}}
-        />
-      </div>
-    </Layout>
+      <SEO title={frontmatter.title} description={excerpt} />
+      <Layout>
+        <Header />
+        <div className="article">
+          <h3>{frontmatter.title}</h3>
+          <div dangerouslySetInnerHTML={{ __html: html }} />
+        </div>
+      </Layout>
     </>
   )
 }
 
 export const pageQuery = graphql`
-  query ($path: String!) {
-    markdownRemark(frontmatter: {path: { eq: $path }}){
+  query($path: String!) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
         path
@@ -34,6 +32,7 @@ export const pageQuery = graphql`
         author
         date
       }
+      excerpt
     }
   }
 `
