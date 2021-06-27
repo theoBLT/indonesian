@@ -90,6 +90,7 @@ a {
   margin-left: 0px;
   cursor: pointer;
   box-sizing: content-box;
+  line-height: 0.9;
 }
 
 .word:hover {
