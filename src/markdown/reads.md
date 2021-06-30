@@ -14,7 +14,7 @@ This kind of content is _hard_ to find yourself, so today I’m taking some time
 
 [Shit Indonesian Says - VICE](https://www.vice.com/id_id/topic/shit-indonesian-says)
 
-Vice has an Indonesian version, and it’s great. Witty, casual, and teaches you a great deal about the shortcomings of Indonesian culture.
+Vice has an Indonesian version, and it’s great. Witty, casual, and teaches you a great deal about the (shortcomings of) Indonesian culture.
 
 A couple cool examples:
 

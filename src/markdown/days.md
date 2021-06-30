@@ -11,9 +11,9 @@ I tried to listen to [THE song](https://www.youtube.com/watch?v=VQVG53eU2gE), bu
 
 That's until I found a [reddit post](https://www.reddit.com/r/indonesia/comments/o5j3rd/senin_selasa_rabu_kamis_jumat_sabtu_minggu_itu/), explaining the origin of the days of the week.
 
-- Sunday is **Minggu**, which [comes from](https://id.wikipedia.org/wiki/Minggu) the Portuguese word `Domingo`, which in old Melayu became _Dominggu_, then became simply _Minggu_ at the turn of the 20th Century
+- Sunday is **Minggu**, which [comes from](https://id.wikipedia.org/wiki/Minggu) the Portuguese word `Domingo`, which in old Melayu became _Dominggu_, then became simply _Minggu_ at the turn of the 20th Century. Easy, right?
 
-From there, days of the week are pulled from Arabic:
+From there, all other days of the week are pulled from Arabic:
 
 - Monday: **Senin** comes from the _arabic_ word الإثنين which [is pronounced](https://forvo.com/word/%D8%A7%D9%84%D8%A5%D8%AB%D9%86%D9%8A%D9%86/) _A lith **nayn**_ — quite close to "al senin"
 - Tuesday: **Selasa** comes from the _arabic_ word الثلاثاء which is pronounced _Ath **thu la tha**’_
@@ -22,4 +22,12 @@ From there, days of the week are pulled from Arabic:
 - Friday: **Jumat** comes from the _arabic_ word الجمعه which is pronounced _Al **jum ah**_
 - Saturday: **Sabtu** comes from the _arabic_ word السبت which is pronounced _As **sabt**_
 
-It makes me very curious to know how days were described in Melayu, before the Arabs arrived in Indonesia in the 13th century and why Sunday, which used to —logically— be called Ahad (from the arabic الأحد or _Al **‘ahad**_), was changed to a Portugues word, 3 centuries later. If you know the answer, [hit me up](https://twitter.com/celotehbahasa)!
+I'm curious to know how people described days in Melayu, before the Arabs arrived in Indonesia in the 13th century.
+
+Also, why did Sunday get replaced? It used to be called Ahad (from the arabic الأحد or _Al **‘ahad**_), and apparently it still is called that way [in Malay](https://www.reddit.com/r/indonesia/comments/o5j3rd/senin_selasa_rabu_kamis_jumat_sabtu_minggu_itu/h2nqjo6/?utm_source=reddit&utm_medium=web2x&context=3) [and some Indonesians](https://www.reddit.com/r/indonesia/comments/o5j3rd/senin_selasa_rabu_kamis_jumat_sabtu_minggu_itu/h2mvfvp/?utm_source=reddit&utm_medium=web2x&context=3), but for most people it got replaced by a Portuguese word, 3 centuries later. Why? If you know the answer, [hit me up](https://twitter.com/celotehbahasa)!
+
+![Comic about the days of the in Indonesian][image-1]
+
+( Comic credit to [Mike Organisciak](https://mikeorganisciak.com/), Meme credit to [u/friedsoyabeanpatty](https://www.reddit.com/user/friedsoyabeanpatty/) )
+
+[image-1]: ../images/days_of_the_week.png
