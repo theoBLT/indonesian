@@ -1,0 +1,59 @@
+---
+title: "Easy Indonesian reads"
+path: "/celoteh/tentang/reads"
+author: "Théo Blochet"
+date: "2019-12-30"
+article_type: "article"
+---
+
+My teacher Viona introduced me to a lot of new content that’s accessible to intermediate speakers (i.e yours truly), casual (the type of Indonesian I care about learning) and insightful (to keep me interested).
+
+This kind of content is _hard_ to find yourself, so today I’m taking some time to share 4 sources you can tap into, when you’re thirsty for new Indonesian content to read or watch.
+
+## 1. Vice’s Shit indonesian says
+
+[Shit Indonesian Says - VICE](https://www.vice.com/id_id/topic/shit-indonesian-says)
+
+Vice has an Indonesian version, and it’s great. Witty, casual, and teaches you a great deal about the shortcomings of Indonesian culture.
+
+A couple cool examples:
+
+- [Daftar Lengkap Alternatif Pengganti Pertanyaan Basa-Basi Nyebelin Ala Indonesia - VICE](https://www.vice.com/id_id/article/j5azk8/daftar-lengkap-alternatif-pengganti-pertanyaan-basa-basi-nyebelin-ala-indonesia) - Do Indonesians often ask you if you’re married or got kids yet? This article pushes back on those nosy and stereotyping questions Indonesians often ask, and proposes alternatives.
+- [Menelisik Dampak Buruk Kebiasan Orang Indonesia Bilang ‘OTW’ - VICE](https://www.vice.com/id_id/article/8x973a/menelisik-dampak-buruk-kebiasan-orang-indonesia-bilang-otw) - A rant against the use of the term “OTW”! As you know, it’s rarely used by people who are _actually_ on their way. I’m of the opinion that this is a global problem and not Indonesian specific, but it’s a fun read!
+- [Cara Anak Muda Bertahan Hidup dalam Kesibukan Kota Jakarta - YouTube](https://www.youtube.com/watch?v=_zd14Z0EUzs) - An exploration of how over-worked young Jakartans are, and how it affects their health. If this is representative, it is scary. I’m curious to learn more about this.
+
+## 2.DuckOfYork
+
+[DUCKOFYORK | Indonesian Lifestyle Blogger: thoughts](https://www.duckofyork.com/search/label/thoughts?max-results=48)
+
+This blog is the online garden of Agi Tiara Pranoto, an Indonesian blogger from Jogja. Her articles sport a perfect dose of irony while also dealing with _real_ curhat-worthy problems, such as whatsapp family groups (ever felt on the verge of leaving yours?), cross-cultural weddings, or smoking. She’s literally the person I learned the word “Curhat” from.
+
+- [“Belum Pengen Punya Anak Dulu" vs The World: Frequently Asked Question Paling Sampah Sejagat Raya | DUCKOFYORK | Indonesian Lifestyle Blogger](https://www.duckofyork.com/2020/05/belum-pengen-punya-anak-dulu-vs-world.html)
+  Light coverage of a deep topic: why she hasn’t got a child yet, and why people should stop asking.
+- [5 Jenis Drama Drama Yang Muncul Akibat Grup Whatsapp! (Dan Solusinya!!!) | DUCKOFYORK | Indonesian Lifestyle Blogger](https://www.duckofyork.com/2018/08/drama-grup-whatsapp.html)
+  Typical issues in Family whatsapp groups, and how to approach them. A fun read.
+
+## 3. KitaBisa
+
+[kitabisa.com Careers - powered by Urbanhire](https://kitabisa.urbanhire.com/)
+
+KitaBisa is a 200 employee-strong start-up doing amazing work running Indonesia’s largest Fundraising platform. They’re our go-to to find and fund charity work in Indonesia. They also produce viral content, around the topics of equality and kindness. On YouTube, they run a series called “Social Experiment”. The awkwardness, candidness and simple Indonesian used in those videos make those a beginner’s dream to watch - while also revealing a lot about our human natures.
+
+- [Social Experiment: Kenapa Kita Butuh Saling Bicara - YouTube](https://www.youtube.com/watch?v=ELQGZ98YrT4) This video puts two blindfolded strangers, and makes then talk to each other. Super revealing of how Indonesians of different ages / social classes / professions interact. Check it out!
+- [Social Experiment - Cara Ngobrol Sama Teman Tuli - YouTube](https://www.youtube.com/watch?v=s4W10a6OmCI) Similar to the previous context, this video is about how we react in the face of disability, by introducing deaf_mute persons to hearing_speaking ones.
+- [Social Experiment - Seniman vs Orang Kantoran, Siapa yang Lebih Baik? | Ketemu Di Tengah - YouTube](https://www.youtube.com/watch?v=8yReWJJuJMk)
+  In this one, they invite 3 artists and 3 company employees, and ask them questions about the meaning of work, their relationship to money, etc. Which one do you identify with most? (For me it was the artists, surprisingly!)
+
+## 4. KokBisa
+
+Not to be confused with KitaBisa, Kok- bisa? is a massive YouTube channel (2.16M subscriber at the time of writing), but also a blog which explores “why” and “what if” questions. I’ll be honest: I prefer when their content is about Indonesian culture or trivia. Some examples below:
+
+-[Kenapa Orang Batak Galak? Kenapa Orang Padang Pelit? Kenapa Orang Jawa Lambat?](https://kokbisachannel.wordpress.com/2015/06/16/kenapa-orang-batak-galak-kenapa-orang-padang-pelit-kenapa-orang-jawa-lambat/)
+This edition goes into stereotypes Indonesians have about each other - something you likely did not know if you’re an outsider like I am.
+
+- [Kenapa Jakarta Macet Banget?](https://kokbisachannel.wordpress.com/2015/07/18/kenapa-jakarta-macet-banget/)
+  Why is the traffic in Jakarta terrible? Backed by numbers, they dig into what makes Jakarta’s road so unique.
+
+That’s my list of content I enjoyed exploring and learning from, as a non-native speaker. There’s a ton more fascinating content I surely do not know about (one I found out about recently is [Asumsi](https://asumsi.co/)): really great.
+
+What about you? What’s some awesome content that you think could appeal to people learning Indonesian? Please share them with me on [instagram](https://www.instagram.com/celotehbahasa) or the [Twitter](https://www.twitter.com/celotehbahasa), and I’ll add them to the article!
