@@ -15,10 +15,11 @@ export default function Template({ data }) {
       <Layout>
         <Header short="true" />
         <div className="article">
-          <Link to="/">Go back</Link>
-          <h3>{frontmatter.title}</h3>
+          <Link to="/">
+            <h2 classname="backarrow">←</h2>
+          </Link>
+          <h1>{frontmatter.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: html }} />
-          <Link to="/">Go back</Link>
         </div>
       </Layout>
     </>

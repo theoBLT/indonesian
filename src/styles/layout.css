@@ -346,3 +346,8 @@ footer {
 #error {
   color: var(--darkred);
 }
+
+/* Hack to target just the back arrow */
+.article > a {
+  text-decoration: none;
+}
