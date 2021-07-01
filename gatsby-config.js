@@ -4,8 +4,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Celotehbahsa.com`,
-    description: `My journey learning the Indonesian language.`,
+    title: `CelotehBahsa: let's learn Indonesian together`,
+    description: `Join my journey learning the Indonesian language.`,
     author: `@theoblochet`,
   },
   plugins: [
