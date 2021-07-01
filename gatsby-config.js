@@ -7,6 +7,8 @@ module.exports = {
     title: `CelotehBahsa: let's learn Indonesian together`,
     description: `Join my journey learning the Indonesian language.`,
     author: `@theoblochet`,
+    url: `https://www.celotehbahasa.com`,
+    siteUrl: `https://www.celotehbahasa.com`,
   },
   plugins: [
     {
@@ -103,6 +105,20 @@ module.exports = {
           anonymize_ip: true,
           cookie_expires: 0,
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: "https://www.celotehbahasa.com",
+        sitemap: "https://www.celotehbahasa.com/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: "/",
       },
     },
   ],
