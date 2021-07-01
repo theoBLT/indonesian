@@ -111,14 +111,7 @@ module.exports = {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
         host: "https://www.celotehbahasa.com",
-        sitemap: "https://www.celotehbahasa.com/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        output: "/",
       },
     },
   ],
