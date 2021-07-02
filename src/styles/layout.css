@@ -120,7 +120,7 @@ a {
   justify-items: center;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  padding-top: 20px;
+  margin-top: 48px;
 }
 
 .sessionIntro {
@@ -350,4 +350,12 @@ footer {
 /* Hack to target just the back arrow */
 .article > a {
   text-decoration: none;
+}
+
+#concept li {
+  font-size: 1.15em;
+}
+
+#concept {
+  margin: 48px 0px;
 }

@@ -17,7 +17,7 @@ function Concepts() {
     }
   `)
   return (
-    <>
+    <div id="concept">
       <h3>Some recent tips</h3>
       <ul>
         {data.allMarkdownRemark.nodes.map((node, i) => (
@@ -28,7 +28,7 @@ function Concepts() {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   )
 }
 
