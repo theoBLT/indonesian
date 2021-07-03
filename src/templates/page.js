@@ -4,10 +4,11 @@ import Layout from "../components/layout"
 import Header from "../components/header"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 export default function Template({ data }) {
-  const { markdownRemark } = data
-  const { frontmatter, html, excerpt } = markdownRemark
+  const { mdx } = data
+  const { frontmatter, body, excerpt } = mdx
 
   return (
     <>
@@ -19,7 +20,7 @@ export default function Template({ data }) {
             <h2 classname="backarrow">←</h2>
           </Link>
           <h1>{frontmatter.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <MDXRenderer>{body}</MDXRenderer>
         </div>
       </Layout>
     </>
@@ -28,8 +29,8 @@ export default function Template({ data }) {
 
 export const pageQuery = graphql`
   query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
+    mdx(frontmatter: { path: { eq: $path } }) {
+      body
       frontmatter {
         path
         title

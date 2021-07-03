@@ -120,7 +120,7 @@ a {
   justify-items: center;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  margin-top: 48px;
+  margin: 48px 0px 0px 0px;
 }
 
 .sessionIntro {
