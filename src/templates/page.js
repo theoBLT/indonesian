@@ -17,7 +17,7 @@ export default function Template({ data }) {
         <Header short="true" />
         <div className="article">
           <Link to="/">
-            <h2 classname="backarrow">←</h2>
+            <h2 className="backarrow">←</h2>
           </Link>
           <h1>{frontmatter.title}</h1>
           <MDXRenderer>{body}</MDXRenderer>
