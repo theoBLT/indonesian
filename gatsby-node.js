@@ -1,32 +1,32 @@
 const path = require(`path`)
 
-exports.createPages = async ({ actions, graphql, reporter}) => {
-    const {createPage} = actions 
-    const pageTemplate = path.resolve(`src/templates/page.js`)
-    const result = await graphql(`
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const { createPage } = actions
+  const pageTemplate = path.resolve(`src/templates/page.js`)
+  const result = await graphql(`
     query {
-        allMarkdownRemark(filter: {frontmatter: {path: {regex: "/celoteh?/"}}}) {
-          edges {
-            node {
-              frontmatter {
-                path
-              }
+      allMdx(filter: { frontmatter: { path: { regex: "/celoteh?/" } } }) {
+        edges {
+          node {
+            frontmatter {
+              path
             }
           }
         }
       }
-    `)
-    if (result.errors) {
-        reporter.panicOnBuild(`Error while running GraphQL query`)
-        
-    return
     }
+  `)
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query`)
 
-    result.data.allMarkdownRemark.edges.forEach(({node}) => {
-        createPage({
-            path: node.frontmatter.path,
-            component: pageTemplate,
-            context: {}
-        })
+    return
+  }
+
+  result.data.allMdx.edges.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.path,
+      component: pageTemplate,
+      context: {},
     })
+  })
 }
