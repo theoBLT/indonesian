@@ -11,6 +11,7 @@ module.exports = {
     siteUrl: `https://celotehbahasa.com`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
