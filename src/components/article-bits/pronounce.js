@@ -5,6 +5,7 @@ export default props => {
 
   const sayIt = (text, language) => {
     var synth = window.speechSynthesis
+
     var u = new SpeechSynthesisUtterance()
     u.text = text
     u.lang = language

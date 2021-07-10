@@ -7,8 +7,8 @@ module.exports = {
     title: `CelotehBahsa: let's learn Indonesian together`,
     description: `Join my journey learning the Indonesian language.`,
     author: `@theoblochet`,
-    url: `https://www.celotehbahasa.com`,
-    siteUrl: `https://www.celotehbahasa.com`,
+    url: `https://celotehbahasa.com`,
+    siteUrl: `https://celotehbahasa.com`,
   },
   plugins: [
     {
@@ -121,7 +121,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
-        host: "https://www.celotehbahasa.com",
+        host: "https://celotehbahasa.com",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
