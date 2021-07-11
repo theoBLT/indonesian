@@ -13,7 +13,7 @@ export default ({ data }) => {
       <SEO title="My journey learning Indonesian" />
       <Layout>
         <Header />
-        <Concepts />
+        <Concepts title="Some recent tips" />
 
         {data.allAirtable.nodes.map((session, index) => (
           <Session

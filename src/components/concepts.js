@@ -1,7 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
-function Concepts() {
+function Concepts(props) {
+  const { title } = props
   const data = useStaticQuery(graphql`
     query GetArticles {
       allMdx(filter: { frontmatter: { article_type: { eq: "article" } } }) {
@@ -16,7 +17,7 @@ function Concepts() {
   `)
   return (
     <div id="concept">
-      <h3>Some recent tips</h3>
+      <h3>{title}</h3>
       <ul>
         {data.allMdx.nodes.map((node, i) => (
           <li>
