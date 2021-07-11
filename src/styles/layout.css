@@ -62,6 +62,7 @@ a {
 
 .date {
   color: var(--grey);
+  margin-bottom: 20px;
 }
 
 .metadata {
@@ -124,7 +125,7 @@ a {
 }
 
 .sessionIntro {
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 #avatar img {

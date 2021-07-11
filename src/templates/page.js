@@ -20,6 +20,7 @@ export default function Template({ data }) {
             <h2 className="backarrow">←</h2>
           </Link>
           <h1>{frontmatter.title}</h1>
+          <span className="date">{frontmatter.date}</span>
           <MDXRenderer>{body}</MDXRenderer>
         </div>
       </Layout>
@@ -35,7 +36,7 @@ export const pageQuery = graphql`
         path
         title
         author
-        date
+        date(locale: "en_US")
       }
       excerpt
     }
