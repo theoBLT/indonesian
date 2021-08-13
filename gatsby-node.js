@@ -3,18 +3,29 @@ const path = require(`path`)
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const pageTemplate = path.resolve(`src/templates/page.js`)
+  const dictionaryTemplate = path.resolve(`src/templates/dictionary.js`)
   const result = await graphql(`
-    query {
-      allMdx(filter: { frontmatter: { path: { regex: "/celoteh?/" } } }) {
-        edges {
-          node {
-            frontmatter {
-              path
-            }
+  {
+    allMdx(filter: {frontmatter: {path: {regex: "/celoteh?/"}}}) {
+      edges {
+        node {
+          frontmatter {
+            path
           }
         }
       }
     }
+    allAirtable {
+      edges {
+        node {
+          data {
+            slug
+          }
+          recordId
+        }
+      }
+    }
+  }
   `)
   if (result.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query`)
@@ -28,5 +39,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: pageTemplate,
       context: {},
     })
+  })
+
+  result.data.allAirtable.edges.forEach(({ node }) => {
+    if(node.data.slug) {
+      createPage({
+        path: node.data.slug,
+        component: dictionaryTemplate,
+        context: {
+          record_id: node.recordId,
+        },
+      })
+    }
   })
 }

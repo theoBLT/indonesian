@@ -46,7 +46,7 @@ module.exports = {
           {
             baseId: `appGmWAihDWDGn2kP`,
             tableName: `words`,
-            // createSeparateNodeType: true,
+            createSeparateNodeType: true,
           },
           {
             baseId: `appGmWAihDWDGn2kP`,
