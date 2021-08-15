@@ -1,11 +1,23 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import Header from "../components/header"
 import Concepts from "../components/concepts"
 import Session from "../components/session"
+import Searchhit from "../components/searchhit"
 import SEO from "../components/seo"
 import Footer from "../components/footer"
+import algoliasearch from 'algoliasearch/lite';
+import { InstantSearch, SearchBox, Hits, connectStateResults } from 'react-instantsearch-dom';
+
+const searchClient = algoliasearch('KNGW4E76GQ', '303d6ed1f7af0462583d12f07a871e04');
+const Results = connectStateResults(({ searchState, children }) =>
+  searchState && searchState.query ? (
+    children
+  ) : (
+    <div><i>Cool people previously searched for <Link to="kepepet">kepepet</Link>, <Link to="gokil">gokil</Link> or <Link to="gelar-tikar">Gelar tikar</Link></i></div>
+  )
+);
 
 export default ({ data }) => {
   return (
@@ -13,6 +25,20 @@ export default ({ data }) => {
       <SEO title="My journey learning Indonesian" />
       <Layout>
         <Header />
+        <InstantSearch 
+          searchClient={searchClient} 
+          indexName="Words"
+          >
+          <SearchBox 
+          translations={{
+            submitTitle: 'Submit your search query.',
+            resetTitle: 'Clear your search query.',
+            placeholder: 'Looking for a word?',
+          }}/>
+          <Results>
+            <Hits hitComponent={Searchhit}/>
+          </Results>
+        </InstantSearch>
         <Concepts title="Some recent tips" />
 
         {data.allAirtable.nodes.map((session, index) => (

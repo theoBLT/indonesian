@@ -9,6 +9,7 @@
     "@mdx-js/react": "^1.6.22",
     "@stripe/react-stripe-js": "^1.4.1",
     "@stripe/stripe-js": "^1.15.1",
+    "algoliasearch": "^4.10.3",
     "gatsby": "^3.8.1",
     "gatsby-image": "^3.8.0",
     "gatsby-plugin-algolia": "^0.22.0",
@@ -32,6 +33,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^5.2.1",
+    "react-instantsearch-dom": "^6.12.1",
     "typescript": "^3.9.10"
   },
   "devDependencies": {

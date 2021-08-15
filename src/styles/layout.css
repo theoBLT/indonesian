@@ -360,3 +360,25 @@ footer {
 #concept {
   margin: 48px 0px;
 }
+
+/* Everything related to search */ 
+
+.ais-SearchBox, .ais-SearchBox-form, .ais-SearchBox-input {
+  width: 100%;
+  height: 2.5em;
+}
+
+/* No need for the buttons to submit/clear search */
+.ais-SearchBox-submit, .ais-SearchBox-reset {
+  display: none;
+}
+
+.ais-Hits-item { 
+  margin-bottom: 1em; 
+  list-style-type: none;
+  
+}
+
+.ais-Hits, .ais-Hits-list {
+  margin-left:0;
+}
