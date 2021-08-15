@@ -11,7 +11,7 @@ const wordsQuery = `{
             type
             example
           }
-          recordId
+          objectID: recordId
         }
       }
     }
@@ -19,7 +19,7 @@ const wordsQuery = `{
   `
 function wordToAlgoliaRecord(node) {
   return {
-    objectID: node.recordId,
+    objectID,
     ...node.data,
   }
 }
