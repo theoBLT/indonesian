@@ -6,6 +6,7 @@
   --darkerred: #4d1e1f;
   --grey: grey;
   --white: #ffffff;
+  --black: #000000cc;
 }
 
 a {
@@ -365,8 +366,19 @@ footer {
 
 .ais-SearchBox, .ais-SearchBox-form, .ais-SearchBox-input {
   width: 100%;
-  height: 2.5em;
+  height: 60px;
 }
+
+.ais-SearchBox-input {
+  padding-left:16px;
+  font-size:28px;
+}
+
+.ais-SearchBox-input:focus {
+  outline:none;
+}
+
+
 
 /* No need for the buttons to submit/clear search */
 .ais-SearchBox-submit, .ais-SearchBox-reset {
@@ -374,11 +386,48 @@ footer {
 }
 
 .ais-Hits-item { 
-  margin-bottom: 1em; 
   list-style-type: none;
-  
+  margin-bottom:0px!important;
+  font-size:22px;
 }
 
 .ais-Hits, .ais-Hits-list {
   margin-left:0;
+}
+
+.searchresult {
+  display:flex;
+  align-items:flex-start;
+  text-decoration: none!important;
+  padding:0px 16px ;
+  height:60px;
+  overflow:hidden;
+  white-space: nowrap;
+  align-items: center;
+}
+
+.searchresult:hover {
+  background: rgba(229, 229, 229, 0.66);
+}
+
+.result-word {
+  color:var(--red) !important;
+  margin-right:6px;
+}
+
+.result-translation {
+  color:var(--black)!important;
+  margin: 0px 6px;
+  
+}
+
+.result-example {
+  color:var(--grey)!important;
+  margin: 0px 6px;
+  text-overflow: ellipsis;
+}
+
+
+.result-arrow {
+  color:var(--black)!important;
 }
