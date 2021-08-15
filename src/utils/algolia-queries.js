@@ -19,7 +19,7 @@ const wordsQuery = `{
   `
 function wordToAlgoliaRecord(node) {
   return {
-    objectID,
+    objectID:node.objectID,
     ...node.data,
   }
 }
