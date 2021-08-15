@@ -25,16 +25,17 @@ export default ({ data }) => {
       <SEO title="My journey learning Indonesian" />
       <Layout>
         <Header />
+        
         <InstantSearch 
           searchClient={searchClient} 
           indexName="Words"
           >
+
           <SearchBox 
           translations={{
-            submitTitle: 'Submit your search query.',
-            resetTitle: 'Clear your search query.',
-            placeholder: 'Looking for a word?',
+            placeholder: 'Type any word...',
           }}/>
+
           <Results>
             <Hits hitComponent={Searchhit}/>
           </Results>

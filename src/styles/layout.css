@@ -14,6 +14,9 @@ a {
 }
 
 .header {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
   font-weight: 500;
   margin-bottom: 20px;
 }
@@ -123,10 +126,6 @@ a {
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin: 48px 0px 0px 0px;
-}
-
-.sessionIntro {
-  /* margin-top: 20px; */
 }
 
 #avatar img {
