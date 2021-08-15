@@ -17,12 +17,12 @@ const wordsQuery = `{
     }
   }
   `
-function wordToAlgoliaRecord(node) {
-  return {
-    objectID:node.objectID,
-    ...node.data,
+  function wordToAlgoliaRecord({ node: { objectID, data} }) {
+    return {
+      objectID,
+      ...data,
+    }
   }
-}
 const queries = [
   {
     query: wordsQuery,
