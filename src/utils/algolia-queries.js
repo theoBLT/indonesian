@@ -9,6 +9,7 @@ const wordsQuery = `{
             translation
             word
             type
+            example
           }
           recordId
         }
@@ -16,16 +17,16 @@ const wordsQuery = `{
     }
   }
   `
-function pageToAlgoliaRecord({ node: { recordId, data} }) {
+function wordToAlgoliaRecord(node) {
   return {
-    objectID: recordId,
-    ...data,
+    objectID: node.recordId,
+    ...node.data,
   }
 }
 const queries = [
   {
     query: wordsQuery,
-    transformer: ({ data }) => data.allAirtable.edges.map(pageToAlgoliaRecord),
+    transformer: ({ data }) => data.allAirtable.edges.map(wordToAlgoliaRecord),
     indexName,
     settings: { attributesToSnippet: [`excerpt:20`] },
   },
