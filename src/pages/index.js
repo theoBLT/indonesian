@@ -37,7 +37,7 @@ export default ({ data }) => {
 
           <SearchBox 
           translations={{
-            placeholder: 'Type any word...',
+            placeholder: 'Search for any Indonesian word...',
           }}/>
 
           <Results>
@@ -45,6 +45,7 @@ export default ({ data }) => {
           </Results>
         </InstantSearch>
         <Concepts title="Latest from the blog" />
+        <h1>Learning in progress</h1>
         {data.allAirtable.nodes.map((session, index) => (
           <Session
             key={index}

@@ -8,6 +8,18 @@
   --lightgrey: rgba(229, 229, 229, 0.66);
   --white: #ffffff;
   --black: #000000cc;
+  /*Vertical unit*/
+  --vunit: 1.8rem;
+  /*Font size unit*/
+  --funit: 1.2rem;
+}
+
+html {
+   font-family:'Bitter','Times New Roman', Times, serif;
+ }
+
+h1,h2,h3,h4,h5,h6 {
+  font-family:'Work Sans', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 a {
@@ -23,55 +35,31 @@ a {
 }
 
 .header img {
-  max-height: 2.4em;
+  max-height: calc(var(--vunit)*1.5);
 }
 
 .container {
   margin: 20px;
 }
 
-.title {
-  font-size: 3em;
-  font-weight: 600;
-}
-
 .subtitle {
-  font-size: 1.5em;
-  line-height: 1.25em;
+  font-size:var(--funit);
 }
 
 .session {
-  margin-bottom: 60px;
+  margin-bottom: calc(var(--vunit)*3);
 }
 
 .wordsList {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 40px;
   /* disabling tap highlight on iOS */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   margin: 40px 0px 0px 0px;
 }
 
-.sessionTitle {
-  margin-bottom: 0px;
-  font-family: "Work Sans";
-}
-
-.translated {
-  /* font-style:italic; */
-  margin-top: -0.7em;
-  font-weight: 400;
-}
-
-.session h3 {
-  font-size: 2.5em;
-  font-weight: 600;
-}
-
 .small-subtitle {
   color: var(--grey)!important;
-  margin-bottom: 20px;
 }
 
 .metadata {
@@ -80,7 +68,7 @@ a {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.33s ease-in-out;
-  margin-top: 8px;
+  margin-top: var(--vunit);
 }
 
 .metadata.loaded {
@@ -94,13 +82,13 @@ a {
   display: inline-flex;
   border: none;
   color: #fff;
-  font-size: 2em;
+  font-size: calc(var(--funit)*1.5);
   font-family: Georgia, "Times New Roman", Times, serif;
   user-select: none;
   margin-left: 0px;
   cursor: pointer;
   box-sizing: content-box;
-  line-height: 0.9;
+  /* line-height: 0.9; */
 }
 
 .word:hover {
@@ -128,7 +116,7 @@ a {
   display: grid;
   align-items: center;
   justify-items: center;
-  grid-gap: 20px;
+  gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin: 48px 0px 0px 0px;
 }
@@ -155,11 +143,10 @@ a {
 }
 
 .article {
-  font-size: 1.2em;
-  line-height: 1.44em;
+  font-size: var(--funit);
+  line-height: var(--vunit);
   max-width: 45ch;
   margin: auto;
-  margin-top: 80px;
 }
 
 .dictionary-definition {
@@ -178,10 +165,6 @@ a {
 .article ul {
   margin: 10px 0px 10px 0px;
   padding-left: 40px;
-}
-
-.article h3 {
-  margin: 48px 0px 24px 0px;
 }
 
 /* Chrome, Safari, Edge, Opera hack to hide the stepper in number inputs*/
@@ -389,11 +372,14 @@ footer {
 input[type=search]{
   -webkit-appearance: none;
   -webkit-border-radius: 0;
+  border-radius:0;
 }
 
 .ais-SearchBox-input {
-  padding-left:16px;
-  font-size:28px;
+  padding-left:var(--vunit);
+  font-size:var(--funit);
+  border:0px;
+  border-bottom:1px solid var(--black);
 }
 
 .ais-SearchBox-input:focus {

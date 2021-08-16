@@ -7,7 +7,7 @@ export default props => {
     return (
 
         <div className = "session" key={key}>
-        <h3 className ="sessionTitle">Session #{sessionNumber}</h3>
+        <h2>Class #{sessionNumber}</h2>
           <span className ="small-subtitle">{sessionDate}</span>
           <div className = "sessionIntro">
           <MDXRenderer>{sessionIntro ? sessionIntro : null}</MDXRenderer>

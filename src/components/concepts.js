@@ -18,13 +18,15 @@ function Concepts(props) {
   `)
   return (
     <div id="concept">
-      <h3>{title}</h3>
+      <h1>{title}</h1>
       <ul>
         {data.allMdx.nodes.map((node, i) => (
           <li>
             <Link key={i} to={node.frontmatter.path}>
+              <h3>
               {node.frontmatter.title}
-            </Link> <br/>
+              </h3>
+            </Link> 
             {node.excerpt}
           </li>
         ))}
