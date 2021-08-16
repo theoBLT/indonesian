@@ -22,6 +22,10 @@ a {
   margin-bottom: 20px;
 }
 
+.header img {
+  max-height: 2.4em;
+}
+
 .container {
   margin: 20px;
 }
@@ -380,6 +384,11 @@ footer {
 .ais-SearchBox, .ais-SearchBox-form, .ais-SearchBox-input {
   width: 100%;
   height: 60px;
+}
+
+input[type=search]{
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
 }
 
 .ais-SearchBox-input {

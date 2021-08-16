@@ -26,7 +26,7 @@ const Results = connectStateResults(({ searchState, searchResults, children }) =
 export default ({ data }) => {
   return (
     <>
-      <SEO title="My journey learning Indonesian" />
+      <SEO title="Learn casual Indonesian with CelotehBahasa.com" />
       <Layout>
         <Header />
 
