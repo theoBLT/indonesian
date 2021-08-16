@@ -11,12 +11,16 @@ import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits, connectStateResults } from 'react-instantsearch-dom';
 
 const searchClient = algoliasearch('KNGW4E76GQ', '303d6ed1f7af0462583d12f07a871e04');
-const Results = connectStateResults(({ searchState, children }) =>
-  searchState && searchState.query ? (
-    children
-  ) : (
-    <div><i>Cool people previously searched for <Link to="kepepet">kepepet</Link>, <Link to="gokil">gokil</Link> or <Link to="gelar-tikar">Gelar tikar</Link></i></div>
-  )
+
+const Results = connectStateResults(({ searchState, searchResults, children }) =>
+  // If there is a state and a query
+  searchState && searchState.query ? ( 
+    // If that query returned zero results
+    searchResults && searchResults.nbHits === 0 ? <div className="no-results">There are no results for {searchState.query}, would you like to <a target="_blank" href={`https://airtable.com/shrV656H340zjGWi4?prefill_word=`+searchState.query}>add this word?</a></div> : children) 
+  // Then, if there is a query, results, but no result returned
+  : (
+    <div className="font-size--small"><i>Cool people previously searched for <Link to="kepepet">kepepet</Link>, <Link to="gokil">gokil</Link> or <Link to="gelar-tikar">Gelar tikar</Link></i></div>
+  ) 
 );
 
 export default ({ data }) => {
@@ -25,7 +29,7 @@ export default ({ data }) => {
       <SEO title="My journey learning Indonesian" />
       <Layout>
         <Header />
-        
+
         <InstantSearch 
           searchClient={searchClient} 
           indexName="Words"
@@ -40,8 +44,7 @@ export default ({ data }) => {
             <Hits hitComponent={Searchhit}/>
           </Results>
         </InstantSearch>
-        <Concepts title="Some recent tips" />
-
+        <Concepts title="Latest from the blog" />
         {data.allAirtable.nodes.map((session, index) => (
           <Session
             key={index}
