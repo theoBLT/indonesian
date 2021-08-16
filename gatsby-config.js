@@ -4,8 +4,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `CelotehBahsa: let's learn Indonesian together`,
-    description: `Join my journey learning the Indonesian language.`,
+    title: `Learn casual Indonesian with CelotehBahasa`,
+    description: `Your reference for the Indonesian that people *actually* speak!`,
     author: `@theoblochet`,
     url: `https://celotehbahasa.com`,
     siteUrl: `https://celotehbahasa.com`,

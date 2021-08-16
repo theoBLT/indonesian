@@ -5,6 +5,7 @@
   --darkred: #803234;
   --darkerred: #4d1e1f;
   --grey: grey;
+  --lightgrey: rgba(229, 229, 229, 0.66);
   --white: #ffffff;
   --black: #000000cc;
 }
@@ -64,8 +65,8 @@ a {
   font-weight: 600;
 }
 
-.date {
-  color: var(--grey);
+.small-subtitle {
+  color: var(--grey)!important;
   margin-bottom: 20px;
 }
 
@@ -150,6 +151,14 @@ a {
 }
 
 .article {
+  font-size: 1.2em;
+  line-height: 1.44em;
+  max-width: 45ch;
+  margin: auto;
+  margin-top: 80px;
+}
+
+.dictionary-definition {
   font-size: 1.2em;
   line-height: 1.44em;
   max-width: 45ch;
@@ -348,13 +357,18 @@ footer {
   color: var(--darkred);
 }
 
-/* Hack to target just the back arrow */
-.article > a {
+/* Hack to target just the back arrow in blog articles and definition pages */
+.article > a , .dictionary-definition > a{
   text-decoration: none;
 }
 
 #concept li {
   font-size: 1.15em;
+  list-style: none;
+}
+
+#concept ul {
+  margin-left:0;
 }
 
 #concept {
@@ -406,7 +420,7 @@ footer {
 }
 
 .searchresult:hover {
-  background: rgba(229, 229, 229, 0.66);
+  background:var(--lightgrey);
 }
 
 .result-word {
@@ -429,4 +443,22 @@ footer {
 
 .result-arrow {
   color:var(--black)!important;
+}
+
+/* Styling dictionary definitions */
+
+.dictionary-definition  blockquote {
+  background-color: var(--lightgrey);
+  margin-top:2em;
+  margin-left:0;
+  line-height: 1.5;
+  padding:1em;
+}
+
+.dictionary-definition .small-subtitle {
+  margin-top:-100px;
+}
+
+.dictionary-translation {
+  font-weight:600;
 }

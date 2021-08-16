@@ -6,19 +6,21 @@ import SEO from "../components/seo"
 import { Link } from "gatsby"
 
 export default function Template({ data }) {
+const {word, type, translation, example} = data.airtable.data
 
   return (
     <>
-      <SEO title={data.airtable.data.word}/>
+      <SEO title={word}/>
       <Layout>
         <Header short="true" />
-        <div className="article">
+        <div className="dictionary-definition">
           <Link to="/">
             <h2 className="backarrow">←</h2>
           </Link>
-          <h1>{data.airtable.data.word}</h1>
-          {data.airtable.data.type}, {data.airtable.data.translation}
-          <blockquote>{data.airtable.data.example}</blockquote>
+          <h1>{word}</h1>
+          <span className="dictionary-translation">{translation}</span> {" • "}
+          <span className="small-subtitle">{type}</span>
+          <blockquote>{example}</blockquote>
         </div>
       </Layout>
     </>
@@ -39,5 +41,4 @@ query ($record_id: String!) {
     recordId
   }
 }
-
 `

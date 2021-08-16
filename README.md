@@ -22,5 +22,4 @@ I'd like to make one page per word, or one page per expression I learn, and SEO 
 Using JSX, I'd like to help deconstruct some common sentences in Indonesian. Then, growing from there, I'd like to use that same syntax highlighting work to help people make sense of entire YouTube transcripts or Blogs. That way you'd come to this site to read interesting content pulled from elsewhere, with a layer of understanding added for second language learners. 
 
 
-
 Note to self: I was forced to set an environment variable of `NODE_VERSION=12` in order to deploy to Netlify with Gatsby 3 ( https://stackoverflow.com/questions/66880068/gatsby-3-x-netlify ): will have to be removed eventually as node versions need to move on.

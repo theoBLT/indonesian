@@ -4,16 +4,17 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 function Concepts(props) {
   const { title } = props
   const data = useStaticQuery(graphql`
-    query GetArticles {
-      allMdx(filter: { frontmatter: { article_type: { eq: "article" } } }) {
-        nodes {
-          frontmatter {
-            title
-            path
-          }
+  query GetArticles {
+    allMdx(filter: {frontmatter: {article_type: {eq: "article"}}}) {
+      nodes {
+        frontmatter {
+          title
+          path
         }
+        excerpt
       }
     }
+  }  
   `)
   return (
     <div id="concept">
@@ -23,7 +24,8 @@ function Concepts(props) {
           <li>
             <Link key={i} to={node.frontmatter.path}>
               {node.frontmatter.title}
-            </Link>
+            </Link> <br/>
+            {node.excerpt}
           </li>
         ))}
       </ul>
