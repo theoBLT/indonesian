@@ -3,7 +3,6 @@ import { useStaticQuery, graphql} from "gatsby"
 
 function Definition(props) {
   const { translation, example, type, rank } = props
-  console.log(`Rank is ${rank}`)
 //   const data = useStaticQuery(graphql`
 //   query GetArticles {
 //     allMdx(filter: {frontmatter: {article_type: {eq: "article"}}}) {
