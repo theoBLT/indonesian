@@ -46,6 +46,7 @@ module.exports = {
           {
             baseId: `appGmWAihDWDGn2kP`,
             tableName: `words`,
+            tableLinks: [`extra_definitions`],
             createSeparateNodeType: true,
           },
           {
@@ -58,6 +59,10 @@ module.exports = {
             separateMapType: true,
             // createSeparateNodeType: true,
           },
+          {
+            baseId: `appGmWAihDWDGn2kP`,
+            tableName: `extra_definitions`
+          }
         ],
       },
     },
