@@ -19,7 +19,7 @@ const Results = connectStateResults(({ searchState, searchResults, children }) =
     searchResults && searchResults.nbHits === 0 ? <div className="no-results">There are no results for {searchState.query}, would you like to <a target="_blank" href={`https://airtable.com/shrV656H340zjGWi4?prefill_word=`+searchState.query}>add this word?</a></div> : children) 
   // Then, if there is a query, results, but no result returned
   : (
-    <div className="font-size--small"><i>Cool people previously searched for <Link to="kepepet">kepepet</Link>, <Link to="gokil">gokil</Link> or <Link to="gelar-tikar">gelar tikar</Link>.</i></div>
+    <div className="font-size--small"><i>Learners before you searched for <Link to="kepepet">kepepet</Link>, <Link to="gokil">gokil</Link> or <Link to="gelar-tikar">gelar tikar</Link>.</i></div>
   ) 
 );
 

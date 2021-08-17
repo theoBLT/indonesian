@@ -396,7 +396,7 @@ input[type=search]{
 .ais-Hits-item { 
   list-style-type: none;
   margin-bottom:0px!important;
-  font-size:22px;
+  font-size:var(--funit);
 }
 
 .ais-Hits, .ais-Hits-list {
@@ -408,30 +408,34 @@ input[type=search]{
   align-items:flex-start;
   text-decoration: none!important;
   padding:0px 16px ;
-  height:60px;
+  height:calc(var(--funit)*2.5);
   overflow:hidden;
   white-space: nowrap;
   align-items: center;
+  margin-bottom:0;
 }
 
 .searchresult:hover {
   background:var(--lightgrey);
 }
 
+.searchresult > * {
+  margin-right:calc(var(--funit)/2);
+  margin-bottom:0;
+}
+
 .result-word {
   color:var(--red) !important;
-  margin-right:6px;
 }
 
 .result-translation {
   color:var(--black)!important;
-  margin: 0px 6px;
+  /* margin: 0px calc(var(--funit)/2); */
   
 }
 
 .result-example {
   color:var(--grey)!important;
-  margin: 0px 6px;
   text-overflow: ellipsis;
 }
 
