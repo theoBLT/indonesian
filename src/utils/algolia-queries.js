@@ -1,21 +1,21 @@
 const escapeStringRegexp = require("escape-string-regexp")
 const indexName = `Words`
 const wordsQuery = `{
-    allAirtable {
-      edges {
-        node {
-          data {
-            slug
-            translation
-            word
-            type
-            example
-          }
-          objectID: recordId
+  allAirtable(filter: {table: {eq: "words"}}) {
+    edges {
+      node {
+        data {
+          slug
+          translation
+          word
+          type
+          example
         }
+        objectID: recordId
       }
     }
   }
+}
   `
   function wordToAlgoliaRecord({ node: { objectID, data} }) {
     return {
