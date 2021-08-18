@@ -358,10 +358,6 @@ footer {
   margin-left:0;
 }
 
-#concept {
-  margin: 48px 0px;
-}
-
 /* Everything related to search */ 
 
 .ais-SearchBox, .ais-SearchBox-form, .ais-SearchBox-input {
@@ -460,4 +456,20 @@ input[type=search]{
 
 .dictionary-translation {
   font-weight:600;
+}
+
+/* New 2-cells layout */
+
+.grid-row {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.wotd {
+  background-color: #fef1f0;
+  padding:0px var(--vunit);
+}
+
+.wotd h1 {
+  color:var(--darkerred)
 }

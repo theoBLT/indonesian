@@ -5,6 +5,7 @@ import Header from "../components/header"
 import Concepts from "../components/concepts"
 import Session from "../components/session"
 import Searchhit from "../components/searchhit"
+import WordOfTheDay from "../components/wordoftheday"
 import SEO from "../components/seo"
 import Footer from "../components/footer"
 import algoliasearch from 'algoliasearch/lite';
@@ -12,16 +13,21 @@ import { InstantSearch, SearchBox, Hits, connectStateResults } from 'react-insta
 
 const searchClient = algoliasearch('KNGW4E76GQ', '303d6ed1f7af0462583d12f07a871e04');
 
-const Results = connectStateResults(({ searchState, searchResults, children }) =>
+const Results = connectStateResults(({ searchState, searchResults, children }) => (
   // If there is a state and a query
   searchState && searchState.query ? ( 
-    // If that query returned zero results
-    searchResults && searchResults.nbHits === 0 ? <div className="no-results">There are no results for {searchState.query}, would you like to <a target="_blank" href={`https://airtable.com/shrV656H340zjGWi4?prefill_word=`+searchState.query}>add this word?</a></div> : children) 
+
+  // If that query returned zero results
+    searchResults && searchResults.nbHits === 0 ? 
+    <div className="no-results">
+      There are no results for {searchState.query}, would you like to <a target="_blank" href={`https://airtable.com/shrV656H340zjGWi4?prefill_word=`+searchState.query}>add this word?</a></div> 
+      : children) 
+  
   // Then, if there is a query, results, but no result returned
   : (
     <div className="font-size--small"><i>Learners before you searched for <Link to="kepepet">kepepet</Link>, <Link to="gokil">gokil</Link> or <Link to="gelar-tikar">gelar tikar</Link>.</i></div>
   ) 
-);
+));
 
 export default ({ data }) => {
   return (
@@ -44,7 +50,18 @@ export default ({ data }) => {
             <Hits hitComponent={Searchhit}/>
           </Results>
         </InstantSearch>
+       
+        <div class ="grid-row">
         <Concepts title="Latest from the blog" />
+        <WordOfTheDay 
+          word="Kepepet"
+          translation="desparate"
+          type="adjective"
+          example="Ngak ada figuran yang pacaran figuran lain. Kecuali kepepet!"
+          />
+        </div>
+
+
         <h1>Learning in progress</h1>
         {data.allAirtable.nodes.map((session, index) => (
           <Session
