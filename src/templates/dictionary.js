@@ -10,7 +10,10 @@ export default function Template({ data }) {
 const {word, type, translation, example, extra_definitions} = data.airtable.data
   return (
     <>
-      <SEO title={word}/>
+      <SEO 
+        title={`${word} — Definition of ${word} in Indonesian`}
+        description={`Meaning of ${word} in Indonesian`}
+        />
       <Layout>
         <Header short="true" />
         <div className="dictionary-definition">

@@ -32,7 +32,7 @@ const Results = connectStateResults(({ searchState, searchResults, children }) =
 export default ({ data }) => {
   return (
     <>
-      <SEO title="Learn casual Indonesian with CelotehBahasa.com" />
+      <SEO />
       <Layout>
         <Header />
 
