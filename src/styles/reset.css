@@ -23,22 +23,22 @@ h4 {
 }
 
 h3 {
-  font-size:calc(var(--funit)*1.4);
-  line-height:calc(var(--vunit)*2);
+  font-size:calc(var(--funit)*1.2);
+  line-height:calc(var(--vunit)*1.4);
   /* margin-top:calc(var(--vunit)*4);
   margin-bottom:calc(var(--vunit)*2); */
 }
 
 h2 {
-  font-size:calc(var(--funit)*1.96);
+  font-size:calc(var(--funit)*1.44);
   line-height:calc(var(--vunit)*2);
   /* margin-top:calc(var(--vunit)*4);
   margin-bottom:calc(var(--vunit)*2); */
 }
 
 h1 {
-  font-size:calc(var(--funit)*2.744);
-  line-height:calc(var(--vunit)*3);
+  font-size:calc(var(--funit)*1.728);
+  line-height:calc(var(--vunit)*2);
   letter-spacing: -0.06rem;
   /* margin-top:calc(var(--vunit)*6);
   margin-bottom:calc(var(--vunit)*3); */

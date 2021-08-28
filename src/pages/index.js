@@ -43,7 +43,7 @@ export default ({ data }) => {
 
           <SearchBox 
           translations={{
-            placeholder: 'Search for any Indonesian word...',
+            placeholder: 'Search any word...',
           }}/>
 
           <Results>
