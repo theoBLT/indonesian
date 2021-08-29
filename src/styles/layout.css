@@ -463,12 +463,13 @@ input[type=search]{
 .grid-row {
   display:grid;
   grid-gap:var(--vunit);
-  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
 }
 
 .wotd {
   background-color: #fef1f0;
   padding:0px var(--vunit);
+  max-height:calc(var(--vunit)*16);
 }
 
 .wotd h1 {

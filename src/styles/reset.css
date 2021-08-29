@@ -37,11 +37,11 @@ h2 {
 }
 
 h1 {
-  font-size:calc(var(--funit)*1.728);
+  font-size:calc(var(--funit)*2.0736);
   line-height:calc(var(--vunit)*2);
   letter-spacing: -0.06rem;
-  /* margin-top:calc(var(--vunit)*6);
-  margin-bottom:calc(var(--vunit)*3); */
+  margin-top:calc(var(--vunit)*2);
+  /* margin-bottom:calc(var(--vunit)*3); */
 }
 
 article,

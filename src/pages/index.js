@@ -43,7 +43,7 @@ export default ({ data }) => {
 
           <SearchBox 
           translations={{
-            placeholder: 'Search any word...',
+            placeholder: 'Search for any word...',
           }}/>
 
           <Results>
@@ -52,10 +52,10 @@ export default ({ data }) => {
         </InstantSearch>
        
         <div class ="grid-row">
-        <Concepts title="Latest from the blog" />
+        <Concepts title="From the blog" />
         <WordOfTheDay 
           word="Kepepet"
-          translation="desparate"
+          translation="desperate"
           type="adjective"
           example="Ngak ada figuran yang pacaran figuran lain. Kecuali kepepet!"
           />
