@@ -25,15 +25,15 @@ h4 {
 h3 {
   font-size:calc(var(--funit)*1.2);
   line-height:calc(var(--vunit)*1.4);
-  /* margin-top:calc(var(--vunit)*4);
-  margin-bottom:calc(var(--vunit)*2); */
+  margin-top:calc(var(--vunit)*1.5);
+  margin-bottom:calc(var(--vunit)*.5);
 }
 
 h2 {
   font-size:calc(var(--funit)*1.44);
   line-height:calc(var(--vunit)*2);
-  /* margin-top:calc(var(--vunit)*4);
-  margin-bottom:calc(var(--vunit)*2); */
+  margin-top:calc(var(--vunit)*1);
+  margin-bottom:calc(var(--vunit)*.5);
 }
 
 h1 {
