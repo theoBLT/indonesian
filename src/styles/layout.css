@@ -475,3 +475,22 @@ input[type=search]{
 .wotd h1 {
   color:var(--darkerred)
 }
+
+/* Components for translations  */
+
+.syntax-component:hover {
+  text-decoration: underline dashed;
+  cursor: pointer;
+}
+
+.discourse-particle {
+  color:blue;
+}
+
+.verb {
+  color:green;
+}
+
+.nya {
+  color:orange;
+}
