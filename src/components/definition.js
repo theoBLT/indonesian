@@ -1,21 +1,8 @@
 import React from "react"
-import { useStaticQuery, graphql} from "gatsby"
+import { Phrase } from "../components/article-bits/phrase"
 
 function Definition(props) {
-  const { translation, example, type, rank } = props
-//   const data = useStaticQuery(graphql`
-//   query GetArticles {
-//     allMdx(filter: {frontmatter: {article_type: {eq: "article"}}}) {
-//       nodes {
-//         frontmatter {
-//           title
-//           path
-//         }
-//         excerpt
-//       }
-//     }
-//   }  
-//   `)
+  const { translation, example, type, rank, mapping } = props
   return (
       
       <>
@@ -23,7 +10,7 @@ function Definition(props) {
       {typeof rank !== 'undefined' ? <h3>{rank+2}.</h3> :''}
         <span className="dictionary-translation">{translation}</span> {" • "}
         <span className="small-subtitle">{type}</span>
-        <blockquote>{example}</blockquote>
+        <blockquote>{mapping?<Phrase original={example} mapping={mapping}/>:example}</blockquote>
       </>
   )
 }

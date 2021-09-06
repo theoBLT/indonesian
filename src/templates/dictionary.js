@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 import { Link } from "gatsby"
 
 export default function Template({ data }) {
-const {word, type, translation, example, extra_definitions} = data.airtable.data
+const {word, type, translation, example, extra_definitions, example_mapping} = data.airtable.data
   return (
     <>
       <SEO 
@@ -21,11 +21,13 @@ const {word, type, translation, example, extra_definitions} = data.airtable.data
             <h2 className="backarrow">←</h2>
           </Link>
           <h1>{word}</h1>
+          {/* If there's more than one definition, show a number */}
           {extra_definitions ? <h3>1.</h3> :''}
           <Definition 
           translation={translation}
           type={type}
           example={example}
+          mapping={JSON.parse(example_mapping)}
           />
           {extra_definitions ? extra_definitions.map((record,index) => (
           <Definition 
@@ -52,6 +54,7 @@ query ($record_id: String!) {
       translation
       session
       example
+      example_mapping
       extra_definitions {
         data {
           translation

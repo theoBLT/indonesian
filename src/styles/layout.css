@@ -520,3 +520,7 @@ input[type=search]{
 .phrase {
   margin-bottom:var(--vunit)!important;
 }
+
+.ber, .di {
+  color: purple;
+}
