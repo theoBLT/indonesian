@@ -483,14 +483,40 @@ input[type=search]{
   cursor: pointer;
 }
 
-.discourse-particle {
+.discourse_particle {
   color:blue;
+}
+
+.highlight-discourse_particle {
+  color: lightskyblue;
 }
 
 .verb {
   color:green;
 }
 
+.highlight-verb {
+  color: lightseagreen;
+}
+
 .nya {
   color:orange;
+}
+
+.highlight-possessive {
+  color: lightsalmon;
+}
+
+.word-highlight {
+    font-size: 20px !important;
+    pointer-events: auto !important;
+}
+
+.word-highlight:hover {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.phrase {
+  margin-bottom:var(--vunit)!important;
 }

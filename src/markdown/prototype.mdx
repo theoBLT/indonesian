@@ -15,7 +15,7 @@ So here's our attempt at syntax coloring:
     translation="How come she's bold enough to borrow money from her parents?"
      mapping={[
         ["Kok","discourse_particle",""],
-        ["brani","adjective","dare"],
+        ["brani","adjective","dare","berani"],
         ["sih","discourse_particle",""],
         ["ampe","adverb","until",""],
         ["pinjem","verb","borrow"],
@@ -30,7 +30,5 @@ So here's our attempt at syntax coloring:
 What we've done above is highlight with different colors the different components of a sentence. 
 
 What I'll want to do next is to:
-* Refactor the components so instead of 1 per type of component, there is 1 overarching component I can call for each word. This will allow me to assign it a `key` as I map through the array, so that the toolips can have unique names. It'll also a void a lot of code duplication. 
-* Once that is done, I'll want to have each translation for each word show up inside the tooltip. 
 * Then, to make all this _really_ powerful, I will link the words inside the sentences to individual words, first by adding a link to the slug if it exists. 
 * Finally, I could also use that same `Phrase` component inside my `definitions`! That way people can use the example sentences for my definitions as a way of navigating and learning new words. 

@@ -1,61 +1,34 @@
 import React from "react"
 import ReactTooltip from "react-tooltip"
+import {Link} from "gatsby"
 
-export const DiscourseParticle = props => {
-    return (
-    <>
-    <span data-tip data-for="discourseParticleTip" className="syntax-component discourse-particle">{props.children}</span>
-    <ReactTooltip id="discourseParticleTip" place="top" effect="solid">
-        Discourse particle
-    </ReactTooltip>
-    </>
-    );
-}
+export const WordHighlight = props => {
+    const {rank, children, type, translation, link } = props;
+    console.log(link);
+    let tooltip_content = translation;
+    let content = <>{children}</>;
+    let short_type = "n";
 
-export const Verb = props => {
-    return (
-    <span className="syntax-component verb">{props.children}</span>
-    );
-}
-
-export const Adjective = props => {
-    return (
-    <span className="syntax-component adjective">{props.children}</span>
-    );
-}
-
-export const Noun = props => {
-    return (
-    <span className="syntax-component noun">{props.children}</span>
-    );
-}
-
-export const Preposition = props => {
-    return (
-    <span className="syntax-component preposition">{props.children}</span>
-    );
-}
-
-export const Adverb = props => {
-    return (
-    <span className="syntax-component adverb">{props.children}</span>
-    );
-}
-
-export const Punctuation = props => {
-    return (
-    <span className="syntax-component punctuation">{props.children}</span>
-    );
-}
-
-export const Possessive = props => {
-    const word = props.children;
-    const beginning = word.slice(0,-3);
-    const highlighted = word.slice(-3);
+    // Defining highlight content and tooltip content per word type
+    switch(type){
+        case "discourse_particle":
+            tooltip_content=children
+            short_type ="dp"
+            break;
+        case "possessive":
+            const beginning = children.slice(0,-3);
+            const highlighted = children.slice(-3);
+            content = <>{beginning}<span className="nya">{highlighted}</span></>
+            short_type="n"
+            break;
+    }    
 
     return (
-        <span className="syntax-component possessive">
-            {beginning}<span className="nya">{highlighted}</span>
-        </span>
+        <>
+        <span data-tip data-for={`${rank}`} className={`syntax-component ${type}`}>{content}</span>{type=="puncutation"?"":" "}
+        <ReactTooltip delayHide={100} delayShow={100} className="word-highlight" id={`${rank}`} globalEventOff='click'  place="top" effect="solid">
+            <span className={`highlight-${type}`}>{short_type}</span> • {tooltip_content} {link?<Link to={`/${link}`}>def</Link>:''}
+        </ReactTooltip>
+        </>
     )
 }
