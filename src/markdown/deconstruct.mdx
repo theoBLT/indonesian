@@ -6,6 +6,8 @@ date: "2021-07-06"
 article_type: "article"
 ---
 
+import {Phrase} from "../components/article-bits/phrase";
+
 I found this Amazing book [via Reddit](https://www.reddit.com/r/indonesian/comments/odgmy8/more_info_jakarta_dialect/): [Colloquial Jakartan Indonesian](https://www.amazon.com/Colloquial-Jakartan-Indonesian-Pacific-Linguistics/dp/0858835711), by [James Sneddon](https://en.wikipedia.org/wiki/James_Sneddon).
 
 In it, the Author deconstructs quoloquial Indonesian this way:
@@ -22,6 +24,26 @@ Beyond correct translations into English, Sneddon also helps you understand how 
   allowfullscreen
 ></iframe>
 
-Next, I'll make a "code" version of that figma prototype, and make it easy for folks to explore colloquial Indonesian text that's new to them. Very excited about that!
+For fun, below, I translated this way of deconstructing sentences into actual code: 
+
+<Phrase 
+    original="Kok brani sih ampe pinjem duit ke orangtuanya gitu?"
+    translation="How come she's bold enough to borrow money from her parents?"
+     mapping={[
+        ["Kok","discourse_particle",""],
+        ["brani","adjective","dare","berani"],
+        ["sih","discourse_particle",""],
+        ["ampe","adverb","until",""],
+        ["pinjem","verb","borrow"],
+        ["duit","noun","money"],
+        ["ke","preposition","to"],
+        ["orangtuanya","possessive","her parents"],
+        ["gitu","adverb","thus"],
+        ["?","punctuation",""]
+        ]}
+   />
+
+Highlight any word above, and you'll see their definition. For words that I already have in my database such as `brani`, you can even jump to a more complete definition. 
+This is going to make it fun to deconstruct colloquial Indonesian down to its individual components. Exciting! 
 
 [image-1]: ../images/colloquial.png
