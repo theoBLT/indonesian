@@ -55,6 +55,7 @@ module.exports = {
             tableLinks: [`words`],
             mapping: {
               intro: `text/markdown`,
+              context: `text/markdown`
             },
             separateMapType: true,
             // createSeparateNodeType: true,

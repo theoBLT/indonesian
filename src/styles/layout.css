@@ -4,6 +4,7 @@
   --red: #c34c4f;
   --darkred: #803234;
   --darkerred: #4d1e1f;
+  --lightred:#fef1f0;
   --grey: grey;
   --lightgrey: rgba(229, 229, 229, 0.66);
   --white: #ffffff;
@@ -442,6 +443,7 @@ input[type=search]{
 
 /* Styling dictionary definitions */
 
+
 .dictionary-definition  blockquote {
   background-color: var(--lightgrey);
   margin-top:2em;
@@ -450,12 +452,36 @@ input[type=search]{
   padding:1em;
 }
 
+blockquote {
+  /* Forcing quotes to be the curly style */
+  quotes: '\201c' '\201d';
+}
+
+.dictionary-definition blockquote:before {
+  font-size: calc(var(--funit)*4);
+  content: open-quote;
+  margin: 24px 0 0 -24px;
+  line-height: 0px;
+}
+
+
+
+
+
 .dictionary-definition .small-subtitle {
   margin-top:-100px;
 }
 
 .dictionary-translation {
   font-weight:600;
+}
+
+.context {
+  border-left: 5px solid var(--darkred);
+  font-size:calc(var(--funit)*0.75);
+  padding-left:24px;
+  margin-top:var(--vunit);
+  background-color:var(--lightred);
 }
 
 /* New 2-cells layout */

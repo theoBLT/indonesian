@@ -20,6 +20,7 @@ export default props => {
                 type = {definition.data.type}
                 translation = {definition.data.translation}
                 example = {definition.data.example}
+                context= {definition.data.context}
                 />
                 )}
             </div>

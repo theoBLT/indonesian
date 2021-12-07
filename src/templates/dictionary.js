@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 import { Link } from "gatsby"
 
 export default function Template({ data }) {
-const {word, type, translation, example, extra_definitions, example_mapping} = data.airtable.data
+const {word, type, translation, example, extra_definitions, example_mapping, context} = data.airtable.data
   return (
     <>
       <SEO 
@@ -28,6 +28,7 @@ const {word, type, translation, example, extra_definitions, example_mapping} = d
           type={type}
           example={example}
           mapping={JSON.parse(example_mapping)}
+          context={context}
           />
           {extra_definitions ? extra_definitions.map((record,index) => (
           <Definition 
@@ -54,6 +55,7 @@ query ($record_id: String!) {
       translation
       session
       example
+      context
       example_mapping
       extra_definitions {
         data {

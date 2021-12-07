@@ -2,7 +2,7 @@ import React, {useState, useLayoutEffect} from "react"
 import {capitalize, getAngles} from "../utils/helpers.js"
 
 export default props =>  {
-    const {word, type, translation, key, example} = props;
+    const {word, type, translation, key, example, context} = props;
     const [visible, setVisible] = useState(false);
     const [angles, setAngles] = useState([]);
 
