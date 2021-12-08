@@ -13,15 +13,7 @@ import "../styles/reset.css"
 const Layout = ({ children }) => {
   return (
     <div className="container">
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0 1.0875rem 1.45rem`,
-          }}
-        >
           <main>{children}</main>
-        </div>
       </div>
     )
 }
