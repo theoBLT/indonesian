@@ -7,8 +7,7 @@ function HeaderTemplate(props) {
   return (
     <div className="header">
       <Link to="/">
-        CB
-        {/* <img src={Logo} alt="CelotehBahsa's logo" /> */}
+        CB.
       </Link>
       <div className="menubar">
         <Link to="about">About</Link>

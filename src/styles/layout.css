@@ -1,7 +1,7 @@
 /* Custom CSS starts here, after the reset */
 
 :root {
-  --red: #c34c4f;
+  --red: #d33a2c;
   --darkred: #803234;
   --darkerred: #4d1e1f;
   --lightred:#fef1f0;
@@ -10,7 +10,7 @@
   --white: #ffffff;
   --black: #000000cc;
   /*Vertical unit*/
-  --vunit: 1.8rem;
+  --vunit: 1.6rem;
   /*Font size unit*/
   --funit: 1.2rem;
 }
@@ -31,7 +31,7 @@ a {
   display: flex;
   justify-content:space-between;
   align-items: center;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 20px;
   background-color:var(--red);
   padding: 6px 20px;
@@ -375,6 +375,10 @@ footer {
   margin-left:0;
 }
 
+#concept a {
+  text-decoration: none;
+}
+
 /* Everything related to search */ 
 
 .ais-SearchBox, .ais-SearchBox-form, .ais-SearchBox-input {
@@ -389,10 +393,9 @@ input[type=search]{
 }
 
 .ais-SearchBox-input {
-  padding-left:var(--vunit);
   font-size:var(--funit);
   border:0px;
-  border-bottom:1px solid var(--black);
+  border-bottom:1px solid var(--grey);
 }
 
 .ais-SearchBox-input:focus {
@@ -505,7 +508,7 @@ blockquote {
 }
 
 .wotd {
-  background-color: #fef1f0;
+  background-color: #d33a2c2e;
   padding:0px var(--vunit);
   max-height:calc(var(--vunit)*16);
 }

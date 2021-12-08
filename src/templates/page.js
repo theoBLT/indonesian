@@ -13,8 +13,8 @@ export default function Template({ data }) {
   return (
     <>
       <SEO title={frontmatter.title} description={excerpt} />
+      <Header short="true" />
       <Layout>
-        <Header short="true" />
         <div className="article">
           <Link to="/">
             <h2 className="backarrow">←</h2>

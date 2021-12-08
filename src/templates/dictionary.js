@@ -12,10 +12,10 @@ const {word, type, translation, example, extra_definitions, example_mapping, con
     <>
       <SEO 
         title={`${word} — Definition of ${word} in Indonesian`}
-        description={`Meaning of ${word} in Indonesian`}
+        description={`Meaning of ${word} in Indonesian. Apa artinya ${word} di bahasa Indonesia?`}
         />
+      <Header short="true" />
       <Layout>
-        <Header short="true" />
         <div className="dictionary-definition">
           <Link to="/">
             <h2 className="backarrow">←</h2>
