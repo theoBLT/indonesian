@@ -34,9 +34,8 @@ export default ({ data }) => {
   return (
     <>
       <SEO />
+      <Header />
       <Layout>
-        <Header />
-
         <InstantSearch 
           searchClient={searchClient} 
           indexName="Words"

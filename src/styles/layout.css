@@ -33,10 +33,26 @@ a {
   align-items: center;
   font-weight: 500;
   margin-bottom: 20px;
+  background-color:var(--red);
+  padding: 6px 20px;
+}
+
+.menubar {
+  margin-bottom:0px;
 }
 
 .header img {
-  max-height: calc(var(--vunit)*1.5);
+  max-height: calc(var(--vunit)*1);
+  margin-bottom:0;
+  color:var(--white);
+  text-decoration: none;
+}
+
+.header a {
+  margin-bottom:0;
+  vertical-align: center;
+  color:var(--white);
+  text-decoration: none;
 }
 
 .container {
@@ -485,7 +501,7 @@ blockquote {
 .grid-row {
   display:grid;
   grid-gap:var(--vunit);
-  grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
 }
 
 .wotd {
