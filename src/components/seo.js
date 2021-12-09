@@ -69,7 +69,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name:`theme-color`,
-          content:`#C34C4F`
+          content:`#d33a2c`
         }
       ].concat(meta)}
     />
