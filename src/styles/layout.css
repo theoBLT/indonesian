@@ -171,7 +171,7 @@ a {
   line-height: 1.44em;
   max-width: 45ch;
   margin: auto;
-  margin-top: 80px;
+  margin-top: 52px;
 }
 
 .article li {
@@ -362,8 +362,15 @@ footer {
 }
 
 /* Hack to target just the back arrow in blog articles and definition pages */
-.article > a , .dictionary-definition > a{
+.article > a , .definition-title > a{
   text-decoration: none;
+  margin-right:32px;
+  margin-bottom:0;
+  margin-top:0;
+}
+
+.definition-title h1, .defintion-title h2 {
+  margin:0;
 }
 
 #concept li {
@@ -490,6 +497,16 @@ blockquote {
 
 .dictionary-translation {
   font-weight:600;
+}
+
+.definition-title {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.backarrow {
+  margin:0px;
 }
 
 .context {

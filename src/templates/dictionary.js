@@ -17,12 +17,15 @@ const {word, type, translation, example, extra_definitions, example_mapping, con
       <Header short="true" />
       <Layout>
         <div className="dictionary-definition">
+          <div className="definition-title">
           <Link to="/">
             <h2 className="backarrow">←</h2>
           </Link>
           <h1>{word}</h1>
+          </div>
           {/* If there's more than one definition, show a number */}
           {extra_definitions ? <h3>1.</h3> :''}
+          <div className="definition-row">
           <Definition 
           translation={translation}
           type={type}
@@ -38,7 +41,7 @@ const {word, type, translation, example, extra_definitions, example_mapping, con
           type={record.data.type}
           example={record.data.example}
           />)):''}
-
+          </div>
         </div>
       </Layout>
     </>
