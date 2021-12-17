@@ -1,6 +1,6 @@
 import React from "react"
 import { Phrase } from "../components/article-bits/phrase"
-import { MDXRenderer } from "gatsby-plugin-mdx"
+import Example from "./example"
 
 function Definition(props) {
   const { translation, example, type, rank, mapping, context } = props
@@ -16,7 +16,10 @@ function Definition(props) {
                   {context}
                 </div>
                 : null}
-        <blockquote>{mapping?<Phrase original={example} mapping={mapping}/>:example}</blockquote>
+        <Example
+          example = {example} 
+          mapping = {mapping} 
+        />
       </>
   )
 }

@@ -7,6 +7,7 @@
   --lightred:#fef1f0;
   --grey: grey;
   --lightgrey: rgba(229, 229, 229, 0.66);
+  --darkergrey: #a6a6a6a8;
   --white: #ffffff;
   --black: #000000cc;
   /*Vertical unit*/
@@ -485,10 +486,10 @@ blockquote {
   quotes: '\201c' '\201d';
 }
 
-.dictionary-definition blockquote:before {
+.dictionary-definition blockquote:nth-child(1):before {
   font-size: calc(var(--funit)*4);
   content: open-quote;
-  margin: 24px 0 0 -24px;
+  margin: 24px 0 0 -30px;
   line-height: 0px;
 }
 
@@ -517,6 +518,34 @@ blockquote {
   margin-top:var(--vunit);
   background-color:var(--lightred);
 }
+
+/* Conversation design when a defintion is a dialog */
+
+.conversation-thread {
+  margin-top:52px;
+  display:flex;
+  flex-direction: column;
+}
+
+.conversation-thread blockquote {
+  border-radius: 16px;
+  max-width: 80%;
+}
+
+.conversation-thread blockquote {
+  margin:36px 0px 0px 0px;
+}
+
+.conversation-thread blockquote:nth-child(even) {
+  background-color: var(--darkergrey);
+  margin-left: auto;
+}
+
+.conversation-thread blockquote:nth-child(1) {
+  margin-top:0px;
+}
+
+
 
 /* New 2-cells layout */
 
