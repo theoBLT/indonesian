@@ -9,9 +9,9 @@ function Example(props) {
       return null;
   }
   
+  // Handling for conversation-style examples
   if (example.startsWith("A: ")){
       splits = example.split(/[AB]: /).slice(1)
-      console.log(splits)
       return (
           <div className="conversation-thread">
           {splits.map(dialogitem => <blockquote>{dialogitem}</blockquote>)}
@@ -19,6 +19,7 @@ function Example(props) {
       ) 
   }
 
+  // For all other examples, use the 'standard' style
   return (
     <blockquote>{mapping?<Phrase original={example} mapping={mapping}/>:example}</blockquote>
   )
