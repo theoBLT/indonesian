@@ -1,8 +1,9 @@
 import React from "react"
 import { Phrase } from "../components/article-bits/phrase"
+import Texthighlight from "./texthighlight"
 
 function Example(props) {
-  const { example, mapping } = props
+  const { word, example, mapping } = props
   let splits
 
   if (!example){
@@ -14,14 +15,14 @@ function Example(props) {
       splits = example.split(/[AB]: /).slice(1)
       return (
           <div className="conversation-thread">
-          {splits.map(dialogitem => <blockquote>{dialogitem}</blockquote>)}
+          {splits.map(dialogitem => <blockquote><Texthighlight highlight={word} paragraph={dialogitem} /></blockquote>)}
           </div>
       ) 
   }
 
   // For all other examples, use the 'standard' style
   return (
-    <blockquote>{mapping?<Phrase original={example} mapping={mapping}/>:example}</blockquote>
+    <blockquote>{mapping?<Phrase original={example} mapping={mapping}/>:<Texthighlight highlight={word} paragraph={example} />}</blockquote>
   )
 }
 

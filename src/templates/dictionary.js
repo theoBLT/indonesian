@@ -28,14 +28,16 @@ const {word, type, translation, example, extra_definitions, example_mapping, con
           <div className="definition-row">
           <Definition 
           translation={translation}
+          word={word}
           type={type}
           example={example}
           mapping={JSON.parse(example_mapping)}
           context={context}
           />
           {extra_definitions ? extra_definitions.map((record,index) => (
-          <Definition 
+          <Definition
           key={index}
+          word={word}
           rank={index}
           translation={record.data.translation}
           type={record.data.type}

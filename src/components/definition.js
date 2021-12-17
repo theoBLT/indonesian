@@ -2,7 +2,7 @@ import React from "react"
 import Example from "./example"
 
 function Definition(props) {
-  const { translation, example, type, rank, mapping, context } = props
+  const { word, translation, example, type, rank, mapping, context } = props
   return (
       
       <>
@@ -17,7 +17,8 @@ function Definition(props) {
                 : null}
         <Example
           example = {example} 
-          mapping = {mapping} 
+          mapping = {mapping}
+          word = {word}
         />
       </>
   )
