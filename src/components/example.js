@@ -4,6 +4,10 @@ import { Phrase } from "../components/article-bits/phrase"
 function Example(props) {
   const { example, mapping } = props
   let splits
+
+  if (!example){
+      return null;
+  }
   
   if (example.startsWith("A: ")){
       splits = example.split(/[AB]: /).slice(1)
