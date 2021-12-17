@@ -95,6 +95,7 @@ export const query = graphql`
               type
               example
               context
+              slug
             }
           }
           intro {

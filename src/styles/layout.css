@@ -90,7 +90,7 @@ a {
 
 .metadata.loaded {
   height: auto;
-  max-height: 200px;
+  max-height: 250px;
 }
 
 .word {
@@ -393,10 +393,11 @@ footer {
   height: 60px;
 }
 
-input[type=search]{
+input[type="search"]{
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   border-radius:0;
+  background-color:white;
 }
 
 .ais-SearchBox-input {

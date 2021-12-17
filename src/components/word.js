@@ -1,8 +1,9 @@
+import { Link } from "gatsby";
 import React, {useState, useLayoutEffect} from "react"
 import {capitalize, getAngles} from "../utils/helpers.js"
 
 export default props =>  {
-    const {word, type, translation, key, example, context} = props;
+    const {word, type, translation, key, example, slug} = props;
     const [visible, setVisible] = useState(false);
     const [angles, setAngles] = useState([]);
 
@@ -29,6 +30,9 @@ export default props =>  {
                         {capitalize(example)}
                     </span>
                 : null}
+                </div>
+                <div className="link-to-definition">
+                    <Link to ={slug}>Read full definition</Link>
                 </div>
              </span>
 

@@ -21,6 +21,7 @@ export default props => {
                 translation = {definition.data.translation}
                 example = {definition.data.example}
                 context= {definition.data.context}
+                slug= {definition.data.slug}
                 />
                 )}
             </div>
