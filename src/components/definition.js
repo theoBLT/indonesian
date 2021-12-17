@@ -1,5 +1,4 @@
 import React from "react"
-import { Phrase } from "../components/article-bits/phrase"
 import Example from "./example"
 
 function Definition(props) {
