@@ -1,4 +1,5 @@
 import React from "react"
+import sanitizeHtml from 'sanitize-html';
 
 function Texthighlight(props) {
   const { highlight, paragraph } = props
@@ -12,11 +13,12 @@ function Texthighlight(props) {
   
   const highlightedWords = splitWords.map((word) => word.toUpperCase() === highlight.toUpperCase()? `<span class ="example-highlight">${word}</span>` : word)
   const joinedWords = highlightedWords.join(' ')
-  console.log(joinedWords);
+  const cleanHtml = sanitizeHtml(joinedWords,{allowedTags: ['span'],allowedAttributes: {
+    span: [ 'class']}});
 
   return (
       <>
-      <span dangerouslySetInnerHTML={{__html: joinedWords}} >
+      <span dangerouslySetInnerHTML={{__html: cleanHtml}} >
       </span>
       </>
   )
