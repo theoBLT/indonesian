@@ -486,16 +486,7 @@ blockquote {
   quotes: '\201c' '\201d';
 }
 
-/* .example-highlight {
-  letter-spacing: -0.5px;
-  padding: 4.5px 6px;
-  margin: 1px -1px;
-  background: rgb(250 250 0 / 67%);
-  border-radius: 3px;
-} */
-
-
-/* Hack to give some realistic effect to highlights */
+/* Hack to give some realistic effect to highlights. Credit https://max.hn/thoughts/how-to-create-a-highlighter-marker-effect-in-css */
 .example-highlight {
   margin: 0 -0.35em;
   padding: 0.1em 0.35em;
@@ -510,8 +501,6 @@ blockquote {
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
-
-
 
 .dictionary-definition blockquote:nth-child(1):before {
   font-size: calc(var(--funit)*4);
