@@ -16,11 +16,12 @@ export default function Template({ data }) {
       <Header short="true" />
       <Layout>
         <div className="article">
+        <div className="definition-title article-title">
           <Link to="/">
             <h2 className="backarrow">←</h2>
           </Link>
           <h1>{frontmatter.title}</h1>
-          
+        </div>
           <MDXRenderer>{body}</MDXRenderer>
 
 
