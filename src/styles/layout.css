@@ -474,8 +474,6 @@ input[type="search"]{
 
 .dictionary-definition  blockquote {
   background-color: var(--lightgrey);
-  /* margin-top:2em;
-  margin-left:0; */
   margin: 48px 0px;
   line-height: 1.5;
   padding:1em;
@@ -502,7 +500,7 @@ blockquote {
   box-decoration-break: clone;
 }
 
-.dictionary-definition blockquote:nth-child(1):before {
+.dictionary-definition blockquote:nth-of-type(1):before {
   font-size: calc(var(--funit)*4);
   content: open-quote;
   margin: 24px 0 0 -30px;
@@ -552,7 +550,7 @@ blockquote {
   margin:36px 0px 0px 0px;
 }
 
-.conversation-thread blockquote:nth-child(even) {
+.conversation-thread blockquote:nth-of-type(even) {
   background-color: var(--darkergrey);
   margin-left: auto;
 }
