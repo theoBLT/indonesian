@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import Logo from "../images/celotehbahasa.svg"
 
 function HeaderTemplate(props) {
   const { short } = props
