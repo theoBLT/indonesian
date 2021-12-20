@@ -10,6 +10,18 @@ export default props =>  {
     useLayoutEffect(()=>{
         return setAngles(getAngles());
     },[]);
+
+    if ( !type | !translation ){
+        // If the word is incomplete, only show a link to the target word, no expandable.
+        return (
+        <div key={key} className = "definition">
+        <Link to ={slug}>
+        <a className="word" style={{clipPath:`polygon(`+angles[0]+`% 0%, 100% 2%,`+ angles[1]+`% 100%, 0% 99%)`}} onClick={() => setVisible(!visible)}>
+                {capitalize(word)}
+        </a>
+        </Link>
+        </div>)
+    }
     
     return (
         <div key={key} className = "definition">

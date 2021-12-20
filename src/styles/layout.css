@@ -112,6 +112,14 @@ a {
   /* line-height: 0.9; */
 }
 
+.definition > a {
+  text-decoration:none!important;
+}
+
+a .word {
+  text-decoration:none!important;
+}
+
 .word:hover {
   background-color: var(--darkred);
   border: 0px;

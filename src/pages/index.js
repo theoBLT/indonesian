@@ -7,6 +7,7 @@ import Session from "../components/session"
 import WordOfTheDay from "../components/wordoftheday"
 import SEO from "../components/seo"
 import Footer from "../components/footer"
+import Word from "../components/word"
 
 export default ({ data }) => {
   return (
@@ -14,8 +15,19 @@ export default ({ data }) => {
       <SEO />
       <Header />
       <Layout>
-       
-        <div class ="grid-row">
+      <div className ="row">
+        <h1>Some recent favorites</h1>
+        <div className="wordsList">
+        <Word word="Patungan" slug="patungan"/>
+        <Word word="Baper" slug="baper"/>
+        <Word word="SBB" slug="sbb"/>
+        <Word word="Santuy" slug="santuy"/>
+        <Word word="Mumpung" slug="mumpung"/>
+        <Word word="TBL" slug="tbl"/>
+        <Word word="Nyempil" slug="nyempil"/>
+      </div>
+      </div>
+        <div className ="grid-row">
         <Concepts title="From the blog" />
         <WordOfTheDay 
           word="Kepepet"
