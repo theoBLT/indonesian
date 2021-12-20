@@ -1,8 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-function HeaderTemplate(props) {
-  const { short } = props
+function HeaderTemplate() {
   return (
     <div className="header">
       <Link to="/">
