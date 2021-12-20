@@ -9,13 +9,14 @@ export default () => {
   return (
     <>
       <SEO title="My journey learning Indonesian" />
-      <Layout>
-        <Header />
+      <Header />
+      <Layout> 
+    
         <div id="intro">
         <div id="avatar">
           <img
             src="https://pbs.twimg.com/profile_images/1322835228197556224/jJwEyHUX_400x400.png"
-            alt="A portrait of Théo Blochet"
+            alt="A picture of Théo Blochet"
           />
         </div>
 
