@@ -51,12 +51,35 @@ a {
   text-decoration: none;
 }
 
-.header a {
+.header > a{
   grid-column: 1 / 2;
+}
+
+.header a {
   margin-bottom:0;
   vertical-align: center;
   color:var(--white);
   text-decoration: none;
+}
+
+.search-box {
+  display:inline-flex;
+  margin:0;
+}
+
+#add-word {
+  margin:0;
+  height:52px;
+  border:1px solid var(--white);
+  border-radius:4px;
+  margin-left:6px;
+  padding: 0 6px;
+  font-weight:400;
+  line-height:52px;
+}
+
+#add-word:hover {
+  background-color:var(--darkred);
 }
 
 .container {
@@ -259,15 +282,17 @@ footer {
 
 @media screen and (max-width:600px) {
 
-  .ais-SearchBox {
+  .search-box {
     grid-column: 1/4;
     grid-row:2/3;
-  }
-
-  input[type="search"] {
-    width: 100%;
+    justify-content: center;
     margin:12px 0;
   }
+
+  input[type="search"]{
+    width: 100%;
+  }
+
   
 }
 
