@@ -38,7 +38,7 @@ function HeaderTemplate() {
           translations={{
             placeholder: 'Search any word...',
           }} />
-        <a href={`https://airtable.com/shrV656H340zjGWi4`} id="add-word">Add word</a>
+        <a href={`https://airtable.com/shrV656H340zjGWi4`} id="add-word">+</a>
         </div>
 
         <div className="menubar">
