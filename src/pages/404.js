@@ -7,9 +7,10 @@ import SEO from "../components/seo"
 import { Link } from "gatsby"
 
 const NotFoundPage = () => (
-  <Layout>
-    <Header short="true" />
+  <>
+  <Header short="true" />
     <SEO title="404: Not found" />
+  <Layout>
     <h3>This page doesn't exist</h3>
     <p>
       It must be my mistake for directing you to a missing page, I probably
@@ -24,6 +25,7 @@ const NotFoundPage = () => (
 
     <Footer />
   </Layout>
+  </>
 )
 
 export default NotFoundPage
