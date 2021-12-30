@@ -5,7 +5,7 @@ import { Highlight } from "react-instantsearch-dom"
 const Searchhit = (props) => {
     const {hit} = props
   return (
-    <Link to={hit.slug} className="searchresult">
+    <Link to={`/`+ hit.slug} className="searchresult">
         
         <span className="result-word">
             <Highlight hit={hit} attribute="word" tagName="mark"/> 
