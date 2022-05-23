@@ -16,7 +16,7 @@ export default ({ data }) => {
       <Header />
       <Layout>
         <div className="row">
-          <p>
+          <p className="subtitle">
             Celoteh Bahasa is a complete dictionnary of “
             <span className="example-highlight">Bahasa Indonesia gaul</span>”
             (colloquial Indonesian) brought to you by a Bule learning the
@@ -29,13 +29,13 @@ export default ({ data }) => {
           <h1>Some recent favorites</h1>
 
           <div className="wordsList">
-            <Word word="Patungan" slug="patungan" />
-            <Word word="Baper" slug="baper" />
+            <Word word="Warteg" slug="warteg" />
+            <Word word="Ya udah, sana!" slug="ya-udah-sana" />
             <Word word="SBB" slug="sbb" />
             <Word word="Santuy" slug="santuy" />
-            <Word word="Mumpung" slug="mumpung" />
+            <Word word="Dempet-dempetan" slug="dempet-dempetan" />
             <Word word="TBL" slug="tbl" />
-            <Word word="Nyempil" slug="nyempil" />
+            <Word word="Pelampiasan" slug="pelampiasan" />
           </div>
         </div>
         <div className="grid-row">
