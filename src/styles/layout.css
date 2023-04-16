@@ -4,7 +4,7 @@
   --red: #d33a2c;
   --darkred: #803234;
   --darkerred: #4d1e1f;
-  --lightred:#fef1f0;
+  --lightred: #fef1f0;
   --grey: grey;
   --lightgrey: rgba(229, 229, 229, 0.66);
   --darkergrey: #a6a6a6a8;
@@ -16,12 +16,31 @@
   --funit: 1.2rem;
 }
 
-html {
-   font-family:'Bitter','Times New Roman', Times, serif;
- }
+/* Media queries for different screen sizes */
+@media screen and (max-width: 768px) {
+  :root {
+    --sidemargins: 1.25rem;
+  }
+}
 
-h1,h2,h3,h4,h5,h6 {
-  font-family:'Work Sans', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+@media screen and (min-width: 768px) {
+  :root {
+    --sidemargins: 5rem;
+  }
+}
+
+html {
+  font-family: "Bitter", "Times New Roman", Times, serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Work Sans", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
 }
 
 a {
@@ -30,68 +49,68 @@ a {
 
 .header {
   display: grid;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
   font-weight: 600;
   margin-bottom: 20px;
-  background-color:var(--red);
-  padding: 6px 20px;
+  background-color: var(--red);
+  padding: 6px var(--sidemargins);
   font-size: var(--funit);
 }
 
 .menubar {
   grid-column: 3 / 4;
-  margin-bottom:0px;
+  margin-bottom: 0px;
 }
 
 .header img {
-  max-height: calc(var(--vunit)*1);
-  margin-bottom:0;
-  color:var(--white);
+  max-height: calc(var(--vunit) * 1);
+  margin-bottom: 0;
+  color: var(--white);
   text-decoration: none;
 }
 
-.header > a{
+.header > a {
   grid-column: 1 / 2;
 }
 
 .header a {
-  margin-bottom:0;
+  margin-bottom: 0;
   vertical-align: center;
-  color:var(--white);
+  color: var(--white);
   text-decoration: none;
 }
 
 .search-box {
-  display:inline-flex;
-  margin:0;
+  display: inline-flex;
+  margin: 0;
 }
 
 #add-word {
-  margin:0;
-  height:52px;
-  border:1px solid var(--white);
-  border-radius:4px;
-  margin-left:6px;
+  margin: 0;
+  height: 52px;
+  border: 1px solid var(--white);
+  border-radius: 4px;
+  margin-left: 6px;
   padding: 0 18px;
-  font-weight:400;
-  line-height:52px;
+  font-weight: 400;
+  line-height: 52px;
 }
 
 #add-word:hover {
-  background-color:var(--darkred);
+  background-color: var(--darkred);
 }
 
 .container {
-  margin: 0 18px;
+  margin: 0 var(--sidemargins);
 }
 
 .subtitle {
-  font-size:var(--funit);
+  font-size: var(--funit);
 }
 
 .session {
-  margin-bottom: calc(var(--vunit)*3);
+  margin-bottom: calc(var(--vunit) * 3);
 }
 
 .wordsList {
@@ -103,7 +122,7 @@ a {
 }
 
 .small-subtitle {
-  color: var(--grey)!important;
+  color: var(--grey) !important;
 }
 
 .metadata {
@@ -126,7 +145,7 @@ a {
   display: inline-flex;
   border: none;
   color: #fff;
-  font-size: calc(var(--funit)*1.5);
+  font-size: calc(var(--funit) * 1.5);
   font-family: Georgia, "Times New Roman", Times, serif;
   user-select: none;
   margin-left: 0px;
@@ -136,11 +155,11 @@ a {
 }
 
 .definition > a {
-  text-decoration:none!important;
+  text-decoration: none !important;
 }
 
 a .word {
-  text-decoration:none!important;
+  text-decoration: none !important;
 }
 
 .word:hover {
@@ -199,7 +218,7 @@ a .word {
   line-height: var(--vunit);
   max-width: 45ch;
   margin: auto;
-  margin-top:52px;
+  margin-top: 52px;
 }
 
 .dictionary-definition {
@@ -246,19 +265,21 @@ footer {
 }
 
 /* Hack to target just the back arrow in blog articles and definition pages */
-.article > a , .definition-title > a{
+.article > a,
+.definition-title > a {
   text-decoration: none;
-  margin-right:32px;
-  margin-bottom:0;
-  margin-top:0;
+  margin-right: 32px;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
-.definition-title h1, .defintion-title h2 {
-  margin:0;
+.definition-title h1,
+.defintion-title h2 {
+  margin: 0;
 }
 
 .article-title {
-  margin-bottom: calc(var(--vunit)*2);
+  margin-bottom: calc(var(--vunit) * 2);
 }
 
 #concept li {
@@ -267,134 +288,130 @@ footer {
 }
 
 #concept ul {
-  margin-left:0;
+  margin-left: 0;
 }
 
 #concept a {
   text-decoration: none;
 }
 
-/* Everything related to search */ 
+/* Everything related to search */
 
 .ais-SearchBox {
-  grid-column: 2/3
+  grid-column: 2/3;
 }
 
-@media screen and (max-width:600px) {
-
+@media screen and (max-width: 600px) {
   .search-box {
     grid-column: 1/4;
-    grid-row:2/3;
+    grid-row: 2/3;
     justify-content: center;
-    margin:12px 0;
+    margin: 12px 0;
   }
 
-  input[type="search"]{
+  input[type="search"] {
     width: 100%;
   }
-
-  
 }
 
-.ais-SearchBox, .ais-SearchBox-form, .ais-SearchBox-input {
+.ais-SearchBox,
+.ais-SearchBox-form,
+.ais-SearchBox-input {
   width: auto;
   min-height: 52px;
-  margin:0;
+  margin: 0;
 }
 
-input[type="search"]{
+input[type="search"] {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
-  border-radius:4px;
-  background-color:hsl(5deg 65% 90%);
+  border-radius: 4px;
+  background-color: hsl(5deg 65% 90%);
 }
 
-input[type="search"]:focus{
-  background-color:white;
+input[type="search"]:focus {
+  background-color: white;
 }
 
 .ais-SearchBox-input {
-  font-size:var(--funit);
-  font-weight:400;
-  border:0px;
-  padding-left:12px
+  font-size: var(--funit);
+  font-weight: 400;
+  border: 0px;
+  padding-left: 12px;
 }
 
 .ais-SearchBox-input:focus {
-  outline:none;
+  outline: none;
 }
 
-
-
 /* No need for the buttons to submit/clear search */
-.ais-SearchBox-submit, .ais-SearchBox-reset {
+.ais-SearchBox-submit,
+.ais-SearchBox-reset {
   display: none;
 }
 
-.ais-Hits-item { 
+.ais-Hits-item {
   list-style-type: none;
-  margin-bottom:0px!important;
-  font-size:var(--funit);
+  margin-bottom: 0px !important;
+  font-size: var(--funit);
 }
 
-.ais-Hits, .ais-Hits-list {
-  margin-left:0;
+.ais-Hits,
+.ais-Hits-list {
+  margin-left: 0;
 }
 
 .searchresult {
-  display:flex;
-  align-items:flex-start;
-  text-decoration: none!important;
-  padding:0px 16px ;
-  height:calc(var(--funit)*2.5);
-  overflow:hidden;
+  display: flex;
+  align-items: flex-start;
+  text-decoration: none !important;
+  padding: 0px 16px;
+  height: calc(var(--funit) * 2.5);
+  overflow: hidden;
   white-space: nowrap;
   align-items: center;
-  margin-bottom:0;
+  margin-bottom: 0;
 }
 
 .searchresult:hover {
-  background:var(--lightgrey);
+  background: var(--lightgrey);
 }
 
 .searchresult > * {
-  margin-right:calc(var(--funit)/2);
-  margin-bottom:0;
+  margin-right: calc(var(--funit) / 2);
+  margin-bottom: 0;
 }
 
 .result-word {
-  color:var(--red) !important;
+  color: var(--red) !important;
 }
 
 .result-translation {
-  color:var(--black)!important;
+  color: var(--black) !important;
   /* margin: 0px calc(var(--funit)/2); */
-  
 }
 
 .result-example {
-  color:var(--grey)!important;
+  color: var(--grey) !important;
   text-overflow: ellipsis;
 }
 
-
 .result-arrow {
-  color:var(--black)!important;
+  color: var(--black) !important;
 }
 
 /* Styling dictionary definitions */
 
-
-.dictionary-definition  blockquote {
+.dictionary-definition blockquote {
   background-color: var(--lightgrey);
   margin: 48px 0px;
   line-height: 1.5;
-  padding:1em;
+  padding: 1em;
 }
 
 blockquote {
   /* Forcing quotes to be the curly style */
-  quotes: '\201c' '\201d';
+  quotes: "\201c""\201d";
 }
 
 /* Hack to give some realistic effect to highlights. Credit https://max.hn/thoughts/how-to-create-a-highlighter-marker-effect-in-css */
@@ -414,18 +431,18 @@ blockquote {
 }
 
 .dictionary-definition blockquote:nth-of-type(1):before {
-  font-size: calc(var(--funit)*4);
+  font-size: calc(var(--funit) * 4);
   content: open-quote;
   margin: 24px 0 0 -30px;
   line-height: 0px;
 }
 
 .dictionary-definition .small-subtitle {
-  margin-top:-100px;
+  margin-top: -100px;
 }
 
 .dictionary-translation {
-  font-weight:600;
+  font-weight: 600;
 }
 
 .definition-title {
@@ -435,22 +452,22 @@ blockquote {
 }
 
 .backarrow {
-  margin:0px;
+  margin: 0px;
 }
 
 .context {
   border-left: 5px solid var(--darkred);
-  font-size:calc(var(--funit)*0.75);
-  padding:24px;
-  margin-top:var(--vunit);
-  background-color:var(--lightred);
+  font-size: calc(var(--funit) * 0.75);
+  padding: 24px;
+  margin-top: var(--vunit);
+  background-color: var(--lightred);
 }
 
 /* Conversation design when a defintion is a dialog */
 
 .conversation-thread {
-  margin-top:52px;
-  display:flex;
+  margin-top: 52px;
+  display: flex;
   flex-direction: column;
 }
 
@@ -460,7 +477,7 @@ blockquote {
 }
 
 .conversation-thread blockquote {
-  margin:36px 0px 0px 0px;
+  margin: 36px 0px 0px 0px;
 }
 
 .conversation-thread blockquote:nth-of-type(even) {
@@ -469,17 +486,15 @@ blockquote {
 }
 
 .conversation-thread blockquote:nth-child(1) {
-  margin-top:0px;
+  margin-top: 0px;
 }
-
-
 
 /* New 2-cells layout */
 
 .grid-row {
-  display:grid;
-  grid-gap:var(--vunit);
-  grid-template-columns:  repeat(auto-fit, minmax(250px, 1fr));;
+  display: grid;
+  grid-gap: var(--vunit);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-auto-flow: row;
 }
 
@@ -489,11 +504,11 @@ blockquote {
 
 .wotd {
   background-color: #d33a2c2e;
-  padding:0px var(--vunit);
+  padding: 0px var(--vunit);
 }
 
 .wotd h1 {
-  color:var(--darkerred)
+  color: var(--darkerred);
 }
 
 /* Components for translations  */
@@ -504,7 +519,7 @@ blockquote {
 }
 
 .discourse_particle {
-  color:blue;
+  color: blue;
 }
 
 .highlight-discourse_particle {
@@ -512,7 +527,7 @@ blockquote {
 }
 
 .verb {
-  color:green;
+  color: green;
 }
 
 .highlight-verb {
@@ -520,7 +535,7 @@ blockquote {
 }
 
 .nya {
-  color:orange;
+  color: orange;
 }
 
 .highlight-possessive {
@@ -528,19 +543,20 @@ blockquote {
 }
 
 .word-highlight {
-    font-size: 20px !important;
-    pointer-events: auto !important;
+  font-size: 20px !important;
+  pointer-events: auto !important;
 }
 
 .word-highlight:hover {
-    visibility: visible !important;
-    opacity: 1 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .phrase {
-  margin-bottom:var(--vunit)!important;
+  margin-bottom: var(--vunit) !important;
 }
 
-.ber, .di {
+.ber,
+.di {
   color: purple;
 }

@@ -17,12 +17,10 @@ export default ({ data }) => {
       <Layout>
         <div className="row">
           <p className="subtitle">
-            Celoteh Bahasa is a complete dictionnary of “
-            <span className="example-highlight">Bahasa Indonesia gaul</span>”
-            (colloquial Indonesian) brought to you by a Bule learning the
-            language. Hope this helps you understand the meaning of the words
-            your coolest Jakartan friends use, whether at the bar or in chat
-            messages!
+            Welcome to Celoteh Bahasa, an unapologetically incomplete
+            Bule-crafted guide to colloquial Indonesian! Dive in and learn with
+            us - if you grasp even one word better, our mission is accomplished.
+            Thanks for stopping by!
           </p>
         </div>
         <div className="row">
