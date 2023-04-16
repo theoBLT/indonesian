@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import Header from "../components/header"
 import Concepts from "../components/concepts"
@@ -15,12 +15,23 @@ export default ({ data }) => {
       <SEO />
       <Header />
       <Layout>
+        <div class="row" id="vindes">
+          <span class="example-highlight">
+            Hallo teman2 Dari VINDES! 👋 Ini Théo, salamat datang! Kalo kalian
+            mau ikut IG aku,{" "}
+            <strong>
+              <a href="https://www.instagram.com/theoblt">clik Disini! </a>
+            </strong>
+          </span>
+        </div>
         <div id="intro" className="row">
           <div id="avatar">
-            <img
-              src="https://pbs.twimg.com/profile_images/1322835228197556224/jJwEyHUX_400x400.png"
-              alt="A picture of Théo Blochet"
-            />
+            <Link to="/about">
+              <img
+                src="https://pbs.twimg.com/profile_images/1322835228197556224/jJwEyHUX_400x400.png"
+                alt="A picture of Théo Blochet, the website's author"
+              />
+            </Link>
           </div>
           <p className="subtitle">
             Welcome to Celoteh Bahasa, an unapologetically incomplete
