@@ -15,11 +15,17 @@ export default ({ data }) => {
       <SEO />
       <Header />
       <Layout>
-        <div className="row">
+        <div id="intro" className="row">
+          <div id="avatar">
+            <img
+              src="https://pbs.twimg.com/profile_images/1322835228197556224/jJwEyHUX_400x400.png"
+              alt="A picture of Théo Blochet"
+            />
+          </div>
           <p className="subtitle">
             Welcome to Celoteh Bahasa, an unapologetically incomplete
             Bule-crafted guide to colloquial Indonesian! Dive in and learn with
-            us - if you grasp even one word better, our mission is accomplished.
+            me - if you grasp even one word better, my mission is accomplished.
             Thanks for stopping by!
           </p>
         </div>
@@ -27,13 +33,13 @@ export default ({ data }) => {
           <h1>Some recent favorites</h1>
 
           <div className="wordsList">
-            <Word word="Warteg" slug="warteg" />
-            <Word word="Ya udah, sana!" slug="ya-udah-sana" />
+            <Word word="Letoy" slug="letoy" />
+            <Word word="Pede" slug="pede" />
             <Word word="SBB" slug="sbb" />
             <Word word="Santuy" slug="santuy" />
-            <Word word="Dempet-dempetan" slug="dempet-dempetan" />
+            <Word word="Intinya" slug="intinya" />
             <Word word="TBL" slug="tbl" />
-            <Word word="Pelampiasan" slug="pelampiasan" />
+            <Word word="Baper" slug="baper" />
           </div>
         </div>
         <div className="grid-row">
