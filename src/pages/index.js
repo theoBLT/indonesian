@@ -15,15 +15,6 @@ export default ({ data }) => {
       <SEO />
       <Header />
       <Layout>
-        <div class="row" id="vindes">
-          <span class="example-highlight">
-            Hallo teman2 Dari VINDES! 👋 Ini Théo, salamat datang! Kalo kalian
-            mau ikut IG aku,{" "}
-            <strong>
-              <a href="https://www.instagram.com/theoblt">clik Disini! </a>
-            </strong>
-          </span>
-        </div>
         <div id="intro" className="row">
           <div id="avatar">
             <Link to="/about">
