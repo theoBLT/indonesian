@@ -9,7 +9,7 @@ import SEO from "../components/seo"
 import Footer from "../components/footer"
 import Word from "../components/word"
 
-export default ({ data }) => {
+const Index = ({ data }) => {
   return (
     <>
       <SEO />
@@ -69,6 +69,8 @@ export default ({ data }) => {
     </>
   )
 }
+
+export default Index
 
 export const query = graphql`
   query getWordsBySession {

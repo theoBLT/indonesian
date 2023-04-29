@@ -5,7 +5,7 @@ import Header from "../components/header"
 import SEO from "../components/seo"
 import Footer from "../components/footer"
 
-export default () => {
+const About = () => {
   return (
     <>
       <SEO title="My journey learning Indonesian" />
@@ -39,3 +39,5 @@ export default () => {
     </>
   )
 }
+
+export default About
