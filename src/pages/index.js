@@ -26,9 +26,9 @@ const Index = ({ data }) => {
           </div>
           <p className="subtitle">
             Welcome to Celoteh Bahasa, an unapologetically incomplete
-            Bule-crafted guide to colloquial Indonesian! Dive in and learn with
-            me - if you grasp even one word better, my mission is accomplished.
-            Thanks for stopping by!
+            Bule-crafted guide made up of {data.totalWords.totalCount} words of
+            colloquial Indonesian! Dive in and learn with me — if you grasp even
+            one word better, my mission is accomplished. Thanks for stopping by!
           </p>
         </div>
         <div className="row">
@@ -100,6 +100,9 @@ export const query = graphql`
           }
         }
       }
+    }
+    totalWords: allAirtable {
+      totalCount
     }
   }
 `
