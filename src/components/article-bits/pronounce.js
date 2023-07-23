@@ -1,6 +1,6 @@
 import React from "react"
 
-export default props => {
+const Pronounce = (props) => {
   const { text, language } = props
 
   const sayIt = (text, language) => {
@@ -14,3 +14,5 @@ export default props => {
 
   return <button onClick={() => sayIt(text, language)}> {text} 🔉</button>
 }
+
+export default Pronounce

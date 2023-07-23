@@ -1,5 +1,4 @@
 import React from "react"
-import sanitizeHtml from "sanitize-html"
 
 function Texthighlight(props) {
   const { highlight, paragraph } = props

@@ -36,6 +36,7 @@ const Results = connectStateResults(
           , or{" "}
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href={
               `https://airtable.com/shrV656H340zjGWi4?prefill_word=` +
               searchState.query

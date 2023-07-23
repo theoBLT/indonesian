@@ -2,7 +2,7 @@ import React from "react"
 import Word from "../components/word"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-export default (props) => {
+const Session = (props) => {
   const { key, sessionNumber, sessionDate, sessionWords, sessionIntro } = props
   return (
     <div className="session" key={key}>
@@ -28,3 +28,5 @@ export default (props) => {
     </div>
   )
 }
+
+export default Session

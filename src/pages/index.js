@@ -5,14 +5,14 @@ import Header from "../components/header"
 import Concepts from "../components/concepts"
 import Session from "../components/session"
 import WordOfTheDay from "../components/wordoftheday"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Footer from "../components/footer"
 import Word from "../components/word"
 
 const Index = ({ data }) => {
   return (
     <>
-      <SEO />
+      <Seo />
       <Header />
       <Layout>
         <div id="intro" className="row">
@@ -20,15 +20,14 @@ const Index = ({ data }) => {
             <Link to="/about">
               <img
                 src="https://pbs.twimg.com/profile_images/1322835228197556224/jJwEyHUX_400x400.png"
-                alt="A picture of Théo Blochet, the website's author"
+                alt="Théo Blochet, the website's author"
               />
             </Link>
           </div>
           <p className="subtitle">
-            Welcome to Celoteh Bahasa, an unapologetically incomplete
-            Bule-crafted guide made up of {data.totalWords.totalCount} words of
-            colloquial Indonesian! Dive in and learn with me — if you grasp even
-            one word better, my mission is accomplished. Thanks for stopping by!
+            Welcome to Celoteh Bahasa, an unapologetically incomplete guide to
+            colloquial Indonesian, with {data.totalWords.totalCount} words and
+            counting ! Dive in and learn with me. Thanks for stopping by!
           </p>
         </div>
         <div className="row">
@@ -49,7 +48,6 @@ const Index = ({ data }) => {
           <WordOfTheDay
             word="Kepepet"
             translation="desperate"
-            type="adjective"
             example="Ngak ada figuran yang pacaran figuran lain. Kecuali kepepet!"
           />
         </div>

@@ -2,20 +2,20 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Header from "../components/header"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Footer from "../components/footer"
 
 const About = () => {
   return (
     <>
-      <SEO title="My journey learning Indonesian" />
+      <Seo title="My journey learning Indonesian" />
       <Header />
       <Layout>
         <div id="intro">
           <div id="avatar">
             <img
               src="https://pbs.twimg.com/profile_images/1322835228197556224/jJwEyHUX_400x400.png"
-              alt="A picture of Théo Blochet"
+              alt="Théo Blochet"
             />
           </div>
 

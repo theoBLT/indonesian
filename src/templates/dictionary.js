@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Header from "../components/header"
 import Definition from "../components/definition"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import { Link } from "gatsby"
 
 export default function Template({ data }) {
@@ -18,7 +18,7 @@ export default function Template({ data }) {
   } = data.airtable.data
   return (
     <>
-      <SEO
+      <Seo
         title={`${word} — Definition of ${word} in Indonesian`}
         description={`Meaning of ${word} in Indonesian. Apa artinya ${word} di bahasa Indonesia?`}
       />

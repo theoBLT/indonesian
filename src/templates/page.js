@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Header from "../components/header"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import { Link } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
@@ -12,19 +12,17 @@ export default function Template({ data }) {
 
   return (
     <>
-      <SEO title={frontmatter.title} description={excerpt} />
-      <Header/>
+      <Seo title={frontmatter.title} description={excerpt} />
+      <Header />
       <Layout>
         <div className="article">
-        <div className="definition-title article-title">
-          <Link to="/">
-            <h2 className="backarrow">←</h2>
-          </Link>
-          <h1>{frontmatter.title}</h1>
-        </div>
+          <div className="definition-title article-title">
+            <Link to="/">
+              <h2 className="backarrow">←</h2>
+            </Link>
+            <h1>{frontmatter.title}</h1>
+          </div>
           <MDXRenderer>{body}</MDXRenderer>
-
-
         </div>
         <span className="date">{frontmatter.date}</span>
       </Layout>
@@ -33,7 +31,7 @@ export default function Template({ data }) {
 }
 
 export const pageQuery = graphql`
-  query($path: String!) {
+  query ($path: String!) {
     mdx(frontmatter: { path: { eq: $path } }) {
       body
       frontmatter {
