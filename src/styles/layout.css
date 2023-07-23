@@ -29,6 +29,19 @@
   }
 }
 
+/* Media queries for different screen sizes */
+@media screen and (max-width: 600px) {
+  #add-word .long-button {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  #add-word .short-button {
+    display: none;
+  }
+}
+
 html {
   font-family: "Bitter", "Times New Roman", Times, serif;
 }
