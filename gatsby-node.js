@@ -53,3 +53,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   })
 }
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type AirtableFieldtextmarkdown implements Node {
+      id: ID!
+      childMdx: Mdx
+    }
+
+    type Mdx {
+      body: String
+    }
+  `;
+  createTypes(typeDefs);
+};

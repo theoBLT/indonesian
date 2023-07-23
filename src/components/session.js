@@ -1,16 +1,12 @@
 import React from "react"
 import Word from "../components/word"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const Session = (props) => {
-  const { key, sessionNumber, sessionDate, sessionWords, sessionIntro } = props
+  const { sessionNumber, sessionDate, sessionWords } = props
   return (
-    <div className="session" key={key}>
+    <div className="session">
       <h2>Class #{sessionNumber}</h2>
       <span className="small-subtitle">{sessionDate}</span>
-      <div className="sessionIntro">
-        <MDXRenderer>{sessionIntro ? sessionIntro : null}</MDXRenderer>
-      </div>
       <div className="wordsList">
         {sessionWords &&
           sessionWords.map((definition, i) => (

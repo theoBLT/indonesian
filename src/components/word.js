@@ -3,7 +3,7 @@ import React, { useState, useLayoutEffect } from "react"
 import { capitalize, getAngles } from "../utils/helpers.js"
 
 const Word = (props) => {
-  const { word, type, translation, key, example, slug } = props
+  const { word, type, translation, example, slug } = props
   const [visible, setVisible] = useState(false)
   const [angles, setAngles] = useState([])
 
@@ -14,7 +14,7 @@ const Word = (props) => {
   if (!type | !translation) {
     // If the word is incomplete, only show a link to the target word, no expandable.
     return (
-      <div key={key} className="definition">
+      <div className="definition">
         <Link to={slug}>
           <a
             className="word"
@@ -38,7 +38,7 @@ const Word = (props) => {
   }
 
   return (
-    <div key={key} className="definition">
+    <div className="definition">
       <button
         type="button"
         className="word"

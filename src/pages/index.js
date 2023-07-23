@@ -59,7 +59,6 @@ const Index = ({ data }) => {
             sessionNumber={session.data.number}
             sessionDate={session.data.date}
             sessionWords={session.data.words}
-            sessionIntro={session.data.intro.childMdx.body}
           />
         ))}
         <Footer />
@@ -70,37 +69,26 @@ const Index = ({ data }) => {
 
 export default Index
 
-export const query = graphql`
-  query getWordsBySession {
-    allAirtable(
-      filter: { data: { number: { ne: null } } }
-      sort: { order: DESC, fields: data___number }
-    ) {
-      nodes {
-        data {
-          date(fromNow: true)
-          number
-          words {
-            data {
-              word
-              translation
-              type
-              example
-              context
-              slug
-            }
-          }
-          intro {
-            id
-            childMdx {
-              body
-            }
+export const query = graphql`query getWordsBySession {
+  allAirtable(filter: {data: {number: {ne: null}}}, sort: {data: {number: DESC}}) {
+    nodes {
+      data {
+        date(fromNow: true)
+        number
+        words {
+          data {
+            word
+            translation
+            type
+            example
+            context
+            slug
           }
         }
       }
     }
-    totalWords: allAirtable {
-      totalCount
-    }
   }
-`
+  totalWords: allAirtable {
+    totalCount
+  }
+}`
